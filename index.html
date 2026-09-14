@@ -25,6 +25,50 @@
   @keyframes hsPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.85); } }
   @keyframes hsScan { 0% { transform: translateY(-8%); opacity: 0; } 12% { opacity: .9; } 88% { opacity: .9; } 100% { transform: translateY(108%); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* ── Tablet ≤ 1024px ── */
+  @media (max-width: 1024px) {
+    [data-heatgrid] { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    [data-heatgrid] > div { min-width: 620px; }
+    [data-heatgrid] + div { flex-wrap: wrap; }
+  }
+
+  /* ── Mobile ≤ 767px ── */
+  @media (max-width: 767px) {
+    /* Nav: hide text links, keep CTA */
+    header nav a:not([href="#demo"]) { display: none !important; }
+    header nav { gap: 0 !important; }
+
+    /* Hero: darken full-width for text legibility */
+    [data-hero-root] > div:first-of-type {
+      background: linear-gradient(180deg, #060607 0%, rgba(6,6,7,0.92) 30%, rgba(6,6,7,0.7) 60%, rgba(6,6,7,0.35) 100%) !important;
+    }
+
+    /* Heat grid: force horizontal scroll */
+    [data-heatgrid] { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
+    [data-heatgrid] > div { min-width: 520px; }
+
+    /* Console roster rows: stack on mobile */
+    [data-hs-row] { gap: 10px !important; }
+    [data-hs-row] > div:first-child { flex: 1 1 100% !important; }
+
+    /* Sample report card: reduce padding */
+    #data [data-reveal] { padding: 24px 18px !important; }
+
+    /* Sticky CTA: compact on mobile */
+    [data-stickycta] > div { padding: 10px 16px !important; gap: 10px !important; }
+    [data-stickycta] > div > div:first-child > div:first-child { font-size: 13px !important; }
+    [data-stickycta] > div > div:first-child > div:last-child { font-size: 11.5px !important; }
+    [data-stickycta] a { padding: 10px 18px !important; font-size: 13px !important; }
+
+    /* Footer: stack columns */
+    footer > div:first-child > div { gap: 28px 16px !important; }
+    footer > div:first-child > div > div { flex-basis: 100% !important; min-width: 100% !important; }
+    footer > div:first-child > div > div:first-child { flex-basis: 100% !important; }
+
+    /* FAQ answer text: reduce right padding */
+    [data-screen-label="FAQ"] p { padding-right: 20px !important; }
+  }
 </style>
 </helmet>
 <div style="font-family: Geist, ui-sans-serif, 'Helvetica Neue', Arial, sans-serif; background: #060607; color: #FAFAFA; overflow-x: hidden;">
