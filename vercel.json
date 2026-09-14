@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/book-a-meeting", "destination": "/book-a-meeting.html" },
+    { "source": "/Book a Meeting.dc.html", "destination": "/book-a-meeting.html" },
+    { "source": "/Book%20a%20Meeting.dc.html", "destination": "/book-a-meeting.html" }
+  ]
+}
