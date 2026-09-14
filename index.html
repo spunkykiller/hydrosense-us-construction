@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body { margin: 0; background: #060607; -webkit-font-smoothing: antialiased; }
+  a { color: #FAFAFA; text-decoration: none; }
+  a:hover { color: #22D3EE; }
+  input, button, textarea, select { font: inherit; }
+  input::placeholder { color: #A9A49B; }
+  ::selection { background: #22D3EE; color: #060607; }
+  @keyframes hsSpin { to { transform: translateY(-50%) rotate(360deg); } }
+  @keyframes hsTrack { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes hsPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.85); } }
+  @keyframes hsScan { 0% { transform: translateY(-8%); opacity: 0; } 12% { opacity: .9; } 88% { opacity: .9; } 100% { transform: translateY(108%); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</helmet>
+<div style="font-family: Geist, ui-sans-serif, 'Helvetica Neue', Arial, sans-serif; background: #060607; color: #FAFAFA; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(6,6,7,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1C1F;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(14px, 3.4vw, 32px); min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: clamp(12px, 2vw, 24px); flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: clamp(9px, 1.4vw, 13px); min-width: 0;">
+        <span style="font-size: 17px; font-weight: 600; letter-spacing: -0.03em; color: #FAFAFA; white-space: nowrap;">HydroSense</span>
+        <span style="width: 1px; height: 15px; background: #333338;"></span>
+        <img src="assets/innovosens-nav-logo.svg" alt="Innovosens" style="height: 13px; width: auto; display: block; opacity: 0.5;" />
+      </div>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px clamp(12px, 2vw, 26px); min-width: 0;">
+        <a href="#readiness" style="font-size: 13.5px; font-weight: 400; color: #9A9AA2; white-space: nowrap; transition: color .18s ease;" style-hover="color: #FAFAFA;">Readiness</a>
+        <a href="#product" style="font-size: 13.5px; font-weight: 400; color: #9A9AA2; white-space: nowrap; transition: color .18s ease;" style-hover="color: #FAFAFA;">Product</a>
+        <a href="#data" style="font-size: 13.5px; font-weight: 400; color: #9A9AA2; white-space: nowrap; transition: color .18s ease;" style-hover="color: #FAFAFA;">Sample report</a>
+        <a href="#demo" style="font-size: 14px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 9px clamp(14px, 2vw, 18px); border-radius: 100px; white-space: nowrap; transition: background .2s ease;" style-hover="background:#22D3EE;color:#060607">Book a 10 minute call</a>
+      </nav>
+    </div>
+  </header>
+
+  <section data-hero-root="" data-screen-label="Hero" style="position: relative; overflow: hidden;">
+    <img src="assets/hero-construction.jpg" alt="Construction crew attending a worker down from heat on a concrete deck in the afternoon sun" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 74% 56%; display: block; filter: brightness(0.72) saturate(0.9);" />
+    <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #060607 0%, rgba(6,6,7,0.97) 42%, rgba(6,6,7,0.9) 60%, rgba(6,6,7,0.62) 78%, rgba(6,6,7,0.12) 100%);"></div>
+    <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, #060607 0%, rgba(6,6,7,0.6) 16%, rgba(6,6,7,0) 42%);"></div>
+    <div style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px);">
+      <div style="max-width: 660px; padding: clamp(52px, 6.5vw, 96px) 0 clamp(48px, 5vw, 76px);">
+        <div data-reveal="" style="display: inline-flex; align-items: center; margin-bottom: 24px;"><span style="display: inline-block; background: #FAFAFA; color: #060607; font-size: 14px; font-weight: 500; padding: 9px 20px; border-radius: 100px;">For U.S. Construction &amp; Site Safety</span></div>
+        <h1 data-reveal="" data-reveal-delay="70" style="font-size: clamp(40px, 5.2vw, 66px); font-weight: 500; line-height: 1.04; letter-spacing: -0.035em; margin: 0 0 26px; max-width: 18ch; text-wrap: balance;"><span style="color: #FAFAFA;">Know who’s ready.</span> <span style="color: #9A9AA2;">Before the afternoon peak.</span></h1>
+        <p data-reveal="" data-reveal-delay="130" style="font-size: clamp(17.5px, 1.8vw, 21px); font-weight: 400; line-height: 1.5; color: #B4B4BC; margin: 0 0 clamp(28px, 3vw, 38px); max-width: 42ch; text-wrap: pretty;">One patch, one photo. Fluid loss and heat strain, worker by worker.</p>
+        <div data-reveal="" data-reveal-delay="190" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <a href="#demo" style="font-size: 16px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 16px 30px; border-radius: 100px; white-space: nowrap; transition: background .2s ease, transform .2s ease;" style-hover="background:#22D3EE;transform:translateY(-2px)">Book a 10 minute call</a>
+        </div>
+        <div data-reveal="" data-reveal-delay="230" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.13em; text-transform: uppercase; color: #8A8A92; margin-top: clamp(20px, 2.2vw, 28px); line-height: 1.7;">EU Seal of Excellence · Sony · Vinnova &amp; Eureka Eurostars funded</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Why it matters" style="background: #060607;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
+      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">The Risk That Takes Your People</span> <span style="color: #8A8A96;">Is The One Nobody Can See.</span></h2>
+        <p style="font-size: clamp(17.5px, 1.8vw, 21px); line-height: 1.6; color: #A8A8AE; margin: 22px 0 0; max-width: 54ch; text-wrap: pretty;">Heat strain is one of the few risks you can measure, and stop before someone goes down.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(24px, 3vw, 40px); align-items: stretch; margin-bottom: clamp(44px, 5vw, 68px);">
+        <div data-reveal="" style="position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #1F1F23; min-height: clamp(280px, 34vw, 420px);">
+          <img src="assets/card-construction.jpg" alt="Site foreman reading a tablet in glaring afternoon sun on a concrete deck" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block;" />
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,7,0) 42%, rgba(6,6,7,0.92) 100%);"></div>
+        </div>
+        <div data-reveal="" data-reveal-delay="60" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(22px, 2.6vw, 34px) clamp(24px, 2.8vw, 36px); display: flex; flex-direction: column; justify-content: center;">
+            <div data-reveal="" data-reveal-delay="0" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0;">
+              <div style="position: relative; flex-shrink: 0; width: clamp(92px, 8.2vw, 112px); height: clamp(92px, 8.2vw, 112px);">
+                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"></circle><circle data-arc="0.34" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"></circle></svg>
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+                  <span style="display: flex; align-items: baseline; gap: 1px;"><span data-countto="34" style="font-size: clamp(27px, 2.7vw, 37px); font-weight: 500; line-height: 1; letter-spacing: -0.045em; color: #FAFAFA; font-variant-numeric: tabular-nums;">34</span><span style="font-size: clamp(13px, 1.2vw, 16px); font-weight: 500; line-height: 1; color: #22D3EE;">%</span></span>
+                </div>
+              </div>
+              <p style="font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">Heat deaths</span>of the U.S. workplace total.</p>
+            </div>
+            <div data-reveal="" data-reveal-delay="70" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0; border-top: 1px solid #1F1F23;">
+              <div style="position: relative; flex-shrink: 0; width: clamp(92px, 8.2vw, 112px); height: clamp(92px, 8.2vw, 112px);">
+                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"></circle><circle data-arc="0.7" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"></circle></svg>
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+                  <span style="display: flex; align-items: baseline; gap: 1px;"><span data-countto="70" style="font-size: clamp(27px, 2.7vw, 37px); font-weight: 500; line-height: 1; letter-spacing: -0.045em; color: #FAFAFA; font-variant-numeric: tabular-nums;">70</span><span style="font-size: clamp(13px, 1.2vw, 16px); font-weight: 500; line-height: 1; color: #22D3EE;">%</span></span>
+                </div>
+              </div>
+              <p style="font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">First days</span>of deaths in the first week.</p>
+            </div>
+            <div data-reveal="" data-reveal-delay="140" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0; border-top: 1px solid #1F1F23;">
+              <div style="position: relative; flex-shrink: 0; width: clamp(92px, 8.2vw, 112px); height: clamp(92px, 8.2vw, 112px);">
+                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"></circle><circle data-arc="1" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"></circle></svg>
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+                  <span data-countto="111" style="font-size: clamp(27px, 2.7vw, 37px); font-weight: 500; line-height: 1; letter-spacing: -0.045em; color: #FAFAFA; font-variant-numeric: tabular-nums;">111</span>
+                </div>
+              </div>
+              <p style="font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">Phoenix</span>days a year above 100 °F.</p>
+            </div>
+          <p style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8A92; margin: clamp(14px, 1.6vw, 20px) 0 0; padding-top: clamp(16px, 1.8vw, 22px); border-top: 1px solid #1F1F23;">Sources · BLS Census of Fatal Occupational Injuries · OSHA · NOAA</p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px;">
+        <div data-reveal="" data-reveal-delay="0" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0B0B0D;">
+            <img src="assets/product-patch-skin.jpg" alt="HydroSense patch worn on a forearm during a training evolution" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,7,0) 46%, rgba(15,15,18,0.9) 100%);"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 9px; padding: 26px 30px 32px;">
+            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: -0.025em; margin: 0; color: #FAFAFA;">Measure the strain</h3>
+            <p style="font-size: 16.5px; line-height: 1.55; color: #9A9AA2; margin: 0;">Sweat rate and fluid loss, worker by worker.</p>
+          </div>
+        </div>
+        <div data-reveal="" data-reveal-delay="80" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0B0B0D;">
+            <img src="assets/app-in-hand.png" alt="The HydroSense app showing a session sweat-loss reading" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,7,0) 46%, rgba(15,15,18,0.9) 100%);"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 9px; padding: 26px 30px 32px;">
+            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: -0.025em; margin: 0; color: #FAFAFA;">See it build</h3>
+            <p style="font-size: 16.5px; line-height: 1.55; color: #9A9AA2; margin: 0;">Patterns across the shift cycle, not a crew average.</p>
+          </div>
+        </div>
+        <div data-reveal="" data-reveal-delay="160" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0B0B0D;">
+            <img src="assets/hero-construction.jpg" alt="Construction crew on a concrete deck in the afternoon sun" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: 66% 56%; display: block;" />
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,7,0) 46%, rgba(15,15,18,0.9) 100%);"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 9px; padding: 26px 30px 32px;">
+            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: -0.025em; margin: 0; color: #FAFAFA;">Act before it escalates</h3>
+            <p style="font-size: 16.5px; line-height: 1.55; color: #9A9AA2; margin: 0;">Water breaks and rotation, while it still matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Heat risk map" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
+      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">Where The Heat Season</span> <span style="color: #8A8A96;">Runs Longest.</span></h2>
+      </div>
+      <div data-reveal="" data-reveal-delay="60" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(26px, 3vw, 38px);">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding-bottom: 14px;">
+          <div style="flex: 1 1 150px; min-width: 0;"></div>
+          <div style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);">
+          <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">APR</div>
+          <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">MAY</div>
+          <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">JUN</div>
+          <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">JUL</div>
+          <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">AUG</div>
+          <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">SEP</div>
+          <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">OCT</div>
+          </div>
+        </div>
+        <div data-heatgrid="" style="display: flex; flex-direction: column;">
+          <div data-heat="1,2,3,3,3,2,1" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+            <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Phoenix &amp; the Sonoran Desert</div>
+            <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
+          </div>
+          <div data-heat="0,2,3,3,3,2,1" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+            <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Permian Basin &amp; Texas Gulf</div>
+            <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
+          </div>
+          <div data-heat="0,1,2,3,3,2,0" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+            <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">California Central Valley</div>
+            <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div></div>
+          </div>
+          <div data-heat="1,2,2,3,3,2,1" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+            <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Florida &amp; the Gulf Southeast</div>
+            <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
+          </div>
+          <div data-heat="0,1,3,3,3,1,0" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+            <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Nevada &amp; the Mojave</div>
+            <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div></div>
+          </div>
+          <div data-heat="2,2,2,2,2,2,2" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+            <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Roof and deck work, radiant load</div>
+            <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div></div>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 26px); margin-top: 26px; padding-top: 22px; border-top: 1px solid #1B1B1F;">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8A96;">Heat risk</span>
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #17171B;"></span>Low</span>
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #0E7490;"></span>Elevated</span>
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #FBBF24;"></span>High</span>
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #F87171;"></span>Extreme</span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(18px, 2.4vw, 32px); margin-top: clamp(20px, 2.4vw, 30px);">
+        <div data-reveal="" data-reveal-delay="0" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: baseline; gap: 3px;"><span data-countto="430" style="font-size: clamp(34px, 3.4vw, 44px); font-weight: 500; line-height: 1; letter-spacing: -0.04em; color: #FAFAFA; font-variant-numeric: tabular-nums;">430</span></div>
+          <p style="font-size: 16px; line-height: 1.55; color: #9A9AA2; margin: 0;">heat deaths in Maricopa County, Arizona in 2025. In 2015 it was 84.</p>
+        </div>
+        <div data-reveal="" data-reveal-delay="80" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: baseline; gap: 3px;"><span data-countto="47" style="font-size: clamp(34px, 3.4vw, 44px); font-weight: 500; line-height: 1; letter-spacing: -0.04em; color: #FAFAFA; font-variant-numeric: tabular-nums;">47</span><span style="font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; color: #22D3EE;">%</span></div>
+          <p style="font-size: 16px; line-height: 1.55; color: #9A9AA2; margin: 0;">of those deaths happened on days rated only <em style="font-style: normal; color: #C7C7CE;">moderate</em> heat risk, not on the days anyone plans for.</p>
+        </div>
+      </div>
+      <p style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #5E5E66; margin: 22px 0 0;">SOURCES: MARICOPA COUNTY DPH · BLS CENSUS OF FATAL OCCUPATIONAL INJURIES · EPA · NFPA · BMC PUBLIC HEALTH</p>
+    </div>
+  </section>
+
+  <section id="readiness" data-screen-label="Command readiness" style="background: #060607;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
+      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 20ch; text-wrap: balance;"><span style="color: #FAFAFA;">Send The Crew</span> <span style="color: #8A8A96;">That Is Ready.</span></h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: clamp(22px, 2.6vw, 32px);">
+        <div data-hs-console="" data-reveal="" data-reveal-delay="60" style="position: relative; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(28px, 3.4vw, 44px);">
+          <span data-hs-scan="" style="position: absolute; left: 0; right: 0; top: 0; height: 84px; pointer-events: none; opacity: 0; background: linear-gradient(to bottom, rgba(34,211,238,0) 0%, rgba(34,211,238,0.09) 55%, rgba(34,211,238,0) 100%);"></span>
+          <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #17171B; pointer-events: none;"></span>
+          <span data-hs-progress="" style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; pointer-events: none; transform-origin: left center; animation: hsTrack 8700ms linear infinite; background: linear-gradient(90deg, rgba(34,211,238,0.3) 0%, #22D3EE 100%);"></span>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; padding-bottom: 18px;">
+            <div style="display: flex; align-items: center; gap: 9px;">
+              <span style="width: 7px; height: 7px; border-radius: 100px; background: #22D3EE; animation: hsPulse 1.8s ease-in-out infinite;"></span>
+              <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #22D3EE;">{{ phaseLabel }}</span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(10px, 1.4vw, 18px);">
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: #8A8A92; white-space: nowrap;"><span style="width: 7px; height: 7px; border-radius: 100px; background: #34D399;"></span>Ready</span>
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: #8A8A92; white-space: nowrap;"><span style="width: 7px; height: 7px; border-radius: 100px; background: #FBBF24;"></span>Monitor</span>
+              <span style="display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: #8A8A92; white-space: nowrap;"><span style="width: 7px; height: 7px; border-radius: 100px; background: #F87171;"></span>Recover</span>
+            </div>
+          </div>
+          <div style="font-size: clamp(18px, 1.9vw, 21px); font-weight: 500; letter-spacing: -0.025em; color: #FAFAFA; padding-bottom: 16px;">{{ unit }}</div>
+          <div style="display: flex; gap: 6px; padding-bottom: 16px;">
+            <sc-for list="{{ segs }}" as="seg" hint-placeholder-count="3">
+              <span style="flex: 1; height: 2px; border-radius: 100px; transition: background .5s ease; background: {{ seg.bg }};"></span>
+            </sc-for>
+          </div>
+          <sc-for list="{{ roster }}" as="r" hint-placeholder-count="3">
+            <div data-hs-row="" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(12px, 1.8vw, 26px); padding: clamp(18px, 2.2vw, 24px) 0; border-top: 1px solid #1B1B1F;">
+              <div style="flex: 0 1 160px; min-width: 0;">
+                <div style="font-size: clamp(16.5px, 1.6vw, 18.5px); font-weight: 500; color: #FAFAFA; letter-spacing: -0.015em;">{{ r.name }}</div>
+                <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A92; margin-top: 4px; white-space: nowrap;">{{ r.role }}</div>
+              </div>
+              <div style="flex: 2 1 160px; min-width: 120px; height: 8px; border-radius: 100px; background: #1B1B1F; overflow: hidden;">
+                <div style="height: 100%; border-radius: 100px; transition: width .95s cubic-bezier(.16,1,.3,1), background .5s ease; width: {{ r.w }}; background: {{ r.barBg }};"></div>
+              </div>
+              <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: flex-end; gap: clamp(12px, 1.6vw, 20px);"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; text-align: right; white-space: nowrap; transition: color .4s ease; min-width: 58px; color: {{ r.valFg }};">{{ r.val }}</div><div style="min-width: clamp(82px, 8vw, 104px); font-size: 13px; font-weight: 500; letter-spacing: 0.02em; text-align: center; padding: 7px 14px; border-radius: 100px; white-space: nowrap; transition: color .45s ease, background .45s ease; color: {{ r.pillFg }}; background: {{ r.pillBg }};">{{ r.pill }}</div></div>
+            </div>
+          </sc-for>
+          <p style="font-size: clamp(15.5px, 1.5vw, 17px); line-height: 1.6; color: #9A9AA2; margin: 24px 0 0; padding-top: 22px; border-top: 1px solid #1B1B1F; min-height: 46px;">{{ phaseNote }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="product" data-screen-label="The product" style="background: #060607;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 56px; align-items: center;">
+        <div data-reveal="" style="min-width: 0;">
+          <div style="position: relative; border-radius: 24px; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23;">
+            <div style="display: flex; width: 100%; aspect-ratio: 4 / 3; transition: transform .55s cubic-bezier(.22,.61,.36,1); transform: translateX({{ trackX }});">
+              <div style="flex: 0 0 100%; min-width: 0; height: 100%;">
+                <img src="assets/app-in-hand.png" alt="The HydroSense app showing a session sweat-loss reading, with the patch worn on the forearm" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <div style="flex: 0 0 100%; min-width: 0; height: 100%;">
+                <img src="assets/product-phone-pack.jpg" alt="A phone showing the session summary next to a HydroSense two-pack and a sweat patch" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <div style="flex: 0 0 100%; min-width: 0; height: 100%;">
+                <img src="assets/product-patch-skin.jpg" alt="Close-up of the numbered sweat patch worn on a forearm" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+            </div>
+            <button type="button" onClick="{{ prevSlide }}" aria-label="Previous photo" style="position: absolute; top: 50%; left: 12px; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 100px; border: 1px solid rgba(250,250,250,0.18); background: rgba(6,6,7,0.55); backdrop-filter: blur(8px); color: #FAFAFA; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease;" style-hover="background: rgba(6,6,7,0.85)">‹</button>
+            <button type="button" onClick="{{ nextSlide }}" aria-label="Next photo" style="position: absolute; top: 50%; right: 12px; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 100px; border: 1px solid rgba(250,250,250,0.18); background: rgba(6,6,7,0.55); backdrop-filter: blur(8px); color: #FAFAFA; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease;" style-hover="background: rgba(6,6,7,0.85)">›</button>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px;">
+            <button type="button" onClick="{{ goSlide0 }}" aria-label="Photo 1" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+              <span style="display: block; width: 100%; height: 3px; border-radius: 100px; background: {{ dot0 }}; transition: background .25s ease;"></span>
+            </button>
+            <button type="button" onClick="{{ goSlide1 }}" aria-label="Photo 2" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+              <span style="display: block; width: 100%; height: 3px; border-radius: 100px; background: {{ dot1 }}; transition: background .25s ease;"></span>
+            </button>
+            <button type="button" onClick="{{ goSlide2 }}" aria-label="Photo 3" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+              <span style="display: block; width: 100%; height: 3px; border-radius: 100px; background: {{ dot2 }}; transition: background .25s ease;"></span>
+            </button>
+          </div>
+        </div>
+        <div data-reveal="" data-reveal-delay="90">
+          <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0 0 34px; text-wrap: balance;"><span style="color: #FAFAFA;">One Patch. One Photo.</span> <span style="color: #8A8A96;">One Real Number.</span></h2>
+          <div style="display: flex; flex-direction: column; gap: 30px;">
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+              <span style="width: 46px; height: 46px; border-radius: 100px; background: #17171B; border: 1px solid #26262B; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; color: #22D3EE;">01</span></span>
+              <div>
+                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 6px; color: #FAFAFA;">Apply</h3>
+                <p style="font-size: 16.5px; line-height: 1.6; color: #9A9AA2; margin: 0;">Forearm, arm or lower back. Run the shift as planned.</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+              <span style="width: 46px; height: 46px; border-radius: 100px; background: #17171B; border: 1px solid #26262B; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; color: #22D3EE;">02</span></span>
+              <div>
+                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 6px; color: #FAFAFA;">Photograph</h3>
+                <p style="font-size: 16.5px; line-height: 1.6; color: #9A9AA2; margin: 0;">Enter the furthest channel the sweat reached.</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+              <span style="width: 46px; height: 46px; border-radius: 100px; background: #17171B; border: 1px solid #26262B; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; color: #22D3EE;">03</span></span>
+              <div>
+                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 6px; color: #FAFAFA;">Read</h3>
+                <p style="font-size: 16.5px; line-height: 1.6; color: #9A9AA2; margin: 0;">Fluid loss and sweat rate. That person, that shift.</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://lp.hydrosense.store/product-safety/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 34px; font-size: 15px; color: #22D3EE; border-bottom: 1px solid rgba(34,211,238,0.35); padding-bottom: 2px; transition: color .2s ease, border-color .2s ease;" style-hover="color:#67E8F9;border-color:#67E8F9">Product safety<span aria-hidden="true">&rsaquo;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="The sensor" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: clamp(34px, 4vw, 64px); align-items: center;">
+        <div data-reveal="">
+          <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0 0 34px; text-wrap: balance;"><span style="color: #FAFAFA;">Single-Use Sweat Patch.</span> <span style="color: #8A8A96;">Nothing To Charge.</span></h2>
+          <div style="display: flex; flex-direction: column; border-top: 1px solid #1F1F23;">
+            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Lightweight, non-invasive, worn under PPE</p></div>
+            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Reads sweat directly. No blood, no urine samples</p></div>
+            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Sweat rate, fluid loss, sodium and potassium</p></div>
+            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">One shift or session per patch, then discarded</p></div>
+            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Skin-friendly 3M adhesive, ISO biocompatible</p></div>
+          </div>
+        </div>
+        <div data-reveal="" data-reveal-delay="90" style="border-radius: 24px; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23; position: relative;">
+          <video data-lazyvideo="assets/hydrosense-formation.mp4" muted="muted" loop="loop" playsInline="playsInline" preload="none" poster="assets/ff-sensor-closeup.jpg" style="width: 100%; height: auto; display: block; object-fit: contain; background: #0B0B0D;"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="data" data-screen-label="Sample report" style="background: #060607;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
+      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">What You Get Back</span> <span style="color: #8A8A96;">After Every Shift.</span></h2>
+      </div>
+      <div data-reveal="" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: 44px 40px;">
+        <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 20px; margin-bottom: 34px; padding-bottom: 20px; border-bottom: 1px solid #1F1F23;">
+          <div style="font-size: 17px; font-weight: 500; letter-spacing: -0.02em; color: #FAFAFA;">Sample report · Afternoon pour, 104 °F</div>
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8A92;">Fluid loss · fl oz</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 18px; font-variant-numeric: tabular-nums;">
+          <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-04</span>
+            <div style="flex: 1; height: 22px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-bar="0" style="width: 93%; height: 100%; background: #22D3EE; border-radius: 100px;"></div></div>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">69 oz</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-06</span>
+            <div style="flex: 1; height: 22px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-bar="90" style="width: 80%; height: 100%; background: #22D3EE; border-radius: 100px;"></div></div>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">60 oz</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-02</span>
+            <div style="flex: 1; height: 22px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-bar="180" style="width: 75%; height: 100%; background: #22D3EE; border-radius: 100px;"></div></div>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">55 oz</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-05</span>
+            <div style="flex: 1; height: 22px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-bar="270" style="width: 60%; height: 100%; background: #22D3EE; border-radius: 100px;"></div></div>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">45 oz</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-01</span>
+            <div style="flex: 1; height: 22px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-bar="360" style="width: 54%; height: 100%; background: #22D3EE; border-radius: 100px;"></div></div>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">40 oz</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-03</span>
+            <div style="flex: 1; height: 22px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-bar="450" style="width: 40%; height: 100%; background: #0E7490; border-radius: 100px;"></div></div>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">30 oz</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 28px; margin-top: 40px; padding-top: 32px; border-top: 1px solid #1F1F23; font-variant-numeric: tabular-nums;">
+          <div>
+            <div style="font-size: 32px; font-weight: 500; letter-spacing: -0.04em; color: #22D3EE; margin-bottom: 6px;">2.3×</div>
+            <div style="font-size: 14px; line-height: 1.5; color: #8A8A92;">Spread across one crew</div>
+          </div>
+          <div>
+            <div style="font-size: 32px; font-weight: 500; letter-spacing: -0.04em; color: #22D3EE; margin-bottom: 6px;">50</div>
+            <div style="font-size: 14px; line-height: 1.5; color: #8A8A92;">Crew average, fl oz</div>
+          </div>
+          <div>
+            <div style="font-size: 32px; font-weight: 500; letter-spacing: -0.04em; color: #22D3EE; margin-bottom: 6px;">0 of 6</div>
+            <div style="font-size: 14px; line-height: 1.5; color: #8A8A92;">Matched the crew average</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Documentation" style="background: #060607;">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
+      <div data-reveal="" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(28px, 3.2vw, 44px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(24px, 3vw, 48px); align-items: center;">
+        <div>
+          <h2 style="font-size: clamp(27px, 3vw, 38px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin: 0 0 14px; text-wrap: balance;"><span style="color: #FAFAFA;">Evidence For The Plan</span> <span style="color: #8A8A96;">You Already Have To Write.</span></h2>
+          <p style="font-size: 17.5px; line-height: 1.6; color: #A8A8AE; margin: 0; max-width: 44ch; text-wrap: pretty;">Your heat plan has to show what you did. Most can only log the water and rest breaks offered, not what the crew actually lost.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid #1F1F23;">
+          <div style="display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 8px;"></span><p style="font-size: 17px; line-height: 1.5; color: #E4E4E7; margin: 0;">Per-person fluid loss, by date and session</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 8px;"></span><p style="font-size: 17px; line-height: 1.5; color: #E4E4E7; margin: 0;">Acclimatization tracked through a new hire’s first week</p></div>
+          <div style="display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 8px;"></span><p style="font-size: 17px; line-height: 1.5; color: #E4E4E7; margin: 0;">A written report you can circulate</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Recognition" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
+      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 20ch; text-wrap: balance;"><span style="color: #FAFAFA;">Recognized By European</span> <span style="color: #8A8A96;">Innovation Programs.</span></h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; align-content: center; gap: clamp(10px, 1.2vw, 16px); max-width: 1040px; margin: 0 auto;">
+        <div data-reveal="" data-reveal-delay="0" style="flex: 0 1 calc(20% - 13px); min-width: 112px; max-width: 196px; aspect-ratio: 4 / 3; background: #101315; border: 1px solid #1C2124; border-radius: clamp(14px, 1.6vw, 20px); display: flex; align-items: center; justify-content: center; padding: clamp(14px, 1.8vw, 26px); transition: border-color .25s ease, background .25s ease;" style-hover="border-color:#2C3438;background:#131719">
+          <img src="assets/mark-eit-health.png" alt="EIT Health" loading="lazy" style="max-width: 88%; max-height: 62%; width: auto; height: auto; object-fit: contain; display: block;" />
+        </div>
+        <div data-reveal="" data-reveal-delay="60" style="flex: 0 1 calc(20% - 13px); min-width: 112px; max-width: 196px; aspect-ratio: 4 / 3; background: #101315; border: 1px solid #1C2124; border-radius: clamp(14px, 1.6vw, 20px); display: flex; align-items: center; justify-content: center; padding: clamp(14px, 1.8vw, 26px); transition: border-color .25s ease, background .25s ease;" style-hover="border-color:#2C3438;background:#131719">
+          <img src="assets/mark-sony.png" alt="Sony" loading="lazy" style="max-width: 84%; max-height: 62%; width: auto; height: auto; object-fit: contain; display: block;" />
+        </div>
+        <div data-reveal="" data-reveal-delay="120" style="flex: 0 1 calc(20% - 13px); min-width: 112px; max-width: 196px; aspect-ratio: 4 / 3; background: #101315; border: 1px solid #1C2124; border-radius: clamp(14px, 1.6vw, 20px); display: flex; align-items: center; justify-content: center; padding: clamp(14px, 1.8vw, 26px); transition: border-color .25s ease, background .25s ease;" style-hover="border-color:#2C3438;background:#131719">
+          <img src="assets/mark-horizon2020.png" alt="Horizon 2020" loading="lazy" style="max-width: 92%; max-height: 62%; width: auto; height: auto; object-fit: contain; display: block; border-radius: 4px;" />
+        </div>
+        <div data-reveal="" data-reveal-delay="180" style="flex: 0 1 calc(20% - 13px); min-width: 112px; max-width: 196px; aspect-ratio: 4 / 3; background: #101315; border: 1px solid #1C2124; border-radius: clamp(14px, 1.6vw, 20px); display: flex; align-items: center; justify-content: center; padding: clamp(14px, 1.8vw, 26px); transition: border-color .25s ease, background .25s ease;" style-hover="border-color:#2C3438;background:#131719">
+          <img src="assets/mark-venture-cup.png" alt="Venture Cup" loading="lazy" style="max-width: 62%; max-height: 80%; width: auto; height: auto; object-fit: contain; display: block;" />
+        </div>
+        <div data-reveal="" data-reveal-delay="240" style="flex: 0 1 calc(20% - 13px); min-width: 112px; max-width: 196px; aspect-ratio: 4 / 3; background: #101315; border: 1px solid #1C2124; border-radius: clamp(14px, 1.6vw, 20px); display: flex; align-items: center; justify-content: center; padding: clamp(14px, 1.8vw, 26px); transition: border-color .25s ease, background .25s ease;" style-hover="border-color:#2C3438;background:#131719">
+          <img src="assets/mark-almi.png" alt="Almi" loading="lazy" style="max-width: 74%; max-height: 62%; width: auto; height: auto; object-fit: contain; display: block;" />
+        </div>
+      </div>
+      <div data-reveal="" style="font-size: clamp(19px, 1.8vw, 23px); font-weight: 500; letter-spacing: -0.025em; color: #FAFAFA; text-align: left; max-width: 1040px; margin: clamp(40px, 4.5vw, 62px) auto 0; padding-bottom: 16px; border-bottom: 1px solid #1F1F23;">Awards &amp; Grants</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: clamp(16px, 2vw, 26px); margin-top: clamp(22px, 2.4vw, 30px); max-width: 1040px; margin-left: auto; margin-right: auto;">
+        <figure data-reveal="" data-reveal-delay="0" style="margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="aspect-ratio: 4 / 3; border-radius: clamp(14px, 1.6vw, 20px); background: #F7F7F8; border: 1px solid #26262B; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 2vw, 26px); overflow: hidden;">
+            <img src="assets/award-eu-seal.png" alt="European Commission Seal of Excellence" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" />
+          </div>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px;">
+            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.01em; line-height: 1.35;">EU Commission Seal of Excellence</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #8A8A92;">2020</span>
+          </figcaption>
+        </figure>
+        <figure data-reveal="" data-reveal-delay="120" style="margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="aspect-ratio: 4 / 3; border-radius: clamp(14px, 1.6vw, 20px); background: #F7F7F8; border: 1px solid #26262B; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 2vw, 26px); overflow: hidden;">
+            <img src="assets/award-eureka-eurostars.png" alt="Eureka Eurostars" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" />
+          </div>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px;">
+            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.01em; line-height: 1.35;">Eureka Eurostars Grant</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #8A8A92;">2022</span>
+          </figcaption>
+        </figure>
+        <figure data-reveal="" data-reveal-delay="240" style="margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="aspect-ratio: 4 / 3; border-radius: clamp(14px, 1.6vw, 20px); background: #F7F7F8; border: 1px solid #26262B; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 2vw, 26px); overflow: hidden;">
+            <img src="assets/award-vinnova.png" alt="Vinnova" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" />
+          </div>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px;">
+            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.01em; line-height: 1.35;">Vinnova Funding</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #8A8A92;">2019 &amp; 2022</span>
+          </figcaption>
+        </figure>
+        <figure data-reveal="" data-reveal-delay="300" style="margin: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="aspect-ratio: 4 / 3; border-radius: clamp(14px, 1.6vw, 20px); background: #F7F7F8; border: 1px solid #26262B; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 2vw, 26px); overflow: hidden;">
+            <img src="assets/award-tie-germany.png" alt="TiE Germany" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;" />
+          </div>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px;">
+            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.01em; line-height: 1.35;">TiE Germany</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #8A8A92;">2023</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <section data-screen-label="FAQ" style="background: #060607;">
+    <div style="max-width: 900px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
+      <div data-reveal="" style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 52px;">
+        <h2 style="font-size: clamp(28px, 3.2vw, 42px); font-weight: 500; line-height: 1.1; letter-spacing: -0.035em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">What Safety Leads</span> <span style="color: #8A8A96;">Ask First.</span></h2>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+        <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="6">
+          <div style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 18px; overflow: hidden;">
+            <button type="button" onClick="{{ item.toggle }}" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; background: transparent; border: none; padding: 24px 28px; cursor: pointer; text-align: left;">
+              <span style="font-size: 16.5px; font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; color: #FAFAFA;">{{ item.q }}</span>
+              <span style="font-size: 20px; font-weight: 400; line-height: 1.2; color: #22D3EE; flex-shrink: 0;">{{ item.sign }}</span>
+            </button>
+            <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
+              <p style="font-size: 15.5px; line-height: 1.7; color: #8A8A92; margin: 0; padding: 0 60px 26px 28px;">{{ item.a }}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Campaign record" style="background: #060607;">
+    <div style="max-width: 900px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px) clamp(8px, 1.4vw, 16px);">
+      <a href="https://www.kickstarter.com/projects/676853405/hydrosense-sweat-patch-optimize-hydration-and-performance" target="_blank" rel="noopener" data-reveal="" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(20px, 3vw, 40px); background: #0B0B0D; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(26px, 3vw, 34px) clamp(26px, 3vw, 36px); color: inherit; transition: border-color .25s ease, background .25s ease;" style-hover="border-color: #2F6E7A; background: #0F0F12;">
+        <span style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 9px;">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #22D3EE;">Technical documentation</span>
+          <span style="font-size: clamp(16.5px, 1.8vw, 19px); font-weight: 400; line-height: 1.5; letter-spacing: -0.012em; color: #E4E4E7; max-width: 54ch; text-wrap: pretty;">Sensor validation, materials, field results and program scope are documented in full on the HydroSense Kickstarter campaign page.</span>
+        </span>
+        <span style="flex: 0 0 auto; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; letter-spacing: -0.01em; color: #FAFAFA; border: 1px solid #2A2A30; border-radius: 100px; padding: 13px 22px; white-space: nowrap;">View the campaign<span style="font-size: 15px; color: #22D3EE;">↗</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="demo" data-screen-label="Request a demo" style="background: #060607;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
+      <div style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 28px; overflow: hidden; max-width: 680px; margin: 0 auto; padding: clamp(40px, 4.6vw, 62px) clamp(24px, 3.6vw, 56px) clamp(38px, 4.4vw, 56px);">
+        <div data-reveal="" style="text-align: center; margin-bottom: clamp(30px, 3.4vw, 44px);">
+          <h2 style="font-size: clamp(29px, 3.2vw, 43px); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; margin: 0 auto; max-width: 17ch; text-wrap: balance;"><span style="color: #FAFAFA;">Start With</span> <span style="color: #8A8A96;">One Crew.</span></h2>
+        </div>
+        <div data-reveal="" data-reveal-delay="80" style="max-width: 440px; margin: 0 auto;">
+          <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: 14px;">
+              <input type="text" value="{{ first }}" onChange="{{ setFirst }}" placeholder="First name" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease;" style-focus="border-color:#22D3EE" />
+              <input type="text" value="{{ last }}" onChange="{{ setLast }}" placeholder="Last name" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease;" style-focus="border-color:#22D3EE" />
+            </div>
+            <input type="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="Work email" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease;" style-focus="border-color:#22D3EE" />
+            <input type="text" value="{{ dept }}" onChange="{{ setDept }}" placeholder="Organization" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease;" style-focus="border-color:#22D3EE" />
+            <button type="submit" style="font-size: 16.5px; font-weight: 500; color: #060607; background: #FAFAFA; border: none; padding: 17px 24px; border-radius: 100px; cursor: pointer; width: 100%; margin-top: 8px; letter-spacing: -0.01em; transition: background .2s ease;" style-hover="background:#22D3EE">Continue to booking</button>
+          </form>
+          </sc-if>
+          <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; gap: 16px; text-align: center;">
+            <h3 style="font-size: 25px; font-weight: 500; line-height: 1.2; letter-spacing: -0.033em; margin: 0; color: #FAFAFA;">Thanks, {{ first }}.</h3>
+            <p style="font-size: 17px; line-height: 1.55; color: #B4B4BC; margin: 0;">Your details are saved. Last step: pick a time that suits you.</p>
+            <a href="Book a Meeting.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 16.5px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 17px 24px; border-radius: 100px; margin-top: 6px; transition: background .2s ease;" style-hover="background:#22D3EE">Proceed to book the meeting</a>
+            <button type="button" onClick="{{ reset }}" style="font-size: 14.5px; font-weight: 400; color: #8A8A92; background: transparent; border: none; padding: 4px; cursor: pointer;" style-hover="color:#FAFAFA">Edit my details</button>
+          </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-stickycta="" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; transform: translateY(120%); transition: transform .35s cubic-bezier(.16,1,.3,1); background: rgba(9,9,12,0.92); backdrop-filter: blur(14px); border-top: 1px solid #1F1F23;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 13px clamp(16px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <div style="min-width: 0;">
+        <div style="font-size: 15px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.015em; line-height: 1.3;">See what your crews are losing.</div>
+        <div style="font-size: 13px; color: #8A8A92; line-height: 1.4; margin-top: 2px;">Ten minutes. No cost, no obligation.</div>
+      </div>
+      <a href="#demo" style="flex-shrink: 0; font-size: 15px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 13px 24px; border-radius: 100px; white-space: nowrap; transition: background .2s ease;" style-hover="background:#22D3EE">Book a 10 minute call</a>
+    </div>
+  </div>
+
+  <footer style="background: #060607; border-top: 1px solid #1C1C1F;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(40px, 4.4vw, 56px) clamp(20px, 4vw, 32px) 0;">
+      <div style="display: flex; flex-wrap: wrap; gap: clamp(26px, 3vw, 36px) clamp(20px, 2.2vw, 28px);">
+        <div style="flex: 1.7 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+          <a href="https://www.innovosens.com/" target="_blank" rel="noopener" aria-label="Innovosens home" style="align-self: flex-start; background: #FAFAFA; border-radius: 12px; padding: 9px 14px; display: flex; align-items: center; transition: opacity .18s ease;" style-hover="opacity: 0.86;">
+            <img src="assets/innovosens-official-footer-logo.png" alt="Innovosens" style="height: 34px; width: auto; display: block; object-fit: contain;" />
+          </a>
+          <p style="font-size: 13px; line-height: 1.6; color: #8A8A92; margin: 0; max-width: 32ch;">Wearable biosensors that make health data easy to reach.</p>
+          <a href="mailto:info@innovosens.com" style="font-size: 13.5px; color: #C7C7CE; align-self: flex-start;">info@innovosens.com</a>
+          <div style="display: flex; gap: 10px; margin-top: 2px;">
+          <a href="https://se.linkedin.com/company/innovosens" target="_blank" rel="noopener" aria-label="Innovosens on LinkedIn" title="LinkedIn" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: currentColor; display: block;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+          </a>
+          <a href="https://x.com/innovosensAB" target="_blank" rel="noopener" aria-label="Innovosens on X" title="X" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; fill: currentColor; display: block;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"></path></svg>
+          </a>
+          <a href="https://www.instagram.com/innovosens.inc/" target="_blank" rel="noopener" aria-label="Innovosens on Instagram" title="Instagram" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; display: block;"><rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5.4"></rect><circle cx="12" cy="12" r="4.35"></circle><circle cx="17.35" cy="6.65" r="1.15" style="fill: currentColor; stroke: none;"></circle></svg>
+          </a>
+          </div>
+        </div>
+        <div style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Explore</div>
+          <a href="#demo" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Book a 10 minute call</a>
+          <a href="https://www.kickstarter.com/projects/676853405/hydrosense-sweat-patch-optimize-hydration-and-performance" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Kickstarter campaign</a>
+          <a href="https://lp.hydrosense.store/product-safety/" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Product safety</a>
+        </div>
+        <div style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Industries</div>
+          <a href="HydroSense for Firefighters.dc.html" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Fire departments</a>
+          <a href="HydroSense for Mining Safety.dc.html" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Mining safety</a>
+          <span style="font-size: 13.5px; line-height: 1.35; color: #FAFAFA;">Construction</span>
+        </div>
+        <div style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Company</div>
+          <a href="https://newsite.innovosens.com/aboutus" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">About us</a>
+          <a href="https://newsite.innovosens.com/technology" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Technology</a>
+          <a href="https://newsite.innovosens.com/partner" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Partners</a>
+          <a href="https://newsite.innovosens.com/blog" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Blog</a>
+          <a href="https://newsite.innovosens.com/" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">innovosens.com</a>
+        </div>
+        <div style="flex: 1.2 0 150px; max-width: 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Offices</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px 30px;">
+          <address style="font-size: 12.5px; line-height: 1.6; color: #8A8A92; font-style: normal; margin: 0; flex: 1 1 150px; min-width: 0;"><span style="display: block; color: #C7C7CE;">United States</span>Innovosens AB Inc, c/o Nordic Innovation House, 470 Ramona Street, Palo Alto, CA 94301</address>
+          <address style="font-size: 12.5px; line-height: 1.6; color: #8A8A92; font-style: normal; margin: 0; flex: 1 1 150px; min-width: 0;"><span style="display: block; color: #C7C7CE;">Sweden</span>Innovosens AB, c/o Medeon Science Park, Per Albin Hanssons väg 41, 214 32 Malmö</address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(28px, 3.2vw, 38px) clamp(20px, 4vw, 32px) clamp(24px, 3vw, 32px);">
+      <div style="border-top: 1px solid #16161A; padding-top: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; font-size: 12px; color: #6A6A72;">
+        <span>©2026 Innovosens. All rights reserved.</span>
+        <span>Palo Alto, CA · Malmö, Sweden</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = {
+    slide: 0,
+    open: -1,
+    sector: 0,
+    phase: 0,
+    submitted: false,
+    form: { first: "", last: "", email: "", phone: "", dept: "", consent: false }
+  };
+
+  faqData = [
+    ["What does this ask of a worker?",
+     "One patch before a selected shift or session, one photo after. No daily wear, nothing to charge, no app to check in between. Frequency is set per person, not imposed on the whole crew."],
+    ["Does it need a smartphone or any IT setup?",
+     "Only the app on one phone, to photograph the patch. Nothing to install on your network, no hardware to buy, no integration work."],
+    ["How accurate is it?",
+     "Sweat is collected through a microfluidic channel and read against calorimetric sensors. Every reading is measured against that worker's own baseline, not a crew average."],
+    ["Is it safe on skin in the sun?",
+     "It uses a hypoallergenic, dermatologically tested 3M adhesive that meets ISO biocompatibility standards and stays comfortable through a full shift. Full details are on our product safety page."],
+    ["Is the patch reusable?",
+     "No. One patch per shift, then discarded. Single use is what keeps the reading accurate."],
+    ["What do you need from us to start?",
+     "A site safety lead, a superintendent who can pick the shifts, and whoever signs off on crew programs. Procurement joins once the scope is agreed."]
+  ];
+
+  stickyCta() {
+    const bar = document.querySelector("[data-stickycta]");
+    const hero = document.querySelector("[data-hero-root]");
+    const demo = document.querySelector("#demo");
+    if (!bar || !hero) return;
+    const onScroll = () => {
+      const pastHero = hero.getBoundingClientRect().bottom < 0;
+      const atAsk = demo ? demo.getBoundingClientRect().top < window.innerHeight * 0.9 : false;
+      bar.style.transform = pastHero && !atAsk ? "translateY(0)" : "translateY(120%)";
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    this._teardownSticky = () => window.removeEventListener("scroll", onScroll);
+  }
+
+  slideCount = 3;
+
+  startSlideshow() {
+    clearInterval(this.slideTimer);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    this.slideTimer = setInterval(() => {
+      this.setState((s) => ({ slide: (s.slide + 1) % this.slideCount }));
+    }, 5200);
+  }
+
+  goSlide = (i) => () => {
+    this.setState({ slide: (i + this.slideCount) % this.slideCount });
+    this.startSlideshow();
+  };
+
+  hsSectors = [
+    {
+      unit: "Engine 12 · B Shift",
+      rows: [
+        { n: "Ramirez, J.", r: "FF / PARAMEDIC", v: 92, loss: "1.1% BW", s: "Ready", c: "#34D399", bg: "rgba(52,211,153,0.12)" },
+        { n: "Bennett, C.", r: "FIREFIGHTER", v: 52, loss: "3.1% BW", s: "Monitor", c: "#FBBF24", bg: "rgba(251,191,36,0.12)" },
+        { n: "Nguyen, D.", r: "FIREFIGHTER", v: 31, loss: "4.4% BW", s: "Recover", c: "#F87171", bg: "rgba(248,113,113,0.12)" }
+      ],
+      phases: [
+        { label: "Session logged", note: "Patches photographed after the session." },
+        { label: "Fluid loss", note: "Measured against each firefighter's own baseline." },
+        { label: "Readiness", note: "One ready · one monitored · one held to recover." }
+      ]
+    },
+    {
+      unit: "Shaft 4 · Day Shift · 101 °F at the face",
+      rows: [
+        { n: "Duarte, M.", r: "SHIFT BOSS", v: 90, loss: "1.2% BW", s: "Ready", c: "#34D399", bg: "rgba(52,211,153,0.12)" },
+        { n: "Navarro, L.", r: "HAULAGE", v: 48, loss: "3.4% BW", s: "Monitor", c: "#FBBF24", bg: "rgba(251,191,36,0.12)" },
+        { n: "Osei, K.", r: "DRILL & BLAST", v: 27, loss: "4.6% BW", s: "Recover", c: "#F87171", bg: "rgba(248,113,113,0.12)" }
+      ],
+      phases: [
+        { label: "Shift end logged", note: "Read at the collar after ten hours underground." },
+        { label: "Fluid loss", note: "A litre an hour is routine in hot workings." },
+        { label: "Next shift", note: "One cleared · one on watch · one held off the cage." }
+      ]
+    },
+    {
+      unit: "Tower Crane Pour · Phoenix · 108 °F",
+      rows: [
+        { n: "Silva, A.", r: "FOREMAN", v: 89, loss: "1.2% BW", s: "Ready", c: "#34D399", bg: "rgba(52,211,153,0.12)" },
+        { n: "Doyle, S.", r: "ROOFER", v: 44, loss: "3.7% BW", s: "Monitor", c: "#FBBF24", bg: "rgba(251,191,36,0.12)" },
+        { n: "Achebe, N.", r: "LABORER · DAY 2", v: 25, loss: "4.8% BW", s: "Recover", c: "#F87171", bg: "rgba(248,113,113,0.12)" }
+      ],
+      phases: [
+        { label: "Shift logged", note: "Read at the gang box after the afternoon pour." },
+        { label: "Fluid loss", note: "New hires are most exposed. Most deaths come in week one." },
+        { label: "Tomorrow's plan", note: "One cleared · one on watch · one off the roof deck." }
+      ]
+    },
+    {
+      unit: "Medic 7 · Heat Response · 112 °F",
+      rows: [
+        { n: "Alvarez, R.", r: "PARAMEDIC", v: 88, loss: "1.3% BW", s: "Ready", c: "#34D399", bg: "rgba(52,211,153,0.12)" },
+        { n: "Palmer, J.", r: "EMT-P", v: 46, loss: "3.6% BW", s: "Monitor", c: "#FBBF24", bg: "rgba(251,191,36,0.12)" },
+        { n: "Hayes, M.", r: "SEARCH & RESCUE", v: 29, loss: "4.5% BW", s: "Recover", c: "#F87171", bg: "rgba(248,113,113,0.12)" }
+      ],
+      phases: [
+        { label: "Call cycle logged", note: "Read after a six-hour run of heat calls." },
+        { label: "Fluid loss", note: "Against each responder's baseline, not the crew's." },
+        { label: "Next assignment", note: "One available · one monitored · one in rehab." }
+      ]
+    }
+  ];
+  get hsSector() { return 2; }
+  get hsPhase() { return this.state.phase || 0; }
+  get readinessData() { return this.hsSectors[this.hsSector].rows; }
+  get hsPhases() { return this.hsSectors[this.hsSector].phases; }
+  hsDur = [2000, 2900, 3800];
+
+  hsScan() {
+    const scan = document.querySelector("[data-hs-scan]");
+    if (!scan) return;
+    scan.style.animation = "none";
+    void scan.offsetWidth;
+    scan.style.animation = "hsScan 1.9s cubic-bezier(.4,0,.2,1) 1";
+  }
+
+  hsQueue(p) {
+    clearTimeout(this._hsTimer);
+    this._hsTimer = setTimeout(() => {
+      const next = (p + 1) % 3;
+      this._hsTick = Date.now();
+      this.setState({ phase: next });
+      if (next === 0) this.hsScan();
+      this.hsQueue(next);
+    }, this.hsDur[p]);
+  }
+
+  startReadiness() {
+    const box = document.querySelector("[data-hs-console]");
+    if (!box) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      this.setState({ phase: 2 });
+      const pl = document.querySelector("[data-hs-progress]");
+      if (pl) { pl.style.animation = "none"; pl.style.transform = "scaleX(1)"; }
+      return;
+    }
+    if (!("IntersectionObserver" in window)) { this.hsScan(); this.hsQueue(0); return; }
+    this._hsIo = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          if (!this._hsRunning) this.hsScan();
+          this._hsRunning = true;
+          this._hsTick = Date.now();
+          clearTimeout(this._hsTimer);
+          this.hsQueue(this.state.phase || 0);
+        } else { this._hsRunning = false; clearTimeout(this._hsTimer); }
+      });
+    }, { threshold: 0.12 });
+    this._hsIo.observe(box);
+    this._hsPoll = setInterval(() => {
+      const r = box.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > (window.innerHeight || 800)) return;
+      if (this._hsRunning && Date.now() - (this._hsTick || 0) < 5000) return;
+      if (!this._hsRunning) this.hsScan();
+      this._hsRunning = true;
+      this._hsTick = Date.now();
+      clearTimeout(this._hsTimer);
+      this.hsQueue(this.state.phase || 0);
+    }, 1500);
+  }
+
+  startHeatGrid() {
+    const grid = document.querySelector("[data-heatgrid]");
+    if (!grid) return;
+    const months = Array.prototype.slice.call(document.querySelectorAll("[data-heatmonth]"));
+    const rows = Array.prototype.slice.call(grid.querySelectorAll("[data-heat]")).map((r) => ({
+      cells: Array.prototype.slice.call(r.querySelectorAll("[data-heatcell]"))
+    }));
+    const finals = rows.map((r) => r.cells.map((c) => c.style.background));
+    const settle = () => {
+      months.forEach((m) => { m.style.color = "#8A8A96"; });
+      rows.forEach((r, i) => r.cells.forEach((c, j) => { c.style.background = finals[i][j]; c.style.opacity = "1"; }));
+    };
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    rows.forEach((r) => r.cells.forEach((c) => { c.style.transition = "background .5s ease, opacity .5s ease"; }));
+    months.forEach((m) => { m.style.transition = "color .35s ease"; });
+    let col = 0;
+    const tick = () => {
+      if (col === 0) rows.forEach((r) => r.cells.forEach((c) => { c.style.background = "#17171B"; c.style.opacity = "0.4"; }));
+      rows.forEach((r, i) => {
+        const c = r.cells[col];
+        if (!c) return;
+        c.style.background = finals[i][col];
+        c.style.opacity = "1";
+      });
+      months.forEach((m, k) => { m.style.color = k === col ? "#FAFAFA" : "#8A8A96"; });
+      col += 1;
+      if (col < 7) { this._hgT = setTimeout(tick, 290); return; }
+      months.forEach((m) => { m.style.color = "#8A8A96"; });
+      this._hgT = setTimeout(() => { col = 0; tick(); }, 2800);
+    };
+    const start = () => { if (this._hgRunning) return; this._hgRunning = true; col = 0; tick(); };
+    const stop = () => { this._hgRunning = false; clearTimeout(this._hgT); settle(); };
+    if (!("IntersectionObserver" in window)) { start(); return; }
+    this._hgIo = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) start(); else stop(); }), { threshold: 0.2 });
+    this._hgIo.observe(grid);
+    this._hgFailsafe = setTimeout(() => { if (!this._hgRunning) start(); }, 1800);
+  }
+
+  hsArcFor(el) {
+    const d = el.closest("div");
+    const wrap = d && d.parentElement;
+    return wrap ? wrap.querySelector("[data-arc]") : null;
+  }
+
+  hsAnimate(el) {
+    const to = parseInt(el.getAttribute("data-countto"), 10) || 0;
+    const arc = this.hsArcFor(el);
+    if (arc) {
+      const f = parseFloat(arc.getAttribute("data-arc")) || 0;
+      arc.style.transition = "none";
+      arc.style.strokeDashoffset = "289.03";
+      void arc.getBoundingClientRect();
+      arc.style.transition = "stroke-dashoffset 1.5s cubic-bezier(.16,1,.3,1)";
+      arc.style.strokeDashoffset = String(289.03 * (1 - f));
+    }
+    const t0 = performance.now();
+    const step = (t) => {
+      const p = Math.min(1, (t - t0) / 1400);
+      el.textContent = String(Math.round(to * (1 - Math.pow(1 - p, 3))));
+      if (p < 1 && el._live) requestAnimationFrame(step);
+      else el.textContent = String(to);
+    };
+    el.textContent = "0";
+    requestAnimationFrame(step);
+    clearTimeout(el._snapT);
+    el._snapT = setTimeout(() => {
+      if (el.textContent !== String(to)) el.textContent = String(to);
+      if (arc) {
+        const want = String(289.03 * (1 - (parseFloat(arc.getAttribute("data-arc")) || 0)));
+        if (arc.style.strokeDashoffset !== want) { arc.style.transition = "none"; arc.style.strokeDashoffset = want; }
+      }
+    }, 1800);
+  }
+
+  hsCount() {
+    const els = Array.prototype.slice.call(document.querySelectorAll("[data-countto]"));
+    if (!els.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      els.forEach((el) => {
+        el.textContent = el.getAttribute("data-countto");
+        const arc = this.hsArcFor(el);
+        if (arc) arc.style.strokeDashoffset = String(289.03 * (1 - (parseFloat(arc.getAttribute("data-arc")) || 0)));
+      });
+      return;
+    }
+    const loop = (el) => {
+      if (!el._live) return;
+      this.hsAnimate(el);
+      clearTimeout(el._loopT);
+      el._loopT = setTimeout(() => loop(el), 5200);
+    };
+    if (!("IntersectionObserver" in window)) { els.forEach((el) => { el._live = true; loop(el); }); return; }
+    this._cio = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        const el = en.target;
+        if (en.isIntersecting) { if (!el._live) { el._live = true; loop(el); } }
+        else { el._live = false; clearTimeout(el._loopT); el.textContent = el.getAttribute("data-countto"); }
+      });
+    }, { threshold: 0.35 });
+    els.forEach((e) => this._cio.observe(e));
+  }
+
+  componentDidMount() {
+    this.stickyCta();
+    this.startSlideshow();
+    this.mountLazyVideo();
+    this.startReadiness();
+    this.hsCount();
+    this.startHeatGrid();
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    const vh = () => window.innerHeight || 800;
+
+    // Entrance transitions only. Visibility is never gated on the observer:
+    // a scroll sweep and a hard timer guarantee every node ends up visible.
+    const hidden = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"))
+      .filter((n) => n.getBoundingClientRect().top > vh() * 0.9);
+    hidden.forEach((n) => {
+      n.style.opacity = "0";
+      n.style.transform = "translateY(12px)";
+      n.style.transition = "opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)";
+      n.style.transitionDelay = (parseInt(n.getAttribute("data-reveal-delay") || "0", 10)) + "ms";
+    });
+    let pending = hidden.slice();
+    const show = (n) => {
+      n.style.opacity = "1";
+      n.style.transform = "none";
+      pending = pending.filter((p) => p !== n);
+    };
+    const teardown = () => {
+      window.removeEventListener("scroll", sweep);
+      window.removeEventListener("resize", sweep);
+    };
+    const sweep = () => {
+      const limit = vh() * 0.95;
+      pending.slice().forEach((n) => {
+        if (n.getBoundingClientRect().top < limit) show(n);
+      });
+      if (!pending.length) teardown();
+    };
+    this._teardown = teardown;
+    window.addEventListener("scroll", sweep, { passive: true });
+    window.addEventListener("resize", sweep, { passive: true });
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((x) => {
+          if (!x.isIntersecting) return;
+          show(x.target);
+          io.unobserve(x.target);
+        });
+      }, { rootMargin: "0px 0px -6% 0px", threshold: 0 });
+      hidden.forEach((n) => io.observe(n));
+      this._io = io;
+    }
+    this._sweep = setTimeout(sweep, 600);
+    this._failsafe = setTimeout(() => { pending.slice().forEach(show); teardown(); }, 2400);
+
+    // Bar fills, observed on the parent track. A 0%-width bar has zero area
+    // and can never satisfy an intersection threshold.
+    const bars = Array.prototype.slice.call(document.querySelectorAll("[data-bar]"));
+    bars.forEach((b) => {
+      b.dataset.target = b.style.width;
+      b.style.width = "0%";
+      b.style.transition = "width 1s cubic-bezier(.16,1,.3,1)";
+      b.style.transitionDelay = (parseInt(b.getAttribute("data-bar") || "0", 10)) + "ms";
+    });
+    const fill = (b) => { if (b && b.dataset.target) b.style.width = b.dataset.target; };
+    if ("IntersectionObserver" in window) {
+      const bio = new IntersectionObserver((entries) => {
+        entries.forEach((x) => {
+          if (!x.isIntersecting) return;
+          fill(x.target.querySelector("[data-bar]"));
+          bio.unobserve(x.target);
+        });
+      }, { threshold: 0 });
+      bars.forEach((b) => { if (b.parentElement) bio.observe(b.parentElement); });
+      this._bio = bio;
+    }
+    this._barFailsafe = setTimeout(() => bars.forEach(fill), 2400);
+  }
+
+  mountLazyVideo() {
+    const vids = Array.prototype.slice.call(
+      document.querySelectorAll("video[data-lazyvideo]")
+    );
+    if (!vids.length) return;
+    const start = (v) => {
+      if (v.dataset.loaded) return;
+      v.dataset.loaded = "1";
+      v.preload = "auto";
+      v.src = v.getAttribute("data-lazyvideo");
+      const go = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+      v.addEventListener("loadeddata", go, { once: true });
+      v.load();
+    };
+    if (!("IntersectionObserver" in window)) { vids.forEach(start); return; }
+    const vio = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        start(e.target);
+        vio.unobserve(e.target);
+      });
+    }, { rootMargin: "300px 0px" });
+    vids.forEach((v) => vio.observe(v));
+    this._vio = vio;
+  }
+
+  componentWillUnmount() {
+    [this._io, this._bio, this._vio, this._hsIo, this._cio, this._hgIo].forEach((o) => { if (o) o.disconnect(); });
+    [this._sweep, this._failsafe, this._barFailsafe, this._hsTimer, this._hsNoteT, this._hgT, this._hgFailsafe].forEach((t) => { if (t) clearTimeout(t); });
+    if (this._hsPoll) clearInterval(this._hsPoll);
+    document.querySelectorAll("[data-countto]").forEach((el) => { el._live = false; clearTimeout(el._loopT); clearTimeout(el._snapT); });
+    clearInterval(this.slideTimer);
+    if (this._teardownSticky) this._teardownSticky();
+    if (this._teardown) this._teardown();
+  }
+
+  setField(key) {
+    return (e) => {
+      const v = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+      this.setState((s) => ({ form: Object.assign({}, s.form, { [key]: v }) }));
+    };
+  }
+
+  renderVals() {
+    const f = this.state.form;
+    const sl = this.state.slide;
+    const dot = (i) => (i === sl ? "#FAFAFA" : "rgba(250,250,250,0.22)");
+    return {
+      trackX: (-sl * 100) + "%",
+      dot0: dot(0), dot1: dot(1), dot2: dot(2),
+      prevSlide: this.goSlide(sl - 1),
+      nextSlide: this.goSlide(sl + 1),
+      goSlide0: this.goSlide(0), goSlide1: this.goSlide(1), goSlide2: this.goSlide(2),
+      unit: this.hsSectors[this.hsSector].unit,
+      phaseLabel: this.hsPhases[this.hsPhase].label,
+      phaseNote: this.hsPhases[this.hsPhase].note,
+      segs: [0, 1, 2].map((i) => ({ bg: i <= this.hsPhase ? "#22D3EE" : "#1F1F23" })),
+      roster: this.readinessData.map((d) => {
+        const p = this.hsPhase;
+        return {
+          name: d.n, role: d.r,
+          w: p === 0 ? "0%" : d.v + "%",
+          barBg: p === 2 ? d.c : "#22D3EE",
+          val: p === 0 ? "\u2014" : d.loss,
+          valFg: p === 0 ? "#5E5E66" : (p === 1 ? "#C7C7CE" : d.c),
+          pill: p === 0 ? "Logged" : (p === 1 ? "Reading" : d.s),
+          pillFg: p === 0 ? "#22D3EE" : (p === 1 ? "#8A8A92" : d.c),
+          pillBg: p === 0 ? "rgba(34,211,238,0.10)" : (p === 1 ? "#17171B" : d.bg)
+        };
+      }),
+      faqs: this.faqData.map(([q, a], i) => ({
+        q: q, a: a, sign: this.state.open === i ? "−" : "+",
+        open: this.state.open === i,
+        toggle: () => this.setState((s) => ({ open: s.open === i ? -1 : i }))
+      })),
+      first: f.first, last: f.last, email: f.email, phone: f.phone, dept: f.dept,
+      consent: f.consent,
+      setFirst: this.setField("first"), setLast: this.setField("last"),
+      setEmail: this.setField("email"), setPhone: this.setField("phone"),
+      setDept: this.setField("dept"), setConsent: this.setField("consent"),
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      submit: (e) => { e.preventDefault(); const f = this.state.form; if (!f.first.trim() || !f.email.trim() || !f.dept.trim()) return; this.setState({ submitted: true }); },
+      reset: () => this.setState({ submitted: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
