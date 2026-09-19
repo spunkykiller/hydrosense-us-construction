@@ -35,31 +35,163 @@
 
   /* ── Mobile ≤ 767px ── */
   @media (max-width: 767px) {
-    /* Nav: hide text links, keep CTA */
-    header nav a:not([href="#demo"]) { display: none !important; }
-    header nav { gap: 0 !important; }
+    /* Header: single line, no wrapping, sleek alignment */
+    header > div {
+      flex-wrap: nowrap !important;
+      min-height: 56px !important;
+      padding: 0 16px !important;
+      gap: 12px !important;
+    }
+    header [data-nav-logo] {
+      min-width: 0 !important;
+      flex-shrink: 1 !important;
+    }
+    header [data-nav-logo] span {
+      font-size: 16px !important;
+    }
+    header [data-nav-logo] img {
+      height: 11px !important;
+    }
+    header nav {
+      flex-shrink: 0 !important;
+      gap: 0 !important;
+    }
+    header nav a:not([href="#demo"]) {
+      display: none !important;
+    }
+    header nav a[href="#demo"] {
+      padding: 8px 14px !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      white-space: nowrap !important;
+    }
 
-    /* Hero: darken full-width for text legibility */
+    /* Hero: proportional font sizes and balanced alignment */
     [data-hero-root] > div:first-of-type {
       background: linear-gradient(180deg, #060607 0%, rgba(6,6,7,0.92) 30%, rgba(6,6,7,0.7) 60%, rgba(6,6,7,0.35) 100%) !important;
     }
+    [data-hero-root] > div:last-child > div {
+      padding: 42px 0 34px !important;
+    }
+    [data-hero-badge] {
+      padding: 7px 16px !important;
+      font-size: 13px !important;
+      margin-bottom: 18px !important;
+    }
+    [data-hero-root] h1 {
+      font-size: clamp(28px, 7.8vw, 40px) !important;
+      line-height: 1.1 !important;
+      letter-spacing: -0.03em !important;
+      margin-bottom: 16px !important;
+      max-width: 100% !important;
+    }
+    [data-hero-root] p {
+      font-size: 16px !important;
+      line-height: 1.55 !important;
+      margin-bottom: 22px !important;
+      max-width: 100% !important;
+    }
+    [data-hero-root] a[href="#demo"] {
+      font-size: 15px !important;
+      padding: 14px 26px !important;
+      width: auto !important;
+    }
+    [data-hero-proof] {
+      font-size: 10.5px !important;
+      letter-spacing: 0.08em !important;
+      line-height: 1.6 !important;
+      margin-top: 20px !important;
+    }
 
-    /* Heat grid: force horizontal scroll */
-    [data-heatgrid] { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px; }
-    [data-heatgrid] > div { min-width: 520px; }
+    /* Section Headings: mobile-balanced typography */
+    h2 {
+      font-size: clamp(25px, 6.8vw, 38px) !important;
+    }
 
-    /* Console roster rows: stack on mobile */
-    [data-hs-row] { gap: 10px !important; }
-    [data-hs-row] > div:first-child { flex: 1 1 100% !important; }
+    /* Heat risk map: mobile card layout */
+    [data-heat-card] {
+      padding: 18px 14px !important;
+      border-radius: 20px !important;
+    }
+    [data-heat-scroll] {
+      overflow-x: visible !important;
+      padding-bottom: 0 !important;
+    }
+    [data-heat-inner] {
+      min-width: 0 !important;
+    }
+    [data-heat-header] {
+      display: block !important;
+      padding-bottom: 10px !important;
+      margin-bottom: 12px !important;
+      border-bottom: 1px solid #1B1B1F !important;
+    }
+    [data-heat-empty] {
+      display: none !important;
+    }
+    [data-heat-months] {
+      flex: none !important;
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(7, 1fr) !important;
+      gap: 4px !important;
+    }
+    [data-heatmonth] {
+      font-size: 10.5px !important;
+    }
+    [data-heatgrid] {
+      overflow-x: visible !important;
+      gap: 12px !important;
+    }
+    [data-heatgrid] > div {
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+    [data-heat-row] {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 6px !important;
+      padding: 0 0 12px 0 !important;
+      border-bottom: 1px solid #16161A !important;
+    }
+    [data-heat-row]:last-child {
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+    [data-heat-region] {
+      flex: none !important;
+      width: 100% !important;
+      font-size: 13.5px !important;
+      font-weight: 500 !important;
+      color: #E4E4E7 !important;
+      padding-right: 0 !important;
+      line-height: 1.35 !important;
+    }
+    [data-heatcells] {
+      flex: none !important;
+      width: 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(7, 1fr) !important;
+      gap: 4px !important;
+    }
+    [data-heatcell] {
+      height: 20px !important;
+      border-radius: 4px !important;
+    }
+    [data-heat-legend] {
+      gap: 10px 14px !important;
+      margin-top: 18px !important;
+      padding-top: 16px !important;
+    }
 
     /* Sample report card: reduce padding */
     #data [data-reveal] { padding: 24px 18px !important; }
 
-    /* Sticky CTA: compact on mobile */
-    [data-stickycta] > div { padding: 10px 16px !important; gap: 10px !important; }
-    [data-stickycta] > div > div:first-child > div:first-child { font-size: 13px !important; }
-    [data-stickycta] > div > div:first-child > div:last-child { font-size: 11.5px !important; }
-    [data-stickycta] a { padding: 10px 18px !important; font-size: 13px !important; }
+    /* Sticky CTA: button only on mobile */
+    [data-stickycta] > div { padding: 11px 16px !important; justify-content: center !important; }
+    [data-stickycta] > div > div:first-child { display: none !important; }
+    [data-stickycta] a { width: 100% !important; text-align: center !important; padding: 13px 20px !important; font-size: 15px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
 
     /* Footer: stack columns */
     footer > div:first-child > div { gap: 28px 16px !important; }
@@ -68,6 +200,25 @@
 
     /* FAQ answer text: reduce right padding */
     [data-screen-label="FAQ"] p { padding-right: 20px !important; }
+    [data-screen-label="FAQ"] button { padding: 18px 20px !important; }
+  }
+
+  /* ── Extra small phones ≤ 380px ── */
+  @media (max-width: 380px) {
+    header [data-nav-divider],
+    header [data-nav-sublogo] {
+      display: none !important;
+    }
+    header nav a[href="#demo"] {
+      padding: 7px 11px !important;
+      font-size: 12px !important;
+    }
+    [data-heatcell] {
+      height: 18px !important;
+    }
+    [data-heatmonth] {
+      font-size: 9.5px !important;
+    }
   }
 </style>
 </helmet>
@@ -75,13 +226,12 @@
 
   <header style="position: sticky; top: 0; z-index: 60; background: rgba(6,6,7,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1C1F;">
     <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(14px, 3.4vw, 32px); min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: clamp(12px, 2vw, 24px); flex-wrap: wrap;">
-      <div style="display: flex; align-items: center; gap: clamp(9px, 1.4vw, 13px); min-width: 0;">
+      <div data-nav-logo="" style="display: flex; align-items: center; gap: clamp(9px, 1.4vw, 13px); min-width: 0;">
         <span style="font-size: 17px; font-weight: 600; letter-spacing: -0.03em; color: #FAFAFA; white-space: nowrap;">HydroSense</span>
-        <span style="width: 1px; height: 15px; background: #333338;"></span>
-        <img src="assets/innovosens-nav-logo.svg" alt="Innovosens" style="height: 13px; width: auto; display: block; opacity: 0.5;" />
+        <span data-nav-divider="" style="width: 1px; height: 15px; background: #333338;"></span>
+        <img data-nav-sublogo="" src="assets/innovosens-nav-logo.svg" alt="Innovosens" style="height: 13px; width: auto; display: block; opacity: 0.5;" />
       </div>
       <nav style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px clamp(12px, 2vw, 26px); min-width: 0;">
-        <a href="#readiness" style="font-size: 13.5px; font-weight: 400; color: #9A9AA2; white-space: nowrap; transition: color .18s ease;" style-hover="color: #FAFAFA;">Readiness</a>
         <a href="#product" style="font-size: 13.5px; font-weight: 400; color: #9A9AA2; white-space: nowrap; transition: color .18s ease;" style-hover="color: #FAFAFA;">Product</a>
         <a href="#data" style="font-size: 13.5px; font-weight: 400; color: #9A9AA2; white-space: nowrap; transition: color .18s ease;" style-hover="color: #FAFAFA;">Sample report</a>
         <a href="#demo" style="font-size: 14px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 9px clamp(14px, 2vw, 18px); border-radius: 100px; white-space: nowrap; transition: background .2s ease;" style-hover="background:#22D3EE;color:#060607">Book a 10 minute call</a>
@@ -95,13 +245,13 @@
     <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, #060607 0%, rgba(6,6,7,0.6) 16%, rgba(6,6,7,0) 42%);"></div>
     <div style="position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px);">
       <div style="max-width: 660px; padding: clamp(52px, 6.5vw, 96px) 0 clamp(48px, 5vw, 76px);">
-        <div data-reveal="" style="display: inline-flex; align-items: center; margin-bottom: 24px;"><span style="display: inline-block; background: #FAFAFA; color: #060607; font-size: 14px; font-weight: 500; padding: 9px 20px; border-radius: 100px;">For U.S. Construction &amp; Site Safety</span></div>
+        <div data-reveal="" style="display: inline-flex; align-items: center; margin-bottom: 24px;"><span data-hero-badge="" style="display: inline-block; background: #FAFAFA; color: #060607; font-size: 14px; font-weight: 500; padding: 9px 20px; border-radius: 100px;">For U.S. Construction &amp; Site Safety</span></div>
         <h1 data-reveal="" data-reveal-delay="70" style="font-size: clamp(40px, 5.2vw, 66px); font-weight: 500; line-height: 1.04; letter-spacing: -0.035em; margin: 0 0 26px; max-width: 18ch; text-wrap: balance;"><span style="color: #FAFAFA;">Know who’s ready.</span> <span style="color: #9A9AA2;">Before the afternoon peak.</span></h1>
         <p data-reveal="" data-reveal-delay="130" style="font-size: clamp(17.5px, 1.8vw, 21px); font-weight: 400; line-height: 1.5; color: #B4B4BC; margin: 0 0 clamp(28px, 3vw, 38px); max-width: 42ch; text-wrap: pretty;">One patch, one photo. Fluid loss and heat strain, worker by worker.</p>
         <div data-reveal="" data-reveal-delay="190" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
           <a href="#demo" style="font-size: 16px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 16px 30px; border-radius: 100px; white-space: nowrap; transition: background .2s ease, transform .2s ease;" style-hover="background:#22D3EE;transform:translateY(-2px)">Book a 10 minute call</a>
         </div>
-        <div data-reveal="" data-reveal-delay="230" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.13em; text-transform: uppercase; color: #8A8A92; margin-top: clamp(20px, 2.2vw, 28px); line-height: 1.7;">EU Seal of Excellence · Sony · Vinnova &amp; Eureka Eurostars funded</div>
+        <div data-reveal="" data-reveal-delay="230" data-hero-proof="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.13em; text-transform: uppercase; color: #8A8A92; margin-top: clamp(20px, 2.2vw, 28px); line-height: 1.7;">EU Seal of Excellence · Sony · Vinnova &amp; Eureka Eurostars funded</div>
       </div>
     </div>
   </section>
@@ -185,17 +335,17 @@
     </div>
   </section>
 
-  <section data-screen-label="Heat risk map" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
+  <section data-screen-label="Heat risk map" data-heat-section="" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
       <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
         <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">Where The Heat Season</span> <span style="color: #8A8A96;">Runs Longest.</span></h2>
       </div>
-      <div data-reveal="" data-reveal-delay="60" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(26px, 3vw, 38px);">
-        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
-          <div style="min-width: 540px;">
-            <div style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding-bottom: 14px;">
-              <div style="flex: 1 1 150px; min-width: 0;"></div>
-              <div style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);">
+      <div data-reveal="" data-reveal-delay="60" data-heat-card="" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(26px, 3vw, 38px);">
+        <div data-heat-scroll="" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
+          <div data-heat-inner="" style="min-width: 540px;">
+            <div data-heat-header="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding-bottom: 14px;">
+              <div data-heat-empty="" style="flex: 1 1 150px; min-width: 0;"></div>
+              <div data-heat-months="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);">
               <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">APR</div>
               <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">MAY</div>
               <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">JUN</div>
@@ -206,34 +356,34 @@
               </div>
             </div>
             <div data-heatgrid="" style="display: flex; flex-direction: column;">
-              <div data-heat="1,2,3,3,3,2,1" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Phoenix &amp; the Sonoran Desert</div>
+              <div data-heat="1,2,3,3,3,2,1" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Phoenix &amp; the Sonoran Desert</div>
                 <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
               </div>
-              <div data-heat="0,2,3,3,3,2,1" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Permian Basin &amp; Texas Gulf</div>
+              <div data-heat="0,2,3,3,3,2,1" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Permian Basin &amp; Texas Gulf</div>
                 <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
               </div>
-              <div data-heat="0,1,2,3,3,2,0" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">California Central Valley</div>
+              <div data-heat="0,1,2,3,3,2,0" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">California Central Valley</div>
                 <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div></div>
               </div>
-              <div data-heat="1,2,2,3,3,2,1" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Florida &amp; the Gulf Southeast</div>
+              <div data-heat="1,2,2,3,3,2,1" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Florida &amp; the Gulf Southeast</div>
                 <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
               </div>
-              <div data-heat="0,1,3,3,3,1,0" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Nevada &amp; the Mojave</div>
+              <div data-heat="0,1,3,3,3,1,0" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Nevada &amp; the Mojave</div>
                 <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div></div>
               </div>
-              <div data-heat="2,2,2,2,2,2,2" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Roof and deck work, radiant load</div>
+              <div data-heat="2,2,2,2,2,2,2" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Roof and deck work, radiant load</div>
                 <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div></div>
               </div>
             </div>
           </div>
         </div>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 26px); margin-top: 26px; padding-top: 22px; border-top: 1px solid #1B1B1F;">
+        <div data-heat-legend="" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 26px); margin-top: 26px; padding-top: 22px; border-top: 1px solid #1B1B1F;">
           <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8A96;">Heat risk</span>
           <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #17171B;"></span>Low</span>
           <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #0E7490;"></span>Elevated</span>
@@ -255,50 +405,6 @@
     </div>
   </section>
 
-  <section id="readiness" data-screen-label="Command readiness" style="background: #060607;">
-    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
-      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
-        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 20ch; text-wrap: balance;"><span style="color: #FAFAFA;">Send The Crew</span> <span style="color: #8A8A96;">That Is Ready.</span></h2>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: clamp(22px, 2.6vw, 32px);">
-        <div data-hs-console="" data-reveal="" data-reveal-delay="60" style="position: relative; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(28px, 3.4vw, 44px);">
-          <span data-hs-scan="" style="position: absolute; left: 0; right: 0; top: 0; height: 84px; pointer-events: none; opacity: 0; background: linear-gradient(to bottom, rgba(34,211,238,0) 0%, rgba(34,211,238,0.09) 55%, rgba(34,211,238,0) 100%);"></span>
-          <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: #17171B; pointer-events: none;"></span>
-          <span data-hs-progress="" style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; pointer-events: none; transform-origin: left center; animation: hsTrack 8700ms linear infinite; background: linear-gradient(90deg, rgba(34,211,238,0.3) 0%, #22D3EE 100%);"></span>
-          <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; padding-bottom: 18px;">
-            <div style="display: flex; align-items: center; gap: 9px;">
-              <span style="width: 7px; height: 7px; border-radius: 100px; background: #22D3EE; animation: hsPulse 1.8s ease-in-out infinite;"></span>
-              <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #22D3EE;">{{ phaseLabel }}</span>
-            </div>
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(10px, 1.4vw, 18px);">
-              <span style="display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: #8A8A92; white-space: nowrap;"><span style="width: 7px; height: 7px; border-radius: 100px; background: #34D399;"></span>Ready</span>
-              <span style="display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: #8A8A92; white-space: nowrap;"><span style="width: 7px; height: 7px; border-radius: 100px; background: #FBBF24;"></span>Monitor</span>
-              <span style="display: flex; align-items: center; gap: 7px; font-size: 12.5px; color: #8A8A92; white-space: nowrap;"><span style="width: 7px; height: 7px; border-radius: 100px; background: #F87171;"></span>Recover</span>
-            </div>
-          </div>
-          <div style="font-size: clamp(18px, 1.9vw, 21px); font-weight: 500; letter-spacing: -0.025em; color: #FAFAFA; padding-bottom: 16px;">{{ unit }}</div>
-          <div style="display: flex; gap: 6px; padding-bottom: 16px;">
-            <sc-for list="{{ segs }}" as="seg" hint-placeholder-count="3">
-              <span style="flex: 1; height: 2px; border-radius: 100px; transition: background .5s ease; background: {{ seg.bg }};"></span>
-            </sc-for>
-          </div>
-          <sc-for list="{{ roster }}" as="r" hint-placeholder-count="3">
-            <div data-hs-row="" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(12px, 1.8vw, 26px); padding: clamp(18px, 2.2vw, 24px) 0; border-top: 1px solid #1B1B1F;">
-              <div style="flex: 0 1 160px; min-width: 0;">
-                <div style="font-size: clamp(16.5px, 1.6vw, 18.5px); font-weight: 500; color: #FAFAFA; letter-spacing: -0.015em;">{{ r.name }}</div>
-                <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A92; margin-top: 4px; white-space: nowrap;">{{ r.role }}</div>
-              </div>
-              <div style="flex: 2 1 160px; min-width: 120px; height: 8px; border-radius: 100px; background: #1B1B1F; overflow: hidden;">
-                <div style="height: 100%; border-radius: 100px; transition: width .95s cubic-bezier(.16,1,.3,1), background .5s ease; width: {{ r.w }}; background: {{ r.barBg }};"></div>
-              </div>
-              <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: flex-end; gap: clamp(12px, 1.6vw, 20px);"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; text-align: right; white-space: nowrap; transition: color .4s ease; min-width: 58px; color: {{ r.valFg }};">{{ r.val }}</div><div style="min-width: clamp(82px, 8vw, 104px); font-size: 13px; font-weight: 500; letter-spacing: 0.02em; text-align: center; padding: 7px 14px; border-radius: 100px; white-space: nowrap; transition: color .45s ease, background .45s ease; color: {{ r.pillFg }}; background: {{ r.pillBg }};">{{ r.pill }}</div></div>
-            </div>
-          </sc-for>
-          <p style="font-size: clamp(15.5px, 1.5vw, 17px); line-height: 1.6; color: #9A9AA2; margin: 24px 0 0; padding-top: 22px; border-top: 1px solid #1B1B1F; min-height: 46px;">{{ phaseNote }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="product" data-screen-label="The product" style="background: #060607;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
@@ -590,8 +696,7 @@
   <div data-stickycta="" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; transform: translateY(120%); transition: transform .35s cubic-bezier(.16,1,.3,1); background: rgba(9,9,12,0.92); backdrop-filter: blur(14px); border-top: 1px solid #1F1F23;">
     <div style="max-width: 1280px; margin: 0 auto; padding: 13px clamp(16px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 16px;">
       <div style="min-width: 0;">
-        <div style="font-size: 15px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.015em; line-height: 1.3;">See what your crews are losing.</div>
-        <div style="font-size: 13px; color: #8A8A92; line-height: 1.4; margin-top: 2px;">Ten minutes. No cost, no obligation.</div>
+        <div style="font-size: 15px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.015em; line-height: 1.3;">See what your crews are losing</div>
       </div>
       <a href="#demo" style="flex-shrink: 0; font-size: 15px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 13px 24px; border-radius: 100px; white-space: nowrap; transition: background .2s ease;" style-hover="background:#22D3EE">Book a 10 minute call</a>
     </div>
@@ -932,7 +1037,7 @@ class Component extends DCLogic {
     this.stickyCta();
     this.startSlideshow();
     this.mountLazyVideo();
-    this.startReadiness();
+
     this.hsCount();
     this.startHeatGrid();
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
