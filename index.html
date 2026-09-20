@@ -185,18 +185,132 @@
       padding-top: 16px !important;
     }
 
-    /* Sample report card: reduce padding */
-    #data [data-reveal] { padding: 24px 18px !important; }
-
     /* Sticky CTA: button only on mobile */
     [data-stickycta] > div { padding: 11px 16px !important; justify-content: center !important; }
     [data-stickycta] > div > div:first-child { display: none !important; }
     [data-stickycta] a { width: 100% !important; text-align: center !important; padding: 13px 20px !important; font-size: 15px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
 
-    /* Footer: stack columns */
-    footer > div:first-child > div { gap: 28px 16px !important; }
-    footer > div:first-child > div > div { flex-basis: 100% !important; min-width: 100% !important; }
-    footer > div:first-child > div > div:first-child { flex-basis: 100% !important; }
+    /* Sample report card & header */
+    #data [data-reveal] { padding: clamp(22px, 3.5vw, 36px) clamp(16px, 3vw, 28px) !important; }
+    [data-report-header] {
+      margin-bottom: 22px !important;
+      padding-bottom: 15px !important;
+      gap: 10px 14px !important;
+    }
+    [data-report-title] {
+      font-size: 15px !important;
+      gap: 6px 8px !important;
+    }
+    [data-report-meta] {
+      font-size: 11px !important;
+    }
+
+    /* Evidence for the plan */
+    [data-screen-label="Documentation"] [data-reveal] {
+      padding: clamp(24px, 3.5vw, 34px) clamp(18px, 3.2vw, 28px) !important;
+    }
+    [data-evidence-card] {
+      padding: 12px 14px !important;
+      border-radius: 12px !important;
+      gap: 12px !important;
+    }
+
+    /* Recognition: balanced 3 + 2 mobile layout */
+    [data-screen-label="Recognition"] > div > div:nth-child(2) {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 8px !important;
+    }
+    [data-screen-label="Recognition"] > div > div:nth-child(2) > div {
+      flex: 0 0 calc(33.333% - 6px) !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      height: 56px !important;
+      aspect-ratio: auto !important;
+      border-radius: 12px !important;
+      padding: 8px 10px !important;
+    }
+    [data-screen-label="Recognition"] > div > div:nth-child(2) > div:nth-child(4),
+    [data-screen-label="Recognition"] > div > div:nth-child(2) > div:nth-child(5) {
+      flex: 0 0 calc(44% - 6px) !important;
+    }
+    [data-screen-label="Recognition"] > div > div:nth-child(2) img {
+      max-height: 28px !important;
+      max-width: 82% !important;
+    }
+
+    /* Footer: compact 2-column mobile layout */
+    [data-site-footer] > div:first-child {
+      padding: 32px 18px 0 !important;
+    }
+    [data-footer-grid] {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 22px 14px !important;
+    }
+    [data-footer-brand] {
+      grid-column: 1 / -1 !important;
+      flex-basis: auto !important;
+      min-width: 0 !important;
+      padding-bottom: 14px !important;
+      border-bottom: 1px solid #16161A !important;
+      gap: 10px !important;
+    }
+    [data-footer-brand] a[aria-label="Innovosens home"] {
+      padding: 6px 10px !important;
+    }
+    [data-footer-brand] a[aria-label="Innovosens home"] img {
+      height: 24px !important;
+    }
+    [data-footer-brand] p {
+      font-size: 12.5px !important;
+      max-width: 100% !important;
+      color: #8A8A92 !important;
+      margin: 0 !important;
+    }
+    [data-footer-brand] a[href^="mailto"] {
+      font-size: 12.5px !important;
+    }
+    [data-footer-brand] > div:last-child {
+      display: flex !important;
+      gap: 8px !important;
+      margin-top: 2px !important;
+    }
+    [data-footer-brand] a[title] {
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 8px !important;
+    }
+    [data-footer-col] {
+      flex-basis: auto !important;
+      min-width: 0 !important;
+      gap: 8px !important;
+    }
+    [data-footer-offices] {
+      grid-column: 1 / -1 !important;
+      border-top: 1px solid #16161A !important;
+      padding-top: 14px !important;
+      gap: 10px !important;
+      max-width: 100% !important;
+    }
+    [data-footer-offices] > div:last-child {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 12px 14px !important;
+    }
+    [data-footer-col] a,
+    [data-footer-col] span {
+      font-size: 13px !important;
+      line-height: 1.35 !important;
+    }
+    [data-footer-offices] address {
+      font-size: 11.5px !important;
+      line-height: 1.45 !important;
+    }
+    [data-site-footer] > div:last-child {
+      padding: 16px 18px 24px !important;
+    }
 
     /* FAQ answer text: reduce right padding */
     [data-screen-label="FAQ"] p { padding-right: 20px !important; }
@@ -494,9 +608,14 @@
         <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">What You Get Back</span> <span style="color: #8A8A96;">After Every Shift.</span></h2>
       </div>
       <div data-reveal="" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: 44px 40px;">
-        <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 20px; margin-bottom: 34px; padding-bottom: 20px; border-bottom: 1px solid #1F1F23;">
-          <div style="font-size: 17px; font-weight: 500; letter-spacing: -0.02em; color: #FAFAFA;">Sample report · Afternoon pour, 104 °F</div>
-          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8A92;">Fluid loss · fl oz</div>
+        <div data-report-header="" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-bottom: 34px; padding-bottom: 20px; border-bottom: 1px solid #1F1F23;">
+          <div data-report-title="" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 16.5px; font-weight: 500; letter-spacing: -0.02em; color: #FAFAFA;">
+            <span>Sample report</span>
+            <span style="color: #4A4A52;">·</span>
+            <span style="color: #D4D4D8;">Afternoon pour</span>
+            <span style="background: rgba(248,113,113,0.14); color: #F87171; border: 1px solid rgba(248,113,113,0.28); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; font-weight: 500; padding: 2px 8px; border-radius: 100px; white-space: nowrap; display: inline-flex; align-items: center; line-height: 1.4;">104°F</span>
+          </div>
+          <div data-report-meta="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8A92;">Fluid loss · fl oz</div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 18px; font-variant-numeric: tabular-nums;">
           <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
@@ -550,15 +669,43 @@
 
   <section data-screen-label="Documentation" style="background: #060607;">
     <div style="max-width: 1040px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
-      <div data-reveal="" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(28px, 3.2vw, 44px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(24px, 3vw, 48px); align-items: center;">
+      <div data-reveal="" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(28px, 3.2vw, 44px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(24px, 3.5vw, 48px); align-items: center;">
         <div>
-          <h2 style="font-size: clamp(27px, 3vw, 38px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin: 0 0 14px; text-wrap: balance;"><span style="color: #FAFAFA;">Evidence For The Plan</span> <span style="color: #8A8A96;">You Already Have To Write.</span></h2>
-          <p style="font-size: 17.5px; line-height: 1.6; color: #A8A8AE; margin: 0; max-width: 44ch; text-wrap: pretty;">Your heat plan has to show what you did. Most can only log the water and rest breaks offered, not what the crew actually lost.</p>
+          <div style="display: inline-flex; align-items: center; gap: 6px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #22D3EE; background: rgba(34,211,238,0.08); padding: 4px 10px; border-radius: 100px; margin-bottom: 12px; border: 1px solid rgba(34,211,238,0.2);">
+            <span style="width: 5px; height: 5px; border-radius: 50%; background: #22D3EE;"></span>
+            Audit-Ready Records
+          </div>
+          <h2 style="font-size: clamp(24px, 2.8vw, 36px); font-weight: 500; line-height: 1.15; letter-spacing: -0.03em; margin: 0 0 12px; text-wrap: balance;"><span style="color: #FAFAFA;">Evidence For The Plan</span> <span style="color: #8A8A96;">You Already Have To Write.</span></h2>
+          <p style="font-size: 15px; line-height: 1.55; color: #9A9AA2; margin: 0; max-width: 42ch;">Safety plans require proof of response. HydroSense logs verified worker fluid loss, not just water breaks offered.</p>
         </div>
-        <div style="display: flex; flex-direction: column; border-top: 1px solid #1F1F23;">
-          <div style="display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 8px;"></span><p style="font-size: 17px; line-height: 1.5; color: #E4E4E7; margin: 0;">Per-person fluid loss, by date and session</p></div>
-          <div style="display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 8px;"></span><p style="font-size: 17px; line-height: 1.5; color: #E4E4E7; margin: 0;">Acclimatization tracked through a new hire’s first week</p></div>
-          <div style="display: flex; align-items: flex-start; gap: 13px; padding: 15px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 8px;"></span><p style="font-size: 17px; line-height: 1.5; color: #E4E4E7; margin: 0;">A written report you can circulate</p></div>
+        <div data-evidence-list="" style="display: flex; flex-direction: column; gap: 10px;">
+          <div data-evidence-card="" style="background: #141418; border: 1px solid #222228; border-radius: 14px; padding: 13px 15px; display: flex; align-items: center; gap: 13px;">
+            <div style="width: 34px; height: 34px; border-radius: 9px; background: rgba(34,211,238,0.12); color: #22D3EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" style="width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <div style="min-width: 0;">
+              <div style="font-size: 14px; font-weight: 500; color: #FAFAFA; line-height: 1.35;">Per-person fluid loss</div>
+              <div style="font-size: 12px; color: #8A8A92; line-height: 1.35; margin-top: 2px;">Logged by worker, date, and shift session</div>
+            </div>
+          </div>
+          <div data-evidence-card="" style="background: #141418; border: 1px solid #222228; border-radius: 14px; padding: 13px 15px; display: flex; align-items: center; gap: 13px;">
+            <div style="width: 34px; height: 34px; border-radius: 9px; background: rgba(34,211,238,0.12); color: #22D3EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" style="width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div style="min-width: 0;">
+              <div style="font-size: 14px; font-weight: 500; color: #FAFAFA; line-height: 1.35;">Acclimatization tracking</div>
+              <div style="font-size: 12px; color: #8A8A92; line-height: 1.35; margin-top: 2px;">Real sweat-rate adaptation across week one</div>
+            </div>
+          </div>
+          <div data-evidence-card="" style="background: #141418; border: 1px solid #222228; border-radius: 14px; padding: 13px 15px; display: flex; align-items: center; gap: 13px;">
+            <div style="width: 34px; height: 34px; border-radius: 9px; background: rgba(34,211,238,0.12); color: #22D3EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" style="width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+            </div>
+            <div style="min-width: 0;">
+              <div style="font-size: 14px; font-weight: 500; color: #FAFAFA; line-height: 1.35;">Circulation-ready PDF report</div>
+              <div style="font-size: 12px; color: #8A8A92; line-height: 1.35; margin-top: 2px;">One-click export for safety officers & audits</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -702,10 +849,10 @@
     </div>
   </div>
 
-  <footer style="background: #060607; border-top: 1px solid #1C1C1F;">
+  <footer data-site-footer="" style="background: #060607; border-top: 1px solid #1C1C1F;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(40px, 4.4vw, 56px) clamp(20px, 4vw, 32px) 0;">
-      <div style="display: flex; flex-wrap: wrap; gap: clamp(26px, 3vw, 36px) clamp(20px, 2.2vw, 28px);">
-        <div style="flex: 1.7 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+      <div data-footer-grid="" style="display: flex; flex-wrap: wrap; gap: clamp(26px, 3vw, 36px) clamp(20px, 2.2vw, 28px);">
+        <div data-footer-brand="" style="flex: 1.7 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
           <a href="https://www.innovosens.com/" target="_blank" rel="noopener" aria-label="Innovosens home" style="align-self: flex-start; background: #FAFAFA; border-radius: 12px; padding: 9px 14px; display: flex; align-items: center; transition: opacity .18s ease;" style-hover="opacity: 0.86;">
             <img src="assets/innovosens-official-footer-logo.png" alt="Innovosens" style="height: 34px; width: auto; display: block; object-fit: contain;" />
           </a>
@@ -723,19 +870,19 @@
           </a>
           </div>
         </div>
-        <div style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
+        <div data-footer-col="explore" style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
           <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Explore</div>
           <a href="#demo" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Book a 10 minute call</a>
           <a href="https://www.kickstarter.com/projects/676853405/hydrosense-sweat-patch-optimize-hydration-and-performance" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Kickstarter campaign</a>
           <a href="https://lp.hydrosense.store/product-safety/" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Product safety</a>
         </div>
-        <div style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
+        <div data-footer-col="industries" style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
           <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Industries</div>
           <a href="https://hydrosense-us-firefighters.vercel.app" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Fire departments</a>
           <a href="https://hydrosense-us-mining-safety.vercel.app" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Mining safety</a>
           <span style="font-size: 13.5px; line-height: 1.35; color: #FAFAFA;">Construction</span>
         </div>
-        <div style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
+        <div data-footer-col="company" style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
           <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Company</div>
           <a href="https://newsite.innovosens.com/aboutus" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">About us</a>
           <a href="https://newsite.innovosens.com/technology" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Technology</a>
@@ -743,7 +890,7 @@
           <a href="https://newsite.innovosens.com/blog" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Blog</a>
           <a href="https://newsite.innovosens.com/" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">innovosens.com</a>
         </div>
-        <div style="flex: 1.2 0 150px; max-width: 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+        <div data-footer-offices="" style="flex: 1.2 0 150px; max-width: 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
           <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Offices</div>
           <div style="display: flex; flex-wrap: wrap; gap: 16px 30px;">
           <address style="font-size: 12.5px; line-height: 1.6; color: #8A8A92; font-style: normal; margin: 0; flex: 1 1 150px; min-width: 0;"><span style="display: block; color: #C7C7CE;">United States</span>Innovosens AB Inc, c/o Nordic Innovation House, 470 Ramona Street, Palo Alto, CA 94301</address>
