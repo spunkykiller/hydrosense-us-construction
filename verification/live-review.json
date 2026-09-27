@@ -9,7 +9,7 @@
       "pixelInitialized": false,
       "errors": [],
       "productionAdvertisingRequests": 0,
-      "realCalendlyFramePresent": false
+      "reviewPlaceholder": false
     },
     {
       "slug": "hydrosense-firefighters",
@@ -19,7 +19,7 @@
       "pixelInitialized": false,
       "errors": [],
       "productionAdvertisingRequests": 0,
-      "realCalendlyFramePresent": true
+      "reviewPlaceholder": true
     },
     {
       "slug": "hydrosense-mining-safety",
@@ -29,7 +29,7 @@
       "pixelInitialized": false,
       "errors": [],
       "productionAdvertisingRequests": 0,
-      "realCalendlyFramePresent": false
+      "reviewPlaceholder": false
     },
     {
       "slug": "hydrosense-mining-safety",
@@ -39,7 +39,7 @@
       "pixelInitialized": false,
       "errors": [],
       "productionAdvertisingRequests": 0,
-      "realCalendlyFramePresent": true
+      "reviewPlaceholder": true
     },
     {
       "slug": "hydrosense-us-construction",
@@ -49,7 +49,7 @@
       "pixelInitialized": false,
       "errors": [],
       "productionAdvertisingRequests": 0,
-      "realCalendlyFramePresent": false
+      "reviewPlaceholder": false
     },
     {
       "slug": "hydrosense-us-construction",
@@ -59,8 +59,8 @@
       "pixelInitialized": false,
       "errors": [],
       "productionAdvertisingRequests": 0,
-      "realCalendlyFramePresent": true
+      "reviewPlaceholder": true
     }
   ],
-  "note": "Live review pages only. The real Calendly frame loaded; no booking was submitted. Review mode does not save inquiries or send production advertising events."
+  "note": "Live review pages only. Calendly is disabled in review mode to avoid its own external trackers. No booking was submitted. Review mode does not save inquiries or send production advertising events."
 }
