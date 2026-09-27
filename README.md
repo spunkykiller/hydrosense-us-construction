@@ -12,6 +12,8 @@ This package contains an industry-specific landing page, booking page, locally s
 
 The public Pixel ID is **743509325171589**. The package defaults to review mode: no production advertising events and no false inquiry-save success. The client must explicitly configure production mode. Do not install a second Pixel through a WordPress plugin or tag manager on the same pages without removing the duplicate implementation.
 
+Review-mode booking pages show a local placeholder and an explicit external-calendar link. The live Calendly embed is enabled only in configured production mode, because Calendly can load its own third-party trackers outside this site's consent controls.
+
 ## Files
 
 - `index.html`, `book-a-meeting.html`: canonical pages; existing exported filename aliases remain supported.

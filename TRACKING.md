@@ -40,6 +40,8 @@ Use the matching industry in `utm_term`. IDs are durable attribution; creative/a
 
 Browser Schedule is not server-verified. External fallback bookings, blocked scripts, consent rejection, cross-device journeys, cancellations and reschedules are not fully reconciled in this release. Gaining Sirisha's authorized booking API/webhook access later can close some of these gaps; no Calendly setting or webhook subscription is changed here.
 
+Calendly is a separate service with its own cookies and tracking. A live check found that its embedded interface loads a Meta script independently of this site's consent-controlled Pixel. Review mode therefore does not load the widget at all; it offers an explicit external link. Production uses the real embed, and the client must review the calendar's own tracking/consent configuration. This site's opt-out cannot revoke trackers in an external iframe. No calendar settings were changed.
+
 The baseline readiness index was **36/100 (Broken)**: decision alignment 22/25, event model 5/20, accuracy 0/20, conversion definition 6/15, attribution 1/10, governance 2/10. This is a diagnostic assessment, not a campaign-performance KPI. Production readiness remains pending the client launch checks, not merely delivery of code.
 
 Reference: https://calendly.com/help/advanced-calendly-embed-for-developers

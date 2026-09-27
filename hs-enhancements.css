@@ -44,3 +44,8 @@ input:focus-visible { outline-offset: 1px; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   [data-reveal], [data-hero-anim] { opacity: 1 !important; transform: none !important; }
 }
+.hs-booking-preview { font-family: system-ui, sans-serif; padding: 64px 24px; text-align: center; color: #1a1a1a; }
+.hs-booking-preview h1 { font-size: 28px; line-height: 1.2; }
+.hs-booking-preview p { font-size: 16px; line-height: 1.5; }
+.hs-booking-preview a { display: inline-block; padding: 12px 0; text-decoration: underline; }
+@media (prefers-color-scheme: dark) { .hs-booking-preview { color: #fafafa; } }

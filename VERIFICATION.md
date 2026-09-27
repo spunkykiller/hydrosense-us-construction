@@ -17,6 +17,12 @@ Tested on 27 September 2026. These are package and controlled integration checks
 
 Evidence summaries are in `verification/`. Tests use synthetic records and controlled Calendly messages. No real appointment was made. No Meta or Calendly settings were changed.
 
+## Live Internal Review
+
+All six Vercel review URLs were checked at 390 pixels. The published client script matches the local build, pages render without horizontal overflow or JavaScript errors, and no production advertising events are sent. Backend/source/environment paths are not publicly served. Review mode deliberately replaces the Calendly embed with a local placeholder: a longer real-calendar check revealed that Calendly loads its own Meta script, independently of this website's Pixel. Reviewers can explicitly open the external calendar, whose cookies/tracking are controlled by Calendly.
+
+The real Calendly booking interface was checked separately without submitting an appointment. It currently displays **20 minutes**, so the agreed ten-minute wording remains a known launch mismatch for Sirisha to correct. Production mode retains the embed. The client must review Calendly's own consent/tracking settings before launch; this package cannot control trackers inside an external iframe. No Calendly settings were changed. This check does not verify completed bookings in Sirisha's account or live Meta delivery.
+
 ## Performance Scope
 
 The local performance measurements in `verification/experience.json` use unthrottled headless Chromium, a 390-pixel viewport and reduced motion. They are not field Core Web Vitals, low-end-device or cellular-network benchmarks. Image savings in `build-report.json` compare referenced originals with their largest WebP variants, not total bytes for all responsive variants.

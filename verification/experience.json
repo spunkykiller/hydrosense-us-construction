@@ -16,30 +16,30 @@
       "conditions": "Local headless Chromium, 390px, reduced motion, unthrottled; not field Core Web Vitals",
       "reduced": "0s",
       "image": true,
-      "lcpMs": 196,
+      "lcpMs": 96,
       "cls": 0,
-      "fcpMs": 196,
-      "transferredBytes": 815798
+      "fcpMs": 96,
+      "transferredBytes": 816939
     },
     {
       "slug": "hydrosense-mining-safety",
       "conditions": "Local headless Chromium, 390px, reduced motion, unthrottled; not field Core Web Vitals",
       "reduced": "0s",
       "image": true,
-      "lcpMs": 380,
+      "lcpMs": 100,
       "cls": 0,
-      "fcpMs": 380,
-      "transferredBytes": 669914
+      "fcpMs": 100,
+      "transferredBytes": 671055
     },
     {
       "slug": "hydrosense-us-construction",
       "conditions": "Local headless Chromium, 390px, reduced motion, unthrottled; not field Core Web Vitals",
       "reduced": "0s",
       "image": true,
-      "lcpMs": 396,
+      "lcpMs": 156,
       "cls": 0,
-      "fcpMs": 396,
-      "transferredBytes": 604340
+      "fcpMs": 156,
+      "transferredBytes": 605481
     }
   ]
 }

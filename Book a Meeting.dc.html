@@ -9,8 +9,8 @@
 <x-dc>
 <helmet>
 <title>Book a Meeting · HydroSense</title>
-<link rel="preconnect" href="https://calendly.com">
-<link rel="preconnect" href="https://assets.calendly.com">
+
+
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   :root { --hs-accent: #0E7490; --hs-link-hover: #0B5A70; }
@@ -24,7 +24,7 @@
   @supports not (height: 100dvh) { [data-cal-root] { height: 100vh !important; } }
   @media (prefers-reduced-motion: reduce) { [data-cal-loader] span { animation: none !important; opacity: .7 !important; } }
 </style>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 </helmet>
 <main data-cal-root aria-label="Schedule a meeting" style="position:relative;width:100%;min-height:100dvh;overflow:visible;">
   <div data-cal-loader aria-hidden="true" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 8px; pointer-events: none; opacity: {{ loaderOp }}; transition: opacity .4s ease;">
@@ -46,6 +46,7 @@ class Component extends DCLogic {
   base = "https://calendly.com/sirisha-2/10min";
 
   componentDidMount() {
+    if (window.HydroSense.reviewCalendar()) { this.setState({ ready: true, failed: false }); return; }
     this.mq = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
     this.onScheme = () => {};
     if (this.mq) {

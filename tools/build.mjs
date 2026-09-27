@@ -127,8 +127,11 @@ async function booking() {
   $('body').prepend('<nav class="hs-booking-bar" aria-label="Booking navigation"><a href="./index.html">Back to HydroSense</a><a data-hs-external-booking href="https://calendly.com/sirisha-2/10min" target="_blank" rel="noopener noreferrer">Open calendar separately</a></nav>');
   $('main').attr('style', 'position:relative;width:100%;min-height:100dvh;overflow:visible;');
   $('a[href*="calendly.com"]').attr('data-hs-external-booking', '');
+  $('script[src*="assets.calendly.com/assets/external/widget.js"]').remove();
+  $('link[rel="preconnect"][href*="calendly.com"]').remove();
   const logic = $('script[data-dc-script]');
   let js = logic.text();
+  js = js.replace('componentDidMount() {', 'componentDidMount() {\n    if (window.HydroSense.reviewCalendar()) { this.setState({ ready: true, failed: false }); return; }');
   js = js.replace('this.onScheme = () => this.mountCal();', 'this.onScheme = () => {};');
   js = js.replace('if (typeof e.origin !== "string" || e.origin.indexOf("calendly.com") === -1) return;', 'if (!window.HydroSense.calendarMessage(e)) return;');
   js = js.replace('return this.base + "?background_color=" + c[0] + "&text_color=" + c[1] + "&primary_color=" + c[2];', 'return window.HydroSense.calendarUrl();');

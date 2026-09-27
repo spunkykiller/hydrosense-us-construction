@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "slug": "hydrosense-firefighters",
+      "url": "https://hydrosense-firefighters.vercel.app/",
+      "nonblank": true,
+      "overflow": false,
+      "pixelInitialized": false,
+      "errors": [],
+      "productionAdvertisingRequests": 0,
+      "realCalendlyFramePresent": false
+    },
+    {
+      "slug": "hydrosense-firefighters",
+      "url": "https://hydrosense-firefighters.vercel.app/book-a-meeting.html",
+      "nonblank": true,
+      "overflow": false,
+      "pixelInitialized": false,
+      "errors": [],
+      "productionAdvertisingRequests": 0,
+      "realCalendlyFramePresent": true
+    },
+    {
+      "slug": "hydrosense-mining-safety",
+      "url": "https://hydrosense-mining-safety.vercel.app/",
+      "nonblank": true,
+      "overflow": false,
+      "pixelInitialized": false,
+      "errors": [],
+      "productionAdvertisingRequests": 0,
+      "realCalendlyFramePresent": false
+    },
+    {
+      "slug": "hydrosense-mining-safety",
+      "url": "https://hydrosense-mining-safety.vercel.app/book-a-meeting.html",
+      "nonblank": true,
+      "overflow": false,
+      "pixelInitialized": false,
+      "errors": [],
+      "productionAdvertisingRequests": 0,
+      "realCalendlyFramePresent": true
+    },
+    {
+      "slug": "hydrosense-us-construction",
+      "url": "https://hydrosense-us-construction.vercel.app/",
+      "nonblank": true,
+      "overflow": false,
+      "pixelInitialized": false,
+      "errors": [],
+      "productionAdvertisingRequests": 0,
+      "realCalendlyFramePresent": false
+    },
+    {
+      "slug": "hydrosense-us-construction",
+      "url": "https://hydrosense-us-construction.vercel.app/book-a-meeting.html",
+      "nonblank": true,
+      "overflow": false,
+      "pixelInitialized": false,
+      "errors": [],
+      "productionAdvertisingRequests": 0,
+      "realCalendlyFramePresent": true
+    }
+  ],
+  "note": "Live review pages only. The real Calendly frame loaded; no booking was submitted. Review mode does not save inquiries or send production advertising events."
+}

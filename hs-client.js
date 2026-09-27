@@ -143,6 +143,17 @@
     try { sessionStorage.removeItem('hs-booking-context'); } catch {}
     return options;
   }
+  function reviewCalendar() {
+    if (!preview) return false;
+    const el = document.querySelector('[data-cal]');
+    if (!el) return true;
+    const section = document.createElement('section'); section.className = 'hs-booking-preview';
+    const title = document.createElement('h1'); title.textContent = 'Meeting Booking';
+    const text = document.createElement('p'); text.textContent = 'Internal review. The embedded calendar is disabled.';
+    const link = document.createElement('a'); link.href = calendarUrl(); link.target = '_blank'; link.rel = 'noopener noreferrer'; link.textContent = 'Open calendar separately';
+    section.append(title, text, link); el.replaceChildren(section);
+    return true;
+  }
   function calendarMessage(e) {
     if (e.origin !== 'https://calendly.com') return false;
     const frame = document.querySelector('[data-cal] iframe');
@@ -185,6 +196,6 @@
     }, 7000);
     document.addEventListener('submit', (e) => { if (e.target.matches('[data-hs-inquiry]')) { e.preventDefault(); e.stopPropagation(); submit(e.target); } }, true);
   }
-  window.HydroSense = Object.freeze({ submit, calendarOptions, calendarMessage, calendarUrl, setAdvertisingConsent: setConsent, getAttribution: () => ({ ...attribution }) });
+  window.HydroSense = Object.freeze({ submit, calendarOptions, calendarMessage, calendarUrl, reviewCalendar, setAdvertisingConsent: setConsent, getAttribution: () => ({ ...attribution }) });
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
 })();
