@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Real WordPress REST capture and duplicate retry",
+    "WordPress inquiry validation and origin restriction",
+    "Unauthenticated WordPress export blocked",
+    "Administrator-only nonce-protected CSV export from real WordPress database",
+    "Invalid administrator nonce rejected",
+    "Administrator deletion removes the stored lead"
+  ],
+  "environment": "Local WordPress with official SQLite integration; production MySQL host not tested"
+}

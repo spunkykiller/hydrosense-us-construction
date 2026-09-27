@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "Durable capture and duplicate retry return one lead",
+    "Validation, inquiry consent, honeypot, payload limit, origin and unauthenticated export rejected",
+    "Authenticated CSV confirms persisted single record",
+    "Authenticated lead deletion",
+    "No advertising events before consent; one PageView on consent",
+    "Actual capture precedes booking navigation; Lead once; safe prefill and attribution preserved",
+    "Correct frame/origin completion produces one Schedule; unrelated messages and duplicate completions rejected",
+    "Schedule deduplicates across booking-page reload",
+    "Advertising decline leaves inquiry form usable without events",
+    "Unavailable backend produces an honest retry state without navigation or false success",
+    "CAPI payload hashes email, preserves deduplication ID and excludes plaintext contact data (no live Meta request)",
+    "Persistent backend rate limit enforced",
+    "Standalone maintenance executes successfully"
+  ],
+  "productionServicesModified": false
+}

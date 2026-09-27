@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
+
+<title>HydroSense for US Construction | Organizational Pilots</title><style>x-dc{display:none!important}</style><script src="./site-config.js" defer></script><script src="./hs-client.js" defer></script><script src="./vendor/react.production.min.js" defer></script><script src="./vendor/react-dom.production.min.js" defer></script><link rel="stylesheet" href="./hs-enhancements.css"><script src="./support.js" defer></script><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="description" content="US Construction: measure sweat loss during representative work or training. Discuss a paid organizational pilot in a 10-minute introductory call."><style>@font-face{font-family:Geist;font-style:normal;font-weight:300 700;font-display:swap;src:url(./assets/fonts/geist-latin.woff2) format("woff2")}@font-face{font-family:"Geist Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url(./assets/fonts/geist-mono-latin.woff2) format("woff2")}</style><link rel="preload" href="./assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin></head>
 <body>
 <x-dc>
 <helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..500&display=swap" rel="stylesheet" />
+
+
+
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -37,6 +37,21 @@
   @keyframes hsPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.85); } }
   @keyframes hsScan { 0% { transform: translateY(-8%); opacity: 0; } 12% { opacity: .9; } 88% { opacity: .9; } 100% { transform: translateY(108%); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  html { -webkit-tap-highlight-color: transparent; }
+  @keyframes hsRise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  @keyframes hsFade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes hsHeroIn { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
+  @keyframes hsUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @media (hover: hover) and (pointer: fine) {
+    [data-zoomcard]:hover [data-zoomimg] { transform: scale(1.045); }
+    [data-nudge]:hover [data-arrow] { transform: translateX(3px); }
+    [data-nudge]:hover [data-arrow-ne] { transform: translate(2px, -2px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-hero-anim], [data-anim-in] { animation: none !important; }
+    [data-zoomimg], [data-arrow], [data-arrow-ne] { transition: none !important; transform: none !important; }
+  }
+  @media print { [data-hero-anim], [data-anim-in] { animation: none !important; } [data-reveal] img, [data-reveal] video { transform: none !important; } }
 
   /* ── Ultra-wide ≥ 1700px: keep the hero photo readable and edges aligned ── */
   @media (min-width: 1700px) {
@@ -113,13 +128,13 @@
     [data-hero-copy] { max-width: 100% !important; padding: 38px 0 clamp(150px, 44vw, 240px) !important; }
     [data-hero-badge] {
       font-size: 10.5px !important;
-      letter-spacing: 0.14em !important;
+      letter-spacing: 0;
       padding: 7px 13px !important;
     }
     [data-hero-root] h1 {
-      font-size: clamp(28px, 7.8vw, 40px) !important;
+      font-size: 40px !important;
       line-height: 1.1 !important;
-      letter-spacing: -0.03em !important;
+      letter-spacing: 0;
       margin-bottom: 16px !important;
       max-width: 100% !important;
     }
@@ -136,14 +151,14 @@
     }
     [data-hero-proof] {
       font-size: 10.5px !important;
-      letter-spacing: 0.08em !important;
+      letter-spacing: 0;
       line-height: 1.6 !important;
       margin-top: 20px !important;
     }
 
     /* Section Headings: mobile-balanced typography */
     h2 {
-      font-size: clamp(25px, 6.8vw, 38px) !important;
+      font-size: 38px !important;
     }
 
     /* Heat risk map: mobile card layout */
@@ -252,7 +267,7 @@
     [data-rec-label] { font-size: 17px !important; }
 
     /* Sample report axis */
-    [data-axis] span[data-avglabel] { font-size: 9.5px !important; letter-spacing: 0.06em !important; }
+    [data-axis] span[data-avglabel] { font-size: 9.5px !important; letter-spacing: 0; }
 
     /* Footer: compact 2-column mobile layout */
     [data-site-footer] > div:first-child {
@@ -354,139 +369,139 @@
 
   <header style="position: sticky; top: 0; z-index: 60; background: rgba(6,6,7,0.82); backdrop-filter: blur(14px); border-bottom: 1px solid #1C1C1F;">
     <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px); min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: clamp(12px, 2vw, 24px); flex-wrap: wrap;">
-      <div data-nav-logo="" style="display: flex; align-items: center; gap: clamp(9px, 1.4vw, 13px); min-width: 0;">
-        <span style="font-size: 17px; font-weight: 600; letter-spacing: -0.03em; color: #FAFAFA; white-space: nowrap;">HydroSense</span>
-        <span data-nav-divider="" style="width: 1px; height: 15px; background: #333338;"></span>
-        <span data-nav-sublogo="" style="font-size: 13px; font-weight: 500; letter-spacing: -0.01em; line-height: 1; color: #8A8A92; white-space: nowrap;">Innovosens</span>
+      <div data-nav-logo style="display: flex; align-items: center; gap: clamp(9px, 1.4vw, 13px); min-width: 0;">
+        <span style="font-size: 17px; font-weight: 600; letter-spacing: 0; color: #FAFAFA; white-space: nowrap;">HydroSense</span>
+        <span data-nav-divider style="width: 1px; height: 15px; background: #333338;"></span>
+        <span data-nav-sublogo style="font-size: 13px; font-weight: 500; letter-spacing: 0; line-height: 1; color: #8A8A92; white-space: nowrap;">Innovosens</span>
       </div>
       <nav style="display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px clamp(12px, 2vw, 26px); min-width: 0;">
         <a href="#product" style="font-size: 13.5px; font-weight: 400; color: #9A9AA2; white-space: nowrap; transition: color .18s ease;" style-hover="color: #FAFAFA;">Product</a>
         <a href="#data" style="font-size: 13.5px; font-weight: 400; color: #9A9AA2; white-space: nowrap; transition: color .18s ease;" style-hover="color: #FAFAFA;">Sample report</a>
-        <a href="#demo" style="font-size: 14px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 9px clamp(14px, 2vw, 18px); border-radius: 100px; white-space: nowrap; transition: background .2s ease;" style-hover="background:#22D3EE;color:#060607">Book a 10 minute call</a>
+        <a href="#demo" style="font-size: 14px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 9px clamp(14px, 2vw, 18px); border-radius: 100px; white-space: nowrap; transition: background .2s ease, scale .18s ease;" style-hover="background:#22D3EE;color:#060607" style-active="scale: .96">Book a 10 minute call</a>
       </nav>
     </div>
-    <div data-navprogress="" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; overflow: hidden; pointer-events: none;"></div>
+    <div data-navprogress aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; overflow: hidden; pointer-events: none;"></div>
   </header>
 
-  <section data-hero-root="" data-screen-label="Hero" style="position: relative; overflow: hidden; display: flex; align-items: center; min-height: clamp(540px, 80vh, 780px);">
-    <img data-hero-img="" src="assets/hero-construction.jpg" alt="Construction crew attending a worker down from heat on a concrete deck in the afternoon sun" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 74% 50%; display: block; filter: brightness(0.94) contrast(1.04) saturate(0.98);" />
-    <div data-hero-scrim="" style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(98deg, rgba(6,6,7,0.94) 0%, rgba(6,6,7,0.86) 21%, rgba(6,6,7,0.7) 38%, rgba(6,6,7,0.44) 56%, rgba(6,6,7,0.2) 76%, rgba(6,6,7,0.05) 92%, rgba(6,6,7,0) 100%);"></div>
-    <div data-hero-base="" style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, #060607 0%, rgba(6,6,7,0.52) 13%, rgba(6,6,7,0) 34%), linear-gradient(to bottom, rgba(6,6,7,0.62) 0%, rgba(6,6,7,0) 18%);"></div>
+  <section data-hero-root data-screen-label="Hero" style="position: relative; overflow: hidden; display: flex; align-items: center; min-height: clamp(540px, 80vh, 780px);">
+    <picture data-hero-anim style="position: absolute; inset: 0; display: block; animation: hsHeroIn 2.2s cubic-bezier(.16,1,.3,1) backwards;"><img data-hero-img src="assets/optimized/hero-construction-6e3494c3-960.webp" alt="Construction crew attending a worker down from heat on a concrete deck in the afternoon sun" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 74% 50%; display: block; filter: brightness(0.94) contrast(1.04) saturate(0.98);" srcset="assets/optimized/hero-construction-6e3494c3-320.webp 320w, assets/optimized/hero-construction-6e3494c3-640.webp 640w, assets/optimized/hero-construction-6e3494c3-960.webp 960w, assets/optimized/hero-construction-6e3494c3-1280.webp 1280w, assets/optimized/hero-construction-6e3494c3-1642.webp 1642w" width="1642" height="958" decoding="async" loading="eager" sizes="100vw" fetchpriority="high"></picture>
+    <div data-hero-scrim style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(98deg, rgba(6,6,7,0.94) 0%, rgba(6,6,7,0.86) 21%, rgba(6,6,7,0.7) 38%, rgba(6,6,7,0.44) 56%, rgba(6,6,7,0.2) 76%, rgba(6,6,7,0.05) 92%, rgba(6,6,7,0) 100%);"></div>
+    <div data-hero-base style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, #060607 0%, rgba(6,6,7,0.52) 13%, rgba(6,6,7,0) 34%), linear-gradient(to bottom, rgba(6,6,7,0.62) 0%, rgba(6,6,7,0) 18%);"></div>
     <div style="position: relative; z-index: 1; width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px);">
-      <div data-hero-copy="" style="max-width: 600px; padding: clamp(44px, 5vw, 72px) 0;">
-        <div data-reveal="" style="display: inline-flex; align-items: center; margin-bottom: 24px;"><span data-hero-badge="" style="display: inline-block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #060607; background: #FAFAFA; border-radius: 100px; padding: 9px 18px;">For U.S. Construction &amp; Site Safety</span></div>
-        <h1 data-reveal="" data-reveal-delay="70" style="font-size: clamp(38px, 4.4vw, 53px); font-weight: 500; line-height: 1.06; letter-spacing: -0.034em; margin: 0 0 22px; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">Heat strain takes the one</span> <span style="color: #AEAEB8;">who looked fine at morning stretch.</span></h1>
-        <p data-reveal="" data-reveal-delay="130" style="font-size: clamp(18px, 1.9vw, 22px); font-weight: 400; line-height: 1.45; color: #C8C8D0; margin: 0 0 clamp(28px, 3vw, 38px); max-width: 34ch; text-wrap: pretty;">Know before it costs you one of them.</p>
-        <div data-reveal="" data-reveal-delay="190" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
-          <a href="#demo" style="font-size: 16px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 16px 30px; border-radius: 100px; white-space: nowrap; transition: background .2s ease, transform .2s ease;" style-hover="background:#22D3EE;transform:translateY(-2px)">Book a 10 minute call</a>
+      <div data-hero-copy style="max-width: 600px; padding: clamp(44px, 5vw, 72px) 0;">
+        <div data-hero-anim style="display: inline-flex; align-items: center; margin-bottom: 24px; animation: hsRise .8s cubic-bezier(.16,1,.3,1) 150ms backwards;"><span data-hero-badge style="display: inline-block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0; text-transform: uppercase; color: #060607; background: #FAFAFA; border-radius: 100px; padding: 9px 18px;">For U.S. Construction &amp; Site Safety</span></div>
+        <h1 data-hero-anim style="animation: hsRise .95s cubic-bezier(.16,1,.3,1) 240ms backwards; font-size: 53px; font-weight: 500; line-height: 1.06; letter-spacing: 0; margin: 0 0 22px; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">Heat strain takes the one</span> <span data-hero-anim style="color: #AEAEB8; animation: hsFade 1.1s ease 640ms backwards;">who looked fine at morning stretch.</span></h1>
+        <p data-hero-anim style="animation: hsRise .85s cubic-bezier(.16,1,.3,1) 420ms backwards; font-size: 22px; font-weight: 400; line-height: 1.45; color: #C8C8D0; margin: 0 0 clamp(28px, 3vw, 38px); max-width: 34ch; text-wrap: pretty;">Know before it costs you one of them.</p>
+        <div data-hero-anim style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; animation: hsRise .85s cubic-bezier(.16,1,.3,1) 540ms backwards;">
+          <a href="#demo" style="font-size: 16px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 16px 30px; border-radius: 100px; white-space: nowrap; transition: background .2s ease, transform .2s ease, scale .18s ease;" style-hover="background:#22D3EE;transform:translateY(-2px)" style-active="scale: .97">Book a 10 minute call</a>
         </div>
-        <div data-reveal="" data-reveal-delay="230" data-hero-proof="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.13em; text-transform: uppercase; color: #9C9CA6; margin-top: clamp(22px, 2.4vw, 30px); line-height: 1.7; max-width: 40ch;">Backed By Sony, EU Seal of Excellence</div>
+        <div data-hero-anim data-hero-proof style="animation: hsFade 1s ease 760ms backwards; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; text-transform: uppercase; color: #9C9CA6; margin-top: clamp(22px, 2.4vw, 30px); line-height: 1.7; max-width: 40ch;">Backed By Sony, EU Seal of Excellence</div>
       </div>
     </div>
   </section>
 
   <section data-screen-label="Recognition" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
-      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
-        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 20ch; text-wrap: balance;"><span style="color: #FAFAFA;">Recognized By European</span> <span style="color: #8A8A96;">Innovation Programs.</span></h2>
+      <div data-reveal style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: 52px; font-weight: 500; line-height: 1.06; letter-spacing: 0; margin: 0; max-width: 20ch; text-wrap: balance;"><span style="color: #FAFAFA;">Recognized By European</span> <span style="color: #8A8A96;">Innovation Programs.</span></h2>
       </div>
-      <div data-reveal="" aria-hidden="true" style="margin: 0 0 clamp(24px, 2.6vw, 32px); height: 1px; background: #1F1F23;"></div>
-      <div data-marks-grid="" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(10px, 1.2vw, 16px);">
-        <div data-swipe="" data-swipe-delay="0" data-mark-tile="" style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55;transform:translateY(-2px)">
-          <img src="assets/mark-eit-health-light.png" alt="EIT Health" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
+      <div data-reveal data-reveal-kind="rule" aria-hidden="true" style="margin: 0 0 clamp(24px, 2.6vw, 32px); height: 1px; background: #1F1F23;"></div>
+      <div data-marks-grid style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(10px, 1.2vw, 16px);">
+        <div data-swipe data-swipe-delay="0" data-mark-tile style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55">
+          <img src="assets/optimized/mark-eit-health-light-87aff19e-600.webp" alt="EIT Health" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;" srcset="assets/optimized/mark-eit-health-light-87aff19e-320.webp 320w, assets/optimized/mark-eit-health-light-87aff19e-600.webp 600w" width="600" height="400" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
         </div>
-        <div data-swipe="" data-swipe-delay="95" data-mark-tile="" style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55;transform:translateY(-2px)">
-          <img src="assets/mark-sony-light.png" alt="Sony" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
+        <div data-swipe data-swipe-delay="95" data-mark-tile style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55">
+          <img src="assets/optimized/mark-sony-light-16eb2c29-600.webp" alt="Sony" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;" srcset="assets/optimized/mark-sony-light-16eb2c29-320.webp 320w, assets/optimized/mark-sony-light-16eb2c29-600.webp 600w" width="600" height="400" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
         </div>
-        <div data-swipe="" data-swipe-delay="190" data-mark-tile="" style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; container-type: inline-size; display: flex; align-items: center; justify-content: center; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55;transform:translateY(-2px)">
+        <div data-swipe data-swipe-delay="190" data-mark-tile style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; container-type: inline-size; display: flex; align-items: center; justify-content: center; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55">
           <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(5px, 4cqw, 12px); width: 100%; padding: clamp(8px, 5.5cqw, 22px) clamp(6px, 4.5cqw, 18px);">
-            <img src="assets/mark-eu-flag-sm.png" alt="European Union" loading="lazy" style="width: clamp(46px, 42cqw, 112px); height: auto; display: block;" />
+            <img src="assets/optimized/mark-eu-flag-sm-12660da7-420.webp" alt="European Union" loading="lazy" style="width: clamp(46px, 42cqw, 112px); height: auto; display: block;" srcset="assets/optimized/mark-eu-flag-sm-12660da7-320.webp 320w, assets/optimized/mark-eu-flag-sm-12660da7-420.webp 420w" width="420" height="287" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
             <div style="display: flex; flex-direction: column; align-items: center; gap: clamp(2px, 1.4cqw, 5px); text-align: center; white-space: nowrap;">
-              <span style="font-size: clamp(13px, 10.4cqw, 26px); font-weight: 600; letter-spacing: -0.025em; line-height: 1; color: #003399;">Horizon 2020</span>
-              <span style="font-size: clamp(8.5px, 5.9cqw, 15px); font-weight: 500; letter-spacing: 0.005em; line-height: 1.2; color: #1B4CA8;">EU Research &amp; Innovation</span>
+              <span style="font-size: 26px; font-weight: 600; letter-spacing: 0; line-height: 1; color: #003399;">Horizon 2020</span>
+              <span style="font-size: 15px; font-weight: 500; letter-spacing: 0; line-height: 1.2; color: #1B4CA8;">EU Research &amp; Innovation</span>
             </div>
           </div>
         </div>
-        <div data-swipe="" data-swipe-delay="285" data-mark-tile="" style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55;transform:translateY(-2px)">
-          <img src="assets/mark-venture-cup-light.png" alt="Venture Cup" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
+        <div data-swipe data-swipe-delay="285" data-mark-tile style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55">
+          <img src="assets/optimized/mark-venture-cup-light-56ae1427-600.webp" alt="Venture Cup" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;" srcset="assets/optimized/mark-venture-cup-light-56ae1427-320.webp 320w, assets/optimized/mark-venture-cup-light-56ae1427-600.webp 600w" width="600" height="400" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
         </div>
-        <div data-swipe="" data-swipe-delay="380" data-mark-tile="" style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55;transform:translateY(-2px)">
-          <img src="assets/mark-almi-light.png" alt="Almi" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;" />
+        <div data-swipe data-swipe-delay="380" data-mark-tile style="aspect-ratio: 3 / 2; background: #FFFFFF; border: 1px solid #26262B; border-radius: clamp(14px, 1.6vw, 20px); overflow: hidden; transition: border-color .25s ease, transform .25s ease;" style-hover="border-color:#4A4A55">
+          <img src="assets/optimized/mark-almi-light-bf379c67-600.webp" alt="Almi" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; display: block;" srcset="assets/optimized/mark-almi-light-bf379c67-320.webp 320w, assets/optimized/mark-almi-light-bf379c67-600.webp 600w" width="600" height="400" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
         </div>
       </div>
     </div>  </section>
 
   <section data-screen-label="Why it matters" style="background: #060607;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
-      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
-        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">The Risk That Takes Your People</span> <span style="color: #8A8A96;">Is The One Nobody Can See.</span></h2>
+      <div data-reveal style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: 52px; font-weight: 500; line-height: 1.06; letter-spacing: 0; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">The Risk That Takes Your People</span> <span style="color: #8A8A96;">Is The One Nobody Can See.</span></h2>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: clamp(24px, 3vw, 40px); align-items: stretch; margin-bottom: clamp(44px, 5vw, 68px);">
-        <div data-reveal="" style="position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #1F1F23; min-height: clamp(280px, 34vw, 420px);">
-          <img src="assets/card-construction.jpg" alt="Site foreman reading a tablet in glaring afternoon sun on a concrete deck" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block;" />
+        <div data-reveal data-reveal-kind="media" style="position: relative; border-radius: 24px; overflow: hidden; border: 1px solid #1F1F23; min-height: clamp(280px, 34vw, 420px);">
+          <img src="assets/optimized/card-construction-f06e86c3-960.webp" alt="Site foreman reading a tablet in glaring afternoon sun on a concrete deck" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; display: block;" srcset="assets/optimized/card-construction-f06e86c3-320.webp 320w, assets/optimized/card-construction-f06e86c3-640.webp 640w, assets/optimized/card-construction-f06e86c3-960.webp 960w, assets/optimized/card-construction-f06e86c3-1280.webp 1280w, assets/optimized/card-construction-f06e86c3-1400.webp 1400w" width="1400" height="876" decoding="async" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,7,0) 42%, rgba(6,6,7,0.92) 100%);"></div>
         </div>
-        <div data-reveal="" data-reveal-delay="60" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(22px, 2.6vw, 34px) clamp(24px, 2.8vw, 36px); display: flex; flex-direction: column; justify-content: center;">
-            <div data-reveal="" data-reveal-delay="0" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0;">
+        <div data-reveal data-reveal-delay="60" data-glow style="background: radial-gradient(440px circle at var(--mx, -999px) var(--my, -999px), rgba(34,211,238,0.06), rgba(34,211,238,0) 70%), #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(22px, 2.6vw, 34px) clamp(24px, 2.8vw, 36px); display: flex; flex-direction: column; justify-content: center;">
+            <div data-reveal data-reveal-delay="0" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0;">
               <div style="position: relative; flex-shrink: 0; width: clamp(92px, 8.2vw, 112px); height: clamp(92px, 8.2vw, 112px);">
-                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"></circle><circle data-arc="0.34" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"></circle></svg>
+                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"/><circle data-arc="0.34" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"/></svg>
                 <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
-                  <span style="display: flex; align-items: baseline; gap: 1px;"><span data-countto="34" style="font-size: clamp(27px, 2.7vw, 37px); font-weight: 500; line-height: 1; letter-spacing: -0.045em; color: #FAFAFA; font-variant-numeric: tabular-nums;">34</span><span style="font-size: clamp(13px, 1.2vw, 16px); font-weight: 500; line-height: 1; color: #22D3EE;">%</span></span>
+                  <span style="display: flex; align-items: baseline; gap: 1px;"><span data-countto="34" style="font-size: 37px; font-weight: 500; line-height: 1; letter-spacing: 0; color: #FAFAFA; font-variant-numeric: tabular-nums;">34</span><span style="font-size: 16px; font-weight: 500; line-height: 1; color: #22D3EE;">%</span></span>
                 </div>
               </div>
-              <p style="font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">Heat deaths</span>of the U.S. workplace total.</p>
+              <p style="font-size: 18.5px; line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">Heat deaths</span>of the U.S. workplace total.</p>
             </div>
-            <div data-reveal="" data-reveal-delay="70" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0; border-top: 1px solid #1F1F23;">
+            <div data-reveal data-reveal-delay="70" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0; border-top: 1px solid #1F1F23;">
               <div style="position: relative; flex-shrink: 0; width: clamp(92px, 8.2vw, 112px); height: clamp(92px, 8.2vw, 112px);">
-                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"></circle><circle data-arc="0.7" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"></circle></svg>
+                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"/><circle data-arc="0.7" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"/></svg>
                 <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
-                  <span style="display: flex; align-items: baseline; gap: 1px;"><span data-countto="70" style="font-size: clamp(27px, 2.7vw, 37px); font-weight: 500; line-height: 1; letter-spacing: -0.045em; color: #FAFAFA; font-variant-numeric: tabular-nums;">70</span><span style="font-size: clamp(13px, 1.2vw, 16px); font-weight: 500; line-height: 1; color: #22D3EE;">%</span></span>
+                  <span style="display: flex; align-items: baseline; gap: 1px;"><span data-countto="70" style="font-size: 37px; font-weight: 500; line-height: 1; letter-spacing: 0; color: #FAFAFA; font-variant-numeric: tabular-nums;">70</span><span style="font-size: 16px; font-weight: 500; line-height: 1; color: #22D3EE;">%</span></span>
                 </div>
               </div>
-              <p style="font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">First week</span>of heat deaths on the job happen then.</p>
+              <p style="font-size: 18.5px; line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">First week</span>of heat deaths on the job happen then.</p>
             </div>
-            <div data-reveal="" data-reveal-delay="140" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0; border-top: 1px solid #1F1F23;">
+            <div data-reveal data-reveal-delay="140" style="display: flex; align-items: center; gap: clamp(18px, 2vw, 27px); padding: clamp(16px, 1.8vw, 21px) 0; border-top: 1px solid #1F1F23;">
               <div style="position: relative; flex-shrink: 0; width: clamp(92px, 8.2vw, 112px); height: clamp(92px, 8.2vw, 112px);">
-                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"></circle><circle data-arc="1" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"></circle></svg>
+                <svg viewBox="0 0 100 100" aria-hidden="true" style="width: 100%; height: 100%; display: block; transform: rotate(-90deg);"><circle cx="50" cy="50" r="46" fill="none" stroke="#1F1F23" stroke-width="2.5"/><circle data-arc="1" cx="50" cy="50" r="46" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="289.03" stroke-dashoffset="289.03"/></svg>
                 <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
-                  <span data-countto="111" style="font-size: clamp(27px, 2.7vw, 37px); font-weight: 500; line-height: 1; letter-spacing: -0.045em; color: #FAFAFA; font-variant-numeric: tabular-nums;">111</span>
+                  <span data-countto="111" style="font-size: 37px; font-weight: 500; line-height: 1; letter-spacing: 0; color: #FAFAFA; font-variant-numeric: tabular-nums;">111</span>
                 </div>
               </div>
-              <p style="font-size: clamp(16.5px, 1.6vw, 18.5px); line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">Phoenix</span>days a year above 100 °F.</p>
+              <p style="font-size: 18.5px; line-height: 1.55; color: #C7C7CE; margin: 0; flex: 1 1 0; min-width: 0; text-wrap: pretty;"><span style="display: block; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; text-transform: uppercase; color: #22D3EE; margin-bottom: 8px;">Phoenix</span>days a year above 100 °F.</p>
             </div>
-          <p style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8A92; margin: clamp(14px, 1.6vw, 20px) 0 0; padding-top: clamp(16px, 1.8vw, 22px); border-top: 1px solid #1F1F23;">Sources · BLS · OSHA · NOAA</p>
+          <p style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; text-transform: uppercase; color: #8A8A92; margin: clamp(14px, 1.6vw, 20px) 0 0; padding-top: clamp(16px, 1.8vw, 22px); border-top: 1px solid #1F1F23;">Sources · BLS · OSHA · NOAA</p>
         </div>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px;">
-        <div data-reveal="" data-reveal-delay="0" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1);" style-hover="border-color:#34343C;transform:translateY(-4px)">
+        <div data-reveal data-reveal-delay="0" data-zoomcard data-glow style="background: radial-gradient(440px circle at var(--mx, -999px) var(--my, -999px), rgba(34,211,238,0.06), rgba(34,211,238,0) 70%), #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1);" style-hover="border-color:#34343C">
           <div style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0B0B0D;">
-            <img src="assets/product-patch-skin.jpg" alt="HydroSense patch worn on a forearm during a training evolution" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <img data-zoomimg src="assets/optimized/product-patch-skin-02dfb9e6-960.webp" alt="HydroSense patch worn on a forearm during a training evolution" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.1s cubic-bezier(.16,1,.3,1);" srcset="assets/optimized/product-patch-skin-02dfb9e6-320.webp 320w, assets/optimized/product-patch-skin-02dfb9e6-640.webp 640w, assets/optimized/product-patch-skin-02dfb9e6-960.webp 960w, assets/optimized/product-patch-skin-02dfb9e6-1280.webp 1280w, assets/optimized/product-patch-skin-02dfb9e6-1400.webp 1400w" width="1400" height="1179" decoding="async" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
             <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,7,0) 46%, rgba(15,15,18,0.9) 100%);"></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; padding: 26px 30px 32px;">
-            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: -0.025em; margin: 0; color: #FAFAFA;">Measure the strain</h3>
+            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: 0; margin: 0; color: #FAFAFA;">Measure the strain</h3>
             <p style="font-size: 16.5px; line-height: 1.55; color: #9A9AA2; margin: 0;">Worker by worker.</p>
           </div>
         </div>
-        <div data-reveal="" data-reveal-delay="80" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1);" style-hover="border-color:#34343C;transform:translateY(-4px)">
+        <div data-reveal data-reveal-delay="80" data-zoomcard data-glow style="background: radial-gradient(440px circle at var(--mx, -999px) var(--my, -999px), rgba(34,211,238,0.06), rgba(34,211,238,0) 70%), #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1);" style-hover="border-color:#34343C">
           <div style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0B0B0D;">
-            <img src="assets/app-in-hand.png" alt="The HydroSense app showing a session sweat-loss reading" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <img data-zoomimg src="assets/optimized/app-in-hand-176a7a7d-543.webp" alt="The HydroSense app showing a session sweat-loss reading" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.1s cubic-bezier(.16,1,.3,1);" srcset="assets/optimized/app-in-hand-176a7a7d-320.webp 320w, assets/optimized/app-in-hand-176a7a7d-543.webp 543w" width="543" height="414" decoding="async" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
             <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,7,0) 46%, rgba(15,15,18,0.9) 100%);"></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; padding: 26px 30px 32px;">
-            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: -0.025em; margin: 0; color: #FAFAFA;">Name who is at risk</h3>
+            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: 0; margin: 0; color: #FAFAFA;">Name who is at risk</h3>
             <p style="font-size: 16.5px; line-height: 1.55; color: #9A9AA2; margin: 0;">Not who looks tired.</p>
           </div>
         </div>
-        <div data-reveal="" data-reveal-delay="160" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1);" style-hover="border-color:#34343C;transform:translateY(-4px)">
+        <div data-reveal data-reveal-delay="160" data-zoomcard data-glow style="background: radial-gradient(440px circle at var(--mx, -999px) var(--my, -999px), rgba(34,211,238,0.06), rgba(34,211,238,0) 70%), #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1);" style-hover="border-color:#34343C">
           <div style="position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0B0B0D;">
-            <img src="assets/hero-construction.jpg" alt="Construction crew on a concrete deck in the afternoon sun" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: 66% 56%; display: block;" />
+            <img data-zoomimg src="assets/optimized/hero-construction-6e3494c3-960.webp" alt="Construction crew on a concrete deck in the afternoon sun" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: 66% 56%; display: block; transition: transform 1.1s cubic-bezier(.16,1,.3,1);" srcset="assets/optimized/hero-construction-6e3494c3-320.webp 320w, assets/optimized/hero-construction-6e3494c3-640.webp 640w, assets/optimized/hero-construction-6e3494c3-960.webp 960w, assets/optimized/hero-construction-6e3494c3-1280.webp 1280w, assets/optimized/hero-construction-6e3494c3-1642.webp 1642w" width="1642" height="958" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
             <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,6,7,0) 46%, rgba(15,15,18,0.9) 100%);"></div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 9px; padding: 26px 30px 32px;">
-            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: -0.025em; margin: 0; color: #FAFAFA;">Act before he drops</h3>
+            <h3 style="font-size: 21px; font-weight: 500; line-height: 1.28; letter-spacing: 0; margin: 0; color: #FAFAFA;">Act before he drops</h3>
             <p style="font-size: 16.5px; line-height: 1.55; color: #9A9AA2; margin: 0;">Shade, water, rotation.</p>
           </div>
         </div>
@@ -494,56 +509,56 @@
     </div>
   </section>
 
-  <section data-screen-label="Heat risk map" data-heat-section="" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
+  <section data-screen-label="Heat risk map" data-heat-section style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
-      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
-        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">Where The Heat Season</span> <span style="color: #8A8A96;">Runs Longest.</span></h2>
+      <div data-reveal style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: 52px; font-weight: 500; line-height: 1.06; letter-spacing: 0; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">Where The Heat Season</span> <span style="color: #8A8A96;">Runs Longest.</span></h2>
       </div>
-      <div data-reveal="" data-reveal-delay="60" data-heat-card="" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(26px, 3vw, 38px);">
-        <div data-heat-scroll="" style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
-          <div data-heat-inner="" style="min-width: 540px;">
-            <div data-heat-header="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding-bottom: 14px;">
-              <div data-heat-empty="" style="flex: 1 1 150px; min-width: 0;"></div>
-              <div data-heat-months="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);">
-              <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">APR</div>
-              <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">MAY</div>
-              <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">JUN</div>
-              <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">JUL</div>
-              <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">AUG</div>
-              <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">SEP</div>
-              <div data-heatmonth="" style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #8A8A96; text-align: center;">OCT</div>
+      <div data-reveal data-reveal-delay="60" data-heat-card style="position: relative; background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: clamp(26px, 3vw, 38px);">
+        <div data-heat-scroll style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 8px;">
+          <div data-heat-inner style="min-width: 540px;">
+            <div data-heat-header style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding-bottom: 14px;">
+              <div data-heat-empty style="flex: 1 1 150px; min-width: 0;"></div>
+              <div data-heat-months style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);">
+              <div data-heatmonth style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; color: #8A8A96; text-align: center;">APR</div>
+              <div data-heatmonth style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; color: #8A8A96; text-align: center;">MAY</div>
+              <div data-heatmonth style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; color: #8A8A96; text-align: center;">JUN</div>
+              <div data-heatmonth style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; color: #8A8A96; text-align: center;">JUL</div>
+              <div data-heatmonth style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; color: #8A8A96; text-align: center;">AUG</div>
+              <div data-heatmonth style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; color: #8A8A96; text-align: center;">SEP</div>
+              <div data-heatmonth style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; color: #8A8A96; text-align: center;">OCT</div>
               </div>
             </div>
-            <div data-heatgrid="" style="display: flex; flex-direction: column;">
-              <div data-heat="1,2,3,3,3,2,1" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Phoenix &amp; the Sonoran Desert</div>
-                <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
+            <div data-heatgrid style="display: flex; flex-direction: column;">
+              <div data-heat="1,2,3,3,3,2,1" data-heat-row style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region style="flex: 1 1 150px; min-width: 0; font-size: 15.5px; color: #E4E4E7; letter-spacing: 0; padding-right: 12px;">Phoenix &amp; the Sonoran Desert</div>
+                <div data-heatcells style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
               </div>
-              <div data-heat="0,2,3,3,3,2,1" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Permian Basin &amp; Texas Gulf</div>
-                <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
+              <div data-heat="0,2,3,3,3,2,1" data-heat-row style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region style="flex: 1 1 150px; min-width: 0; font-size: 15.5px; color: #E4E4E7; letter-spacing: 0; padding-right: 12px;">Permian Basin &amp; Texas Gulf</div>
+                <div data-heatcells style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
               </div>
-              <div data-heat="0,1,2,3,3,2,0" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">California Central Valley</div>
-                <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div></div>
+              <div data-heat="0,1,2,3,3,2,0" data-heat-row style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region style="flex: 1 1 150px; min-width: 0; font-size: 15.5px; color: #E4E4E7; letter-spacing: 0; padding-right: 12px;">California Central Valley</div>
+                <div data-heatcells style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div></div>
               </div>
-              <div data-heat="1,2,2,3,3,2,1" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Florida &amp; the Gulf Southeast</div>
-                <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
+              <div data-heat="1,2,2,3,3,2,1" data-heat-row style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region style="flex: 1 1 150px; min-width: 0; font-size: 15.5px; color: #E4E4E7; letter-spacing: 0; padding-right: 12px;">Florida &amp; the Gulf Southeast</div>
+                <div data-heatcells style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div></div>
               </div>
-              <div data-heat="0,1,3,3,3,1,0" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Nevada &amp; the Mojave</div>
-                <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div></div>
+              <div data-heat="0,1,3,3,3,1,0" data-heat-row style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region style="flex: 1 1 150px; min-width: 0; font-size: 15.5px; color: #E4E4E7; letter-spacing: 0; padding-right: 12px;">Nevada &amp; the Mojave</div>
+                <div data-heatcells style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #F87171;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #0E7490;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #17171B;"></div></div>
               </div>
-              <div data-heat="2,2,2,2,2,2,2" data-heat-row="" style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
-                <div data-heat-region="" style="flex: 1 1 150px; min-width: 0; font-size: clamp(14.5px, 1.4vw, 15.5px); color: #E4E4E7; letter-spacing: -0.01em; padding-right: 12px;">Roof and deck work, radiant load</div>
-                <div data-heatcells="" style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell="" style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div></div>
+              <div data-heat="2,2,2,2,2,2,2" data-heat-row style="display: flex; flex-wrap: nowrap; align-items: center; gap: clamp(6px, 0.8vw, 10px); padding: 9px 0;">
+                <div data-heat-region style="flex: 1 1 150px; min-width: 0; font-size: 15.5px; color: #E4E4E7; letter-spacing: 0; padding-right: 12px;">Roof and deck work, radiant load</div>
+                <div data-heatcells style="flex: 4 1 230px; min-width: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px);"><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div><div data-heatcell style="height: clamp(22px, 2.4vw, 26px); border-radius: 6px; background: #FBBF24;"></div></div>
               </div>
             </div>
           </div>
         </div>
-        <div data-heat-legend="" style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 26px); margin-top: 26px; padding-top: 22px; border-top: 1px solid #1B1B1F;">
-          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #8A8A96;">Heat risk</span>
+        <div data-heat-legend style="display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 26px); margin-top: 26px; padding-top: 22px; border-top: 1px solid #1B1B1F;">
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; text-transform: uppercase; color: #8A8A96;">Heat risk</span>
           <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #17171B;"></span>Low</span>
           <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #0E7490;"></span>Elevated</span>
           <span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #8A8A92;"><span style="width: 22px; height: 8px; border-radius: 100px; background: #FBBF24;"></span>High</span>
@@ -551,76 +566,76 @@
         </div>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(18px, 2.4vw, 32px); margin-top: clamp(20px, 2.4vw, 30px);">
-        <div data-reveal="" data-reveal-delay="0" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 0;">
-          <div style="display: flex; align-items: baseline; gap: 3px;"><span data-countto="430" style="font-size: clamp(34px, 3.4vw, 44px); font-weight: 500; line-height: 1; letter-spacing: -0.04em; color: #FAFAFA; font-variant-numeric: tabular-nums;">430</span></div>
+        <div data-reveal data-reveal-delay="0" data-glow style="background: radial-gradient(440px circle at var(--mx, -999px) var(--my, -999px), rgba(34,211,238,0.06), rgba(34,211,238,0) 70%), #0F0F12; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 0;">
+          <div style="display: flex; align-items: baseline; gap: 3px;"><span data-countto="430" style="font-size: 44px; font-weight: 500; line-height: 1; letter-spacing: 0; color: #FAFAFA; font-variant-numeric: tabular-nums;">430</span></div>
           <div style="height: 1px; background: #1F1F23; margin: 18px 0 15px;"></div><p style="font-size: 16px; line-height: 1.55; color: #9A9AA2; margin: 0; min-height: 3.1em; text-wrap: pretty;">heat deaths in Maricopa County, AZ in 2025, up from 84 in 2015.</p>
         </div>
-        <div data-reveal="" data-reveal-delay="80" style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 0;">
-          <div style="display: flex; align-items: baseline; gap: 3px;"><span data-countto="47" style="font-size: clamp(34px, 3.4vw, 44px); font-weight: 500; line-height: 1; letter-spacing: -0.04em; color: #FAFAFA; font-variant-numeric: tabular-nums;">47</span><span style="font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; color: #22D3EE;">%</span></div>
+        <div data-reveal data-reveal-delay="80" data-glow style="background: radial-gradient(440px circle at var(--mx, -999px) var(--my, -999px), rgba(34,211,238,0.06), rgba(34,211,238,0) 70%), #0F0F12; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(24px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 0;">
+          <div style="display: flex; align-items: baseline; gap: 3px;"><span data-countto="47" style="font-size: 44px; font-weight: 500; line-height: 1; letter-spacing: 0; color: #FAFAFA; font-variant-numeric: tabular-nums;">47</span><span style="font-size: 22px; font-weight: 500; color: #22D3EE;">%</span></div>
           <div style="height: 1px; background: #1F1F23; margin: 18px 0 15px;"></div><p style="font-size: 16px; line-height: 1.55; color: #9A9AA2; margin: 0; min-height: 3.1em; text-wrap: pretty;">of those deaths came on days rated only <em style="font-style: normal; color: #C7C7CE;">moderate</em> risk.</p>
         </div>
       </div>
-      <p style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; color: #5E5E66; margin: 22px 0 0;">SOURCES: MARICOPA COUNTY DPH · BLS · EPA · NFPA</p>
+      <p style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0; color: #9A9AA6; margin: 22px 0 0;">SOURCES: MARICOPA COUNTY DPH · BLS · EPA · NFPA</p>
     </div>
   </section>
 
   <section id="product" data-screen-label="The product" style="background: #060607;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 56px; align-items: center;">
-        <div data-reveal="" style="min-width: 0;">
-          <div style="position: relative; border-radius: 24px; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23;">
-            <div style="display: flex; width: 100%; aspect-ratio: 4 / 3; transition: transform .55s cubic-bezier(.22,.61,.36,1); transform: translateX({{ trackX }});">
+        <div data-carousel-wrap style="min-width: 0;">
+          <div data-reveal data-reveal-kind="media" data-carousel role="group" aria-roledescription="carousel" aria-label="Product photos, swipe or use arrow keys" style="position: relative; border-radius: 24px; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23; touch-action: pan-y; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; cursor: grab;">
+            <div data-slides style="display: flex; width: 100%; aspect-ratio: 4 / 3; transition: transform .6s cubic-bezier(.22,1,.36,1); transform: translateX({{ trackX }});">
               <div style="flex: 0 0 100%; min-width: 0; height: 100%;">
-                <img src="assets/app-in-hand.png" alt="The HydroSense app showing a session sweat-loss reading, with the patch worn on the forearm" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <img src="assets/optimized/app-in-hand-176a7a7d-543.webp" alt="The HydroSense app showing a session sweat-loss reading, with the patch worn on the forearm" style="width: 100%; height: 100%; object-fit: cover; display: block;" srcset="assets/optimized/app-in-hand-176a7a7d-320.webp 320w, assets/optimized/app-in-hand-176a7a7d-543.webp 543w" width="543" height="414" decoding="async" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
               </div>
               <div style="flex: 0 0 100%; min-width: 0; height: 100%;">
-                <img src="assets/product-phone-pack.jpg" alt="A phone showing the session summary next to a HydroSense two-pack and a sweat patch" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <img src="assets/optimized/product-phone-pack-ec4879ed-960.webp" alt="A phone showing the session summary next to a HydroSense two-pack and a sweat patch" style="width: 100%; height: 100%; object-fit: cover; display: block;" srcset="assets/optimized/product-phone-pack-ec4879ed-320.webp 320w, assets/optimized/product-phone-pack-ec4879ed-640.webp 640w, assets/optimized/product-phone-pack-ec4879ed-960.webp 960w, assets/optimized/product-phone-pack-ec4879ed-1280.webp 1280w, assets/optimized/product-phone-pack-ec4879ed-1400.webp 1400w" width="1400" height="1179" decoding="async" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
               </div>
               <div style="flex: 0 0 100%; min-width: 0; height: 100%;">
-                <img src="assets/product-patch-skin.jpg" alt="Close-up of the numbered sweat patch worn on a forearm" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                <img src="assets/optimized/product-patch-skin-02dfb9e6-960.webp" alt="Close-up of the numbered sweat patch worn on a forearm" style="width: 100%; height: 100%; object-fit: cover; display: block;" srcset="assets/optimized/product-patch-skin-02dfb9e6-320.webp 320w, assets/optimized/product-patch-skin-02dfb9e6-640.webp 640w, assets/optimized/product-patch-skin-02dfb9e6-960.webp 960w, assets/optimized/product-patch-skin-02dfb9e6-1280.webp 1280w, assets/optimized/product-patch-skin-02dfb9e6-1400.webp 1400w" width="1400" height="1179" decoding="async" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
               </div>
             </div>
-            <button type="button" onClick="{{ prevSlide }}" aria-label="Previous photo" style="position: absolute; top: 50%; left: 12px; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 100px; border: 1px solid rgba(250,250,250,0.18); background: rgba(6,6,7,0.55); backdrop-filter: blur(8px); color: #FAFAFA; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease;" style-hover="background: rgba(6,6,7,0.85)">‹</button>
-            <button type="button" onClick="{{ nextSlide }}" aria-label="Next photo" style="position: absolute; top: 50%; right: 12px; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 100px; border: 1px solid rgba(250,250,250,0.18); background: rgba(6,6,7,0.55); backdrop-filter: blur(8px); color: #FAFAFA; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease;" style-hover="background: rgba(6,6,7,0.85)">›</button>
+            <button type="button" onClick="{{ prevSlide }}" aria-label="Previous photo" style="position: absolute; top: 50%; left: 12px; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 100px; border: 1px solid rgba(250,250,250,0.18); background: rgba(6,6,7,0.55); backdrop-filter: blur(8px); color: #FAFAFA; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease, scale .18s ease;" style-hover="background: rgba(6,6,7,0.85)" style-active="scale: .9">‹</button>
+            <button type="button" onClick="{{ nextSlide }}" aria-label="Next photo" style="position: absolute; top: 50%; right: 12px; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 100px; border: 1px solid rgba(250,250,250,0.18); background: rgba(6,6,7,0.55); backdrop-filter: blur(8px); color: #FAFAFA; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s ease, scale .18s ease;" style-hover="background: rgba(6,6,7,0.85)" style-active="scale: .9">›</button>
           </div>
-          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px;">
-            <button type="button" onClick="{{ goSlide0 }}" aria-label="Photo 1" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-              <span style="display: block; width: 100%; height: 3px; border-radius: 100px; background: {{ dot0 }}; transition: background .25s ease;"></span>
+          <div data-reveal data-reveal-delay="160" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 18px;">
+            <button type="button" onClick="{{ goSlide0 }}" aria-label="Photo 1" aria-current="{{ cur0 }}" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+              <span style="position: relative; display: block; width: 100%; height: 3px; border-radius: 100px; background: rgba(250,250,250,0.22); overflow: hidden;"><span data-dotfill style="position: absolute; inset: 0; border-radius: 100px; background: #FAFAFA; transform-origin: left center; transform: scaleX({{ dotS0 }});"></span></span>
             </button>
-            <button type="button" onClick="{{ goSlide1 }}" aria-label="Photo 2" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-              <span style="display: block; width: 100%; height: 3px; border-radius: 100px; background: {{ dot1 }}; transition: background .25s ease;"></span>
+            <button type="button" onClick="{{ goSlide1 }}" aria-label="Photo 2" aria-current="{{ cur1 }}" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+              <span style="position: relative; display: block; width: 100%; height: 3px; border-radius: 100px; background: rgba(250,250,250,0.22); overflow: hidden;"><span data-dotfill style="position: absolute; inset: 0; border-radius: 100px; background: #FAFAFA; transform-origin: left center; transform: scaleX({{ dotS1 }});"></span></span>
             </button>
-            <button type="button" onClick="{{ goSlide2 }}" aria-label="Photo 3" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
-              <span style="display: block; width: 100%; height: 3px; border-radius: 100px; background: {{ dot2 }}; transition: background .25s ease;"></span>
+            <button type="button" onClick="{{ goSlide2 }}" aria-label="Photo 3" aria-current="{{ cur2 }}" style="width: 44px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+              <span style="position: relative; display: block; width: 100%; height: 3px; border-radius: 100px; background: rgba(250,250,250,0.22); overflow: hidden;"><span data-dotfill style="position: absolute; inset: 0; border-radius: 100px; background: #FAFAFA; transform-origin: left center; transform: scaleX({{ dotS2 }});"></span></span>
             </button>
           </div>
         </div>
-        <div data-reveal="" data-reveal-delay="90">
-          <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0 0 34px; text-wrap: balance;"><span style="color: #FAFAFA;">One Patch.</span> <span style="color: #8A8A96;">One Photo.</span></h2>
+        <div data-reveal data-reveal-delay="90">
+          <h2 style="font-size: 52px; font-weight: 500; line-height: 1.06; letter-spacing: 0; margin: 0 0 34px; text-wrap: balance;"><span style="color: #FAFAFA;">One Patch.</span> <span style="color: #8A8A96;">One Photo.</span></h2>
           <div style="display: flex; flex-direction: column;">
-            <div style="display: flex; gap: clamp(16px, 2vw, 26px); align-items: baseline; padding: clamp(17px, 1.9vw, 23px) 0; border-top: 1px solid #1F1F23;">
-              <span style="flex-shrink: 0; width: clamp(54px, 5.4vw, 76px); text-align: right; font-size: clamp(38px, 4.2vw, 56px); font-weight: 500; letter-spacing: -0.05em; line-height: 0.82; font-variant-numeric: tabular-nums;"><span style="color: #1C1C21;">0</span><span style="color: #22D3EE;">1</span></span>
+            <div data-reveal data-reveal-delay="140" style="display: flex; gap: clamp(16px, 2vw, 26px); align-items: baseline; padding: clamp(17px, 1.9vw, 23px) 0; border-top: 1px solid #1F1F23;">
+              <span style="flex-shrink: 0; width: clamp(54px, 5.4vw, 76px); text-align: right; font-size: 56px; font-weight: 500; letter-spacing: 0; line-height: 0.82; font-variant-numeric: tabular-nums;"><span style="color: #1C1C21;">0</span><span style="color: #22D3EE;">1</span></span>
               <div>
-                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 6px; color: #FAFAFA;">Apply</h3>
+                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: 0; margin: 0 0 6px; color: #FAFAFA;">Apply</h3>
                 <p style="font-size: 16.5px; line-height: 1.6; color: #9A9AA2; margin: 0;">Forearm, arm or lower back.</p>
               </div>
             </div>
-            <div style="display: flex; gap: clamp(16px, 2vw, 26px); align-items: baseline; padding: clamp(17px, 1.9vw, 23px) 0; border-top: 1px solid #1F1F23;">
-              <span style="flex-shrink: 0; width: clamp(54px, 5.4vw, 76px); text-align: right; font-size: clamp(38px, 4.2vw, 56px); font-weight: 500; letter-spacing: -0.05em; line-height: 0.82; font-variant-numeric: tabular-nums;"><span style="color: #1C1C21;">0</span><span style="color: #22D3EE;">2</span></span>
+            <div data-reveal data-reveal-delay="220" style="display: flex; gap: clamp(16px, 2vw, 26px); align-items: baseline; padding: clamp(17px, 1.9vw, 23px) 0; border-top: 1px solid #1F1F23;">
+              <span style="flex-shrink: 0; width: clamp(54px, 5.4vw, 76px); text-align: right; font-size: 56px; font-weight: 500; letter-spacing: 0; line-height: 0.82; font-variant-numeric: tabular-nums;"><span style="color: #1C1C21;">0</span><span style="color: #22D3EE;">2</span></span>
               <div>
-                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 6px; color: #FAFAFA;">Photograph</h3>
+                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: 0; margin: 0 0 6px; color: #FAFAFA;">Photograph</h3>
                 <p style="font-size: 16.5px; line-height: 1.6; color: #9A9AA2; margin: 0;">Enter the furthest channel reached.</p>
               </div>
             </div>
-            <div style="display: flex; gap: clamp(16px, 2vw, 26px); align-items: baseline; padding: clamp(17px, 1.9vw, 23px) 0; border-top: 1px solid #1F1F23;">
-              <span style="flex-shrink: 0; width: clamp(54px, 5.4vw, 76px); text-align: right; font-size: clamp(38px, 4.2vw, 56px); font-weight: 500; letter-spacing: -0.05em; line-height: 0.82; font-variant-numeric: tabular-nums;"><span style="color: #1C1C21;">0</span><span style="color: #22D3EE;">3</span></span>
+            <div data-reveal data-reveal-delay="300" style="display: flex; gap: clamp(16px, 2vw, 26px); align-items: baseline; padding: clamp(17px, 1.9vw, 23px) 0; border-top: 1px solid #1F1F23;">
+              <span style="flex-shrink: 0; width: clamp(54px, 5.4vw, 76px); text-align: right; font-size: 56px; font-weight: 500; letter-spacing: 0; line-height: 0.82; font-variant-numeric: tabular-nums;"><span style="color: #1C1C21;">0</span><span style="color: #22D3EE;">3</span></span>
               <div>
-                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 6px; color: #FAFAFA;">Read</h3>
+                <h3 style="font-size: 18px; font-weight: 500; letter-spacing: 0; margin: 0 0 6px; color: #FAFAFA;">Read</h3>
                 <p style="font-size: 16.5px; line-height: 1.6; color: #9A9AA2; margin: 0;">Fluid loss and sweat rate, per person.</p>
               </div>
             </div>
           </div>
-          <a href="https://lp.hydrosense.store/product-safety/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 34px; font-size: 15px; color: #22D3EE; border-bottom: 1px solid rgba(34,211,238,0.35); padding-bottom: 2px; transition: color .2s ease, border-color .2s ease;" style-hover="color:#67E8F9;border-color:#67E8F9">Product safety<span aria-hidden="true">&rsaquo;</span></a>
+          <a href="https://lp.hydrosense.store/product-safety/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 34px; font-size: 15px; color: #22D3EE; border-bottom: 1px solid rgba(34,211,238,0.35); padding-bottom: 2px; transition: color .2s ease, border-color .2s ease;" style-hover="color:#67E8F9;border-color:#67E8F9" style-active="opacity: .7" data-nudge>Product safety<span data-arrow aria-hidden="true" style="display: inline-block; transition: transform .3s cubic-bezier(.16,1,.3,1);">&rsaquo;</span></a>
         </div>
       </div>
     </div>
@@ -629,18 +644,18 @@
   <section data-screen-label="The sensor" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: clamp(34px, 4vw, 64px); align-items: center;">
-        <div data-reveal="">
-          <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0 0 34px; text-wrap: balance;"><span style="color: #FAFAFA;">Single Use Sweat Patch.</span></h2>
+        <div data-reveal>
+          <h2 style="font-size: 52px; font-weight: 500; line-height: 1.06; letter-spacing: 0; margin: 0 0 34px; text-wrap: balance;"><span style="color: #FAFAFA;">Single Use Sweat Patch.</span></h2>
           <div style="display: flex; flex-direction: column; border-top: 1px solid #1F1F23;">
-            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Worn under PPE</p></div>
-            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Sweat only, no blood or urine</p></div>
-            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Sweat rate, fluid loss, sodium and potassium</p></div>
-            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">One shift per patch, then discarded</p></div>
-            <div style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">3M adhesive, ISO biocompatible</p></div>
+            <div data-reveal data-reveal-kind="left" data-reveal-delay="120" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Worn under PPE</p></div>
+            <div data-reveal data-reveal-kind="left" data-reveal-delay="190" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Sweat only, no blood or urine</p></div>
+            <div data-reveal data-reveal-kind="left" data-reveal-delay="260" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">Sweat rate, fluid loss, sodium and potassium</p></div>
+            <div data-reveal data-reveal-kind="left" data-reveal-delay="330" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">One shift per patch, then discarded</p></div>
+            <div data-reveal data-reveal-kind="left" data-reveal-delay="400" style="display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid #1F1F23;"><span aria-hidden="true" style="flex-shrink: 0; width: 5px; height: 5px; border-radius: 100px; background: #22D3EE; margin-top: 9px;"></span><p style="font-size: 17.5px; line-height: 1.5; color: #E4E4E7; margin: 0;">3M adhesive, ISO biocompatible</p></div>
           </div>
         </div>
-        <div data-reveal="" data-reveal-delay="90" style="border-radius: 24px; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23; position: relative;">
-          <video data-lazyvideo="assets/hydrosense-formation.mp4" muted="muted" loop="loop" playsInline="playsInline" preload="none" poster="assets/ff-sensor-closeup.jpg" style="width: 100%; height: auto; display: block; object-fit: contain; background: #0B0B0D;"></video>
+        <div data-reveal data-reveal-kind="media" data-reveal-delay="90" style="border-radius: 24px; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23; position: relative;">
+          <video data-lazyvideo="assets/hydrosense-formation.mp4" muted="muted" loop="loop" playsInline="playsInline" preload="none" poster="assets/optimized/ff-sensor-closeup-6c950cb4-960.webp" style="width: 100%; height: auto; display: block; object-fit: contain; background: #0B0B0D;"></video>
         </div>
       </div>
     </div>
@@ -648,105 +663,105 @@
 
   <section id="data" data-screen-label="Sample report" style="background: #060607;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
-      <div data-reveal="" style="margin-bottom: clamp(34px, 3.8vw, 52px);">
-        <h2 style="font-size: clamp(33px, 4vw, 52px); font-weight: 500; line-height: 1.06; letter-spacing: -0.032em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">Every Shift Ends</span> <span style="color: #8A8A96;">With A Name.</span></h2>
+      <div data-reveal style="margin-bottom: clamp(34px, 3.8vw, 52px);">
+        <h2 style="font-size: 52px; font-weight: 500; line-height: 1.06; letter-spacing: 0; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">Every Shift Ends</span> <span style="color: #8A8A96;">With A Name.</span></h2>
       </div>
-      <div data-reveal="" data-report-card="" style="position: relative; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: 44px 40px;">
-        <div aria-hidden="true" style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #17171B;"><div data-playhead="" style="height: 100%; width: 100%; transform-origin: left center; transform: scaleX(1); background: linear-gradient(90deg, #0E7490, #22D3EE);"></div></div>
-        <div data-report-header="" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-bottom: 34px; padding-bottom: 20px; border-bottom: 1px solid #1F1F23;">
-          <div data-report-title="" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 16.5px; font-weight: 500; letter-spacing: -0.02em; color: #FAFAFA;">
+      <div data-reveal data-report-card style="position: relative; overflow: hidden; background: #0F0F12; border: 1px solid #1F1F23; border-radius: 24px; padding: 44px 40px;">
+        <div aria-hidden="true" style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #17171B;"><div data-playhead style="height: 100%; width: 100%; transform-origin: left center; transform: scaleX(1); background: linear-gradient(90deg, #0E7490, #22D3EE);"></div></div>
+        <div data-report-header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-bottom: 34px; padding-bottom: 20px; border-bottom: 1px solid #1F1F23;">
+          <div data-report-title style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 16.5px; font-weight: 500; letter-spacing: 0; color: #FAFAFA;">
             <span>Sample report</span>
             <span style="color: #4A4A52;">·</span>
             <span style="color: #8A8A96;">Afternoon pour</span>
           </div>
-          <div data-report-meta="" style="display: inline-flex; align-items: stretch; border-radius: 3px; overflow: hidden; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; white-space: nowrap; flex-shrink: 0;"><span style="display: inline-flex; align-items: center; background: #101014; border: 1px solid #2A2A30; border-right: 0; padding: 6px 8px 5px;"><span data-livedot="" style="width: 5px; height: 5px; background: #22D3EE; display: block; animation: hsDot 7s ease-in-out infinite;"></span></span><span style="background: #17171B; color: #FAFAFA; border: 1px solid #2A2A30; padding: 6px 9px 5px;">fl oz</span></div>
+          <div data-report-meta style="display: inline-flex; align-items: stretch; border-radius: 3px; overflow: hidden; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0; text-transform: uppercase; line-height: 1; white-space: nowrap; flex-shrink: 0;"><span style="display: inline-flex; align-items: center; background: #101014; border: 1px solid #2A2A30; border-right: 0; padding: 6px 8px 5px;"><span data-livedot style="width: 5px; height: 5px; background: #22D3EE; display: block; animation: hsDot 7s ease-in-out infinite;"></span></span><span style="background: #17171B; color: #FAFAFA; border: 1px solid #2A2A30; padding: 6px 9px 5px;">fl oz</span></div>
         </div>
-        <div data-axis="" style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); margin-bottom: 15px;">
+        <div data-axis style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px); margin-bottom: 15px;">
           <span style="width: clamp(46px, 5vw, 58px); flex-shrink: 0;"></span>
           <div style="position: relative; flex: 1; min-width: 0; height: 13px;">
-            <span data-avglabel="" style="position: absolute; left: 64%; top: 0; transform: translateX(-50%); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #7A7A84; white-space: nowrap;">CREW AVG 48</span>
+            <span data-avglabel style="position: absolute; left: 64%; top: 0; transform: translateX(-50%); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0; color: #7A7A84; white-space: nowrap;">CREW AVG 48</span>
           </div>
           <span style="width: clamp(62px, 7vw, 86px); flex-shrink: 0;"></span>
         </div>
-        <div data-barlist="" style="display: flex; flex-direction: column; gap: 18px; font-variant-numeric: tabular-nums;">
+        <div data-barlist style="display: flex; flex-direction: column; gap: 18px; font-variant-numeric: tabular-nums;">
           <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
             <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-04</span>
-            <div data-track="" style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill="" style="--bw: 92%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #0E7490 0%, #22D3EE 82%); position: relative; overflow: hidden;"><span data-sheen="" style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.34) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 0ms infinite;"></span></div><span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">69 oz</span>
+            <div data-track style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill style="--bw: 92%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #0E7490 0%, #22D3EE 82%); position: relative; overflow: hidden;"><span data-sheen style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.34) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 0ms infinite;"></span></div><span data-avgline aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
+            <span data-barval style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">69 oz</span>
           </div>
           <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
             <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-02</span>
-            <div data-track="" style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill="" style="--bw: 73.5%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #0E7490 0%, #22D3EE 82%); position: relative; overflow: hidden;"><span data-sheen="" style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.34) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 260ms infinite;"></span></div><span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">55 oz</span>
+            <div data-track style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill style="--bw: 73.5%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #0E7490 0%, #22D3EE 82%); position: relative; overflow: hidden;"><span data-sheen style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.34) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 260ms infinite;"></span></div><span data-avgline aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
+            <span data-barval style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">55 oz</span>
           </div>
           <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
             <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-05</span>
-            <div data-track="" style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill="" style="--bw: 60%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #0A4F63 0%, #128CA8 100%); position: relative; overflow: hidden;"><span data-sheen="" style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.15) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 390ms infinite;"></span></div><span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">45 oz</span>
+            <div data-track style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill style="--bw: 60%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #0A4F63 0%, #128CA8 100%); position: relative; overflow: hidden;"><span data-sheen style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.15) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 390ms infinite;"></span></div><span data-avgline aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
+            <span data-barval style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">45 oz</span>
           </div>
           <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
             <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-01</span>
-            <div data-track="" style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill="" style="--bw: 53.5%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #7A5410 0%, #E0A82E 100%); position: relative; overflow: hidden;"><span data-sheen="" style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.15) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 520ms infinite;"></span></div><span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">40 oz</span>
+            <div data-track style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill style="--bw: 53.5%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #7A5410 0%, #E0A82E 100%); position: relative; overflow: hidden;"><span data-sheen style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.15) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 520ms infinite;"></span></div><span data-avgline aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
+            <span data-barval style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">40 oz</span>
           </div>
           <div style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 20px);">
             <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #8A8A96; width: clamp(46px, 5vw, 58px); flex-shrink: 0;">CR-03</span>
-            <div data-track="" style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill="" style="--bw: 40%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #7A2A18 0%, #D0563A 100%); position: relative; overflow: hidden;"><span data-sheen="" style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.15) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 650ms infinite;"></span></div><span aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">30 oz</span>
+            <div data-track style="position: relative; flex: 1; min-width: 0; height: 24px; background: #17171B; border-radius: 100px; overflow: hidden;"><div data-barfill style="--bw: 40%; width: var(--bw); height: 100%; border-radius: 100px; background: linear-gradient(90deg, #7A2A18 0%, #D0563A 100%); position: relative; overflow: hidden;"><span data-sheen style="position: absolute; top: 0; bottom: 0; left: 0; width: 18%; background: linear-gradient(90deg, rgba(250,250,250,0) 0%, rgba(250,250,250,0.15) 50%, rgba(250,250,250,0) 100%); animation: hsSheen 7s ease-in-out 650ms infinite;"></span></div><span data-avgline aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 64%; width: 1px; background: rgba(250,250,250,0.3); z-index: 2;"></span></div>
+            <span data-barval style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; color: #FAFAFA; width: clamp(62px, 7vw, 86px); text-align: right; flex-shrink: 0;">30 oz</span>
           </div>
         </div>
-        <div data-outcomes="" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 3vw, 44px); margin-top: 40px; padding-top: 32px; border-top: 1px solid #1F1F23;">
-          <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0;">
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #22D3EE;">Today</span>
-            <div style="font-size: clamp(19px, 2vw, 23px); font-weight: 500; letter-spacing: -0.028em; line-height: 1.22; text-wrap: pretty;"><span style="color: #FAFAFA;">Move CR-03 off the pour.</span> <span style="color: #8A8A96;">Shade now, not an ambulance at four.</span></div>
+        <div data-outcomes style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 3vw, 44px); margin-top: 40px; padding-top: 32px; border-top: 1px solid #1F1F23;">
+          <div data-reveal data-reveal-delay="140" style="display: flex; flex-direction: column; gap: 12px; min-width: 0;">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0; text-transform: uppercase; color: #22D3EE;">Today</span>
+            <div style="font-size: 23px; font-weight: 500; letter-spacing: 0; line-height: 1.22; text-wrap: pretty;"><span style="color: #FAFAFA;">Move CR-03 off the pour.</span> <span style="color: #8A8A96;">Shade now, not an ambulance at four.</span></div>
           </div>
-          <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0;">
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #22D3EE;">This crew</span>
-            <div style="font-size: clamp(19px, 2vw, 23px); font-weight: 500; letter-spacing: -0.028em; line-height: 1.22; text-wrap: pretty;"><span style="color: #FAFAFA;">69 oz against 30 oz, same deck.</span> <span style="color: #8A8A96;">One water rule cannot cover both.</span></div>
+          <div data-reveal data-reveal-delay="240" style="display: flex; flex-direction: column; gap: 12px; min-width: 0;">
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0; text-transform: uppercase; color: #22D3EE;">This crew</span>
+            <div style="font-size: 23px; font-weight: 500; letter-spacing: 0; line-height: 1.22; text-wrap: pretty;"><span style="color: #FAFAFA;">69 oz against 30 oz, same deck.</span> <span style="color: #8A8A96;">One water rule cannot cover both.</span></div>
           </div>
         </div>
-      </div>
+      <p class="hs-illustrative">Illustrative example, not a live worker assessment or certification of fitness for deployment.</p></div>
     </div>
   </section>
 
   <section data-screen-label="Awards" style="background: #09090C; border-top: 1px solid #131317; border-bottom: 1px solid #131317;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 84px);">
-      <div data-reveal="" data-rec-label="" style="font-size: clamp(18px, 1.7vw, 21px); font-weight: 500; letter-spacing: -0.025em; color: #FAFAFA; margin: 0 0 clamp(20px, 2.2vw, 26px); padding-bottom: 15px; border-bottom: 1px solid #1F1F23;">Awards &amp; Grants</div>
-      <div data-awards-grid="" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2vw, 26px);">
-        <figure data-swipe="" data-swipe-delay="0" style="margin: 0; display: flex; flex-direction: column; gap: 13px;">
-          <div data-award-tile="" style="aspect-ratio: 16 / 10; border-radius: clamp(14px, 1.6vw, 20px); background: #FFFFFF; border: 1px solid #26262B; overflow: hidden; padding: 0;">
-            <img src="assets/award-eu-seal-sm.png" alt="European Commission Seal of Excellence" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" />
+      <div data-reveal data-rec-label style="font-size: 21px; font-weight: 500; letter-spacing: 0; color: #FAFAFA; margin: 0 0 clamp(20px, 2.2vw, 26px); padding-bottom: 15px; border-bottom: 1px solid #1F1F23;">Awards &amp; Grants</div>
+      <div data-awards-grid style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2vw, 26px);">
+        <figure data-swipe data-swipe-delay="0" style="margin: 0; display: flex; flex-direction: column; gap: 13px;">
+          <div data-award-tile style="aspect-ratio: 16 / 10; border-radius: clamp(14px, 1.6vw, 20px); background: #FFFFFF; border: 1px solid #26262B; overflow: hidden; padding: 0;">
+            <img src="assets/optimized/award-eu-seal-sm-259c3c2e-640.webp" alt="European Commission Seal of Excellence" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" srcset="assets/optimized/award-eu-seal-sm-259c3c2e-320.webp 320w, assets/optimized/award-eu-seal-sm-259c3c2e-640.webp 640w" width="640" height="374" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
           </div>
           <figcaption style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px;">
-            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.01em; line-height: 1.35;">EU Commission Seal of Excellence</span>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #8A8A92;">2020</span>
+            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: 0; line-height: 1.35;">EU Commission Seal of Excellence</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; color: #8A8A92;">2020</span>
           </figcaption>
         </figure>
-        <figure data-swipe="" data-swipe-delay="115" style="margin: 0; display: flex; flex-direction: column; gap: 13px;">
-          <div data-award-tile="" style="aspect-ratio: 16 / 10; border-radius: clamp(14px, 1.6vw, 20px); background: #FFFFFF; border: 1px solid #26262B; overflow: hidden; padding: 0;">
-            <img src="assets/award-eureka-eurostars-sm.png" alt="Eureka Eurostars" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;" />
+        <figure data-swipe data-swipe-delay="115" style="margin: 0; display: flex; flex-direction: column; gap: 13px;">
+          <div data-award-tile style="aspect-ratio: 16 / 10; border-radius: clamp(14px, 1.6vw, 20px); background: #FFFFFF; border: 1px solid #26262B; overflow: hidden; padding: 0;">
+            <img src="assets/optimized/award-eureka-eurostars-sm-6eb82ee4-640.webp" alt="Eureka Eurostars" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;" srcset="assets/optimized/award-eureka-eurostars-sm-6eb82ee4-320.webp 320w, assets/optimized/award-eureka-eurostars-sm-6eb82ee4-640.webp 640w" width="640" height="360" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
           </div>
           <figcaption style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px;">
-            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.01em; line-height: 1.35;">Backed by Eureka Eurostars</span>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #8A8A92;">2022</span>
+            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: 0; line-height: 1.35;">Backed by Eureka Eurostars</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; color: #8A8A92;">2022</span>
           </figcaption>
         </figure>
-        <figure data-swipe="" data-swipe-delay="230" style="margin: 0; display: flex; flex-direction: column; gap: 13px;">
-          <div data-award-tile="" style="aspect-ratio: 16 / 10; border-radius: clamp(14px, 1.6vw, 20px); background: #FFFFFF; border: 1px solid #26262B; overflow: hidden; padding: 0;">
-            <img src="assets/award-vinnova-sm.png" alt="Vinnova" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" />
+        <figure data-swipe data-swipe-delay="230" style="margin: 0; display: flex; flex-direction: column; gap: 13px;">
+          <div data-award-tile style="aspect-ratio: 16 / 10; border-radius: clamp(14px, 1.6vw, 20px); background: #FFFFFF; border: 1px solid #26262B; overflow: hidden; padding: 0;">
+            <img src="assets/optimized/award-vinnova-sm-ea758ce8-640.webp" alt="Vinnova" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;" srcset="assets/optimized/award-vinnova-sm-ea758ce8-320.webp 320w, assets/optimized/award-vinnova-sm-ea758ce8-640.webp 640w" width="640" height="384" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
           </div>
           <figcaption style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px;">
-            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.01em; line-height: 1.35;">Vinnova Funding</span>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #8A8A92;">2019 &amp; 2022</span>
+            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: 0; line-height: 1.35;">Vinnova Funding</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; color: #8A8A92;">2019 &amp; 2022</span>
           </figcaption>
         </figure>
-        <figure data-swipe="" data-swipe-delay="345" style="margin: 0; display: flex; flex-direction: column; gap: 13px;">
-          <div data-award-tile="" style="aspect-ratio: 16 / 10; border-radius: clamp(14px, 1.6vw, 20px); background: #FFFFFF; border: 1px solid #26262B; overflow: hidden; padding: clamp(9px, 1.2vw, 16px);">
-            <img src="assets/award-tie-germany-sm.png" alt="TiE Germany" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;" />
+        <figure data-swipe data-swipe-delay="345" style="margin: 0; display: flex; flex-direction: column; gap: 13px;">
+          <div data-award-tile style="aspect-ratio: 16 / 10; border-radius: clamp(14px, 1.6vw, 20px); background: #FFFFFF; border: 1px solid #26262B; overflow: hidden; padding: clamp(9px, 1.2vw, 16px);">
+            <img src="assets/optimized/award-tie-germany-sm-77f712be-760.webp" alt="TiE Germany" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; object-position: center; display: block;" srcset="assets/optimized/award-tie-germany-sm-77f712be-320.webp 320w, assets/optimized/award-tie-germany-sm-77f712be-640.webp 640w, assets/optimized/award-tie-germany-sm-77f712be-760.webp 760w" width="760" height="260" decoding="async" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
           </div>
           <figcaption style="display: flex; flex-direction: column; gap: 3px; padding: 0 2px;">
-            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.01em; line-height: 1.35;">TiE Germany</span>
-            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.08em; color: #8A8A92;">2023</span>
+            <span style="font-size: 14.5px; font-weight: 500; color: #FAFAFA; letter-spacing: 0; line-height: 1.35;">TiE Germany</span>
+            <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; color: #8A8A92;">2023</span>
           </figcaption>
         </figure>
       </div>
@@ -755,19 +770,24 @@
 
   <section data-screen-label="FAQ" style="background: #060607;">
     <div style="max-width: 900px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
-      <div data-reveal="" style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 52px;">
-        <h2 style="font-size: clamp(28px, 3.2vw, 42px); font-weight: 500; line-height: 1.1; letter-spacing: -0.035em; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">What Safety Leads</span> <span style="color: #8A8A96;">Ask First.</span></h2>
+      <div data-reveal style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 52px;">
+        <h2 style="font-size: 42px; font-weight: 500; line-height: 1.1; letter-spacing: 0; margin: 0; max-width: 22ch; text-wrap: balance;"><span style="color: #FAFAFA;">What Safety Leads</span> <span style="color: #8A8A96;">Ask First.</span></h2>
       </div>
-      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px;">
+      <div data-reveal style="display: flex; flex-direction: column; gap: 12px;">
         <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="6">
-          <div style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 18px; overflow: hidden;">
-            <button type="button" onClick="{{ item.toggle }}" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; background: transparent; border: none; padding: 24px 28px; cursor: pointer; text-align: left;">
-              <span style="font-size: 16.5px; font-weight: 500; line-height: 1.4; letter-spacing: -0.015em; color: #FAFAFA;">{{ item.q }}</span>
-              <span style="font-size: 20px; font-weight: 400; line-height: 1.2; color: #22D3EE; flex-shrink: 0;">{{ item.sign }}</span>
+          <div data-glow style="background: radial-gradient(440px circle at var(--mx, -999px) var(--my, -999px), rgba(34,211,238,0.06), rgba(34,211,238,0) 70%), #0F0F12; border: 1px solid {{ item.border }}; border-radius: 18px; overflow: hidden; transition: border-color .3s ease;">
+            <button type="button" onClick="{{ item.toggle }}" aria-expanded="{{ item.expanded }}" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; background: transparent; border: none; padding: 24px 28px; cursor: pointer; text-align: left; transition: background-color .2s ease;" style-hover="background-color: rgba(250,250,250,0.018)" style-active="background-color: rgba(250,250,250,0.04)">
+              <span style="font-size: 16.5px; font-weight: 500; line-height: 1.4; letter-spacing: 0; color: #FAFAFA;">{{ item.q }}</span>
+              <span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 13px; height: 13px; margin-top: 5px;">
+                <span style="position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; margin-top: -0.75px; border-radius: 2px; background: #22D3EE;"></span>
+                <span style="position: absolute; top: 0; bottom: 0; left: 50%; width: 1.5px; margin-left: -0.75px; border-radius: 2px; background: #22D3EE; transform: {{ item.vbar }}; transition: transform .45s cubic-bezier(.16,1,.3,1);"></span>
+              </span>
             </button>
-            <sc-if value="{{ item.open }}" hint-placeholder-val="{{ false }}">
-              <p style="font-size: 15.5px; line-height: 1.7; color: #8A8A92; margin: 0; padding: 0 60px 26px 28px; animation: hsPanel .3s cubic-bezier(.16,1,.3,1) both;">{{ item.a }}</p>
-            </sc-if>
+            <div aria-hidden="{{ item.hidden }}" style="display: grid; grid-template-rows: {{ item.rows }}; transition: grid-template-rows .45s cubic-bezier(.16,1,.3,1);">
+              <div style="min-height: 0; overflow: hidden;">
+                <p style="font-size: 15.5px; line-height: 1.7; color: #8A8A92; margin: 0; padding: 0 60px 26px 28px; opacity: {{ item.op }}; transform: {{ item.ty }}; transition: opacity .35s ease, transform .45s cubic-bezier(.16,1,.3,1);">{{ item.a }}</p>
+              </div>
+            </div>
           </div>
         </sc-for>
       </div>
@@ -776,12 +796,12 @@
 
   <section data-screen-label="Campaign record" style="background: #060607;">
     <div style="max-width: 900px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 32px) clamp(8px, 1.4vw, 16px);">
-      <a href="https://www.kickstarter.com/projects/676853405/hydrosense-sweat-patch-optimize-hydration-and-performance" target="_blank" rel="noopener" data-reveal="" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(20px, 3vw, 40px); background: #0B0B0D; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(26px, 3vw, 34px) clamp(26px, 3vw, 36px); color: inherit; transition: border-color .25s ease, background .25s ease;" style-hover="border-color: #2F6E7A; background: #0F0F12;">
+      <a href="https://www.kickstarter.com/projects/676853405/hydrosense-sweat-patch-optimize-hydration-and-performance" target="_blank" rel="noopener noreferrer" data-reveal data-glow data-nudge style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(20px, 3vw, 40px); background: radial-gradient(440px circle at var(--mx, -999px) var(--my, -999px), rgba(34,211,238,0.06), rgba(34,211,238,0) 70%), #0B0B0D; border: 1px solid #1F1F23; border-radius: 20px; padding: clamp(26px, 3vw, 34px) clamp(26px, 3vw, 36px); color: inherit; transition: border-color .25s ease, background-color .25s ease, scale .2s ease;" style-hover="border-color: #2F6E7A; background-color: #0F0F12;" style-active="scale: .99">
         <span style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 9px;">
-          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #22D3EE;">Technical documentation</span>
-          <span style="font-size: clamp(16.5px, 1.8vw, 19px); font-weight: 400; line-height: 1.5; letter-spacing: -0.012em; color: #E4E4E7; max-width: 54ch; text-wrap: pretty;">Sensor validation, materials and field results, documented in full on the campaign page.</span>
+          <span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0; text-transform: uppercase; color: #22D3EE;">Technical documentation</span>
+          <span style="font-size: 19px; font-weight: 400; line-height: 1.5; letter-spacing: 0; color: #E4E4E7; max-width: 54ch; text-wrap: pretty;">Sensor validation, materials and field results, documented in full on the campaign page.</span>
         </span>
-        <span style="flex: 0 0 auto; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; letter-spacing: -0.01em; color: #FAFAFA; border: 1px solid #2A2A30; border-radius: 100px; padding: 13px 22px; white-space: nowrap;">View the campaign<span style="font-size: 15px; color: #22D3EE;">↗</span></span>
+        <span style="flex: 0 0 auto; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; letter-spacing: 0; color: #FAFAFA; border: 1px solid #2A2A30; border-radius: 100px; padding: 13px 22px; white-space: nowrap;">View the campaign<span data-arrow-ne style="display: inline-block; font-size: 15px; color: #22D3EE; transition: transform .3s cubic-bezier(.16,1,.3,1);">↗</span></span>
       </a>
     </div>
   </section>
@@ -789,26 +809,26 @@
   <section id="demo" data-screen-label="Request a demo" style="background: #060607;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(48px, 5.5vw, 78px) clamp(20px, 4vw, 32px) clamp(56px, 6vw, 80px);">
       <div style="background: #0F0F12; border: 1px solid #1F1F23; border-radius: 28px; overflow: hidden; max-width: 680px; margin: 0 auto; padding: clamp(40px, 4.6vw, 62px) clamp(24px, 3.6vw, 56px) clamp(38px, 4.4vw, 56px);">
-        <div data-reveal="" style="text-align: center; margin-bottom: clamp(30px, 3.4vw, 44px);">
-          <h2 style="font-size: clamp(29px, 3.2vw, 43px); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; margin: 0 auto; max-width: 17ch; text-wrap: balance;"><span style="color: #FAFAFA;">Start With</span> <span style="color: #8A8A96;">One Crew.</span></h2>
+        <div data-reveal style="text-align: center; margin-bottom: clamp(30px, 3.4vw, 44px);">
+          <h2 style="font-size: 43px; font-weight: 500; line-height: 1.05; letter-spacing: 0; margin: 0 auto; max-width: 17ch; text-wrap: balance;"><span style="color: #FAFAFA;">Start With</span> <span style="color: #8A8A96;">One Crew.</span></h2>
         </div>
-        <div data-reveal="" data-reveal-delay="80" style="max-width: 440px; margin: 0 auto;">
+        <div data-reveal data-reveal-delay="80" style="max-width: 440px; margin: 0 auto;">
           <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
-          <form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 14px;">
+          <form style="display: flex; flex-direction: column; gap: 14px;" data-hs-inquiry>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: 14px;">
-              <input type="text" value="{{ first }}" onChange="{{ setFirst }}" placeholder="First name" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease;" style-focus="border-color:#22D3EE" />
-              <input type="text" value="{{ last }}" onChange="{{ setLast }}" placeholder="Last name" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease;" style-focus="border-color:#22D3EE" />
+              <div class="hs-field"><label class="hs-form-label" for="hs-firstName">First name</label><input type="text" value="{{ first }}" onChange="{{ setFirst }}" placeholder="First name" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease, box-shadow .18s ease;" style-focus="border-color:#22D3EE;box-shadow:0 0 0 4px rgba(34,211,238,0.12)" name="firstName" autocomplete="given-name" aria-label="First name" maxlength="255" id="hs-firstName"></div>
+              <div class="hs-field"><label class="hs-form-label" for="hs-lastName">Last name</label><input type="text" value="{{ last }}" onChange="{{ setLast }}" placeholder="Last name" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease, box-shadow .18s ease;" style-focus="border-color:#22D3EE;box-shadow:0 0 0 4px rgba(34,211,238,0.12)" name="lastName" autocomplete="family-name" aria-label="Last name" maxlength="255" id="hs-lastName"></div>
             </div>
-            <input type="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="Work email" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease;" style-focus="border-color:#22D3EE" />
-            <input type="text" value="{{ dept }}" onChange="{{ setDept }}" placeholder="Organization" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease;" style-focus="border-color:#22D3EE" />
-            <button type="submit" style="font-size: 16.5px; font-weight: 500; color: #060607; background: #FAFAFA; border: none; padding: 17px 24px; border-radius: 100px; cursor: pointer; width: 100%; margin-top: 8px; letter-spacing: -0.01em; transition: background .2s ease;" style-hover="background:#22D3EE">Continue to schedule a meeting</button>
-          </form>
+            <div class="hs-field"><label class="hs-form-label" for="hs-email">Work email</label><input type="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="Work email" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease, box-shadow .18s ease;" style-focus="border-color:#22D3EE;box-shadow:0 0 0 4px rgba(34,211,238,0.12)" name="email" autocomplete="email" aria-label="Work email" maxlength="255" id="hs-email"></div>
+            <div class="hs-field"><label class="hs-form-label" for="hs-organization">Organization</label><input type="text" value="{{ dept }}" onChange="{{ setDept }}" placeholder="Organization" required="required" style="width: 100%; padding: 15px 17px; border: 1px solid #2A2A30; border-radius: 12px; font-size: 16px; color: #FAFAFA; background: #0B0B0D; outline: none; transition: border-color .18s ease, box-shadow .18s ease;" style-focus="border-color:#22D3EE;box-shadow:0 0 0 4px rgba(34,211,238,0.12)" name="organization" autocomplete="organization" aria-label="Organization" maxlength="255" id="hs-organization"></div>
+            <label class="hs-form-label" for="hs-phone">Phone (optional, include country code)</label><input id="hs-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+1" style="width:100%;padding:15px 17px;border:1px solid #2a2a30;border-radius:12px;font-size:16px;background:#0b0b0d;color:#fafafa"><label class="hs-inquiry-consent"><input name="inquiryConsent" type="checkbox" value="yes" required><span>I agree that Innovosens may save these details and contact me about an organizational pilot.</span></label><label class="hs-honeypot" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label><button type="submit" style="font-size: 16.5px; font-weight: 500; color: #060607; background: #FAFAFA; border: none; padding: 17px 24px; border-radius: 100px; cursor: pointer; width: 100%; margin-top: 8px; letter-spacing: 0; transition: background .2s ease, scale .18s ease;" style-hover="background:#22D3EE" style-active="scale: .97">Continue to schedule a meeting</button>
+          <p class="hs-form-meta">Free 10-minute introduction. Organizational pilots are paid. <a data-hs-privacy>Privacy notice</a></p><p data-hs-status role="status" aria-live="polite"></p><p class="hs-form-meta"><a data-hs-direct-booking href="./book-a-meeting.html">Book directly instead</a></p></form>
           </sc-if>
           <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
-          <div style="display: flex; flex-direction: column; gap: 16px; text-align: center;">
-            <h3 style="font-size: 25px; font-weight: 500; line-height: 1.2; letter-spacing: -0.033em; margin: 0; color: #FAFAFA;">Thanks, {{ first }}.</h3>
+          <div data-anim-in style="display: flex; flex-direction: column; gap: 16px; text-align: center; animation: hsUp .55s cubic-bezier(.16,1,.3,1) both;">
+            <h3 data-thanks tabIndex="-1" style="font-size: 25px; font-weight: 500; line-height: 1.2; letter-spacing: 0; margin: 0; color: #FAFAFA; outline: none;">Thanks, {{ first }}.</h3>
             <p style="font-size: 17px; line-height: 1.55; color: #B4B4BC; margin: 0;">Pick a time that suits you.</p>
-            <a href="US%20Construction%20Book%20a%20Meeting.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 16.5px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 17px 24px; border-radius: 100px; margin-top: 6px; transition: background .2s ease;" style-hover="background:#22D3EE">Proceed to schedule a meeting</a>
+            <a href="./book-a-meeting.html" style="display: flex; align-items: center; justify-content: center; gap: 9px; font-size: 16.5px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 17px 24px; border-radius: 100px; margin-top: 6px; transition: background .2s ease, scale .18s ease;" style-hover="background:#22D3EE" style-active="scale: .97">Proceed to schedule a meeting</a>
             <button type="button" onClick="{{ reset }}" style="font-size: 14.5px; font-weight: 400; color: #8A8A92; background: transparent; border: none; padding: 4px; cursor: pointer;" style-hover="color:#FAFAFA">Edit my details</button>
           </div>
           </sc-if>
@@ -817,58 +837,58 @@
     </div>
   </section>
 
-  <div data-stickycta="" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; transform: translateY(120%); transition: transform .35s cubic-bezier(.16,1,.3,1); background: rgba(9,9,12,0.92); backdrop-filter: blur(14px); border-top: 1px solid #1F1F23;">
+  <div data-stickycta style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; transform: translateY(120%); transition: transform .35s cubic-bezier(.16,1,.3,1); background: rgba(9,9,12,0.92); backdrop-filter: blur(14px); border-top: 1px solid #1F1F23;">
     <div style="max-width: 1280px; margin: 0 auto; padding: 13px clamp(16px, 4vw, 32px); display: flex; align-items: center; justify-content: space-between; gap: 16px;">
       <div style="min-width: 0;">
-        <div style="font-size: 15px; font-weight: 500; color: #FAFAFA; letter-spacing: -0.015em; line-height: 1.3;">See what your crews are losing</div>
+        <div style="font-size: 15px; font-weight: 500; color: #FAFAFA; letter-spacing: 0; line-height: 1.3;">See what your crews are losing</div>
       </div>
-      <a href="#demo" style="flex-shrink: 0; font-size: 15px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 13px 24px; border-radius: 100px; white-space: nowrap; transition: background .2s ease;" style-hover="background:#22D3EE">Book a 10 minute call</a>
+      <a href="#demo" style="flex-shrink: 0; font-size: 15px; font-weight: 500; color: #060607; background: #FAFAFA; padding: 13px 24px; border-radius: 100px; white-space: nowrap; transition: background .2s ease, scale .18s ease;" style-hover="background:#22D3EE" style-active="scale: .97">Book a 10 minute call</a>
     </div>
   </div>
 
-  <footer data-site-footer="" style="background: #060607; border-top: 1px solid #1C1C1F;">
+  <footer data-site-footer style="background: #060607; border-top: 1px solid #1C1C1F;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(40px, 4.4vw, 56px) clamp(20px, 4vw, 32px) 0;">
-      <div data-footer-grid="" style="display: flex; flex-wrap: wrap; gap: clamp(26px, 3vw, 36px) clamp(20px, 2.2vw, 28px);">
-        <div data-footer-brand="" style="flex: 1.7 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
-          <a href="https://www.innovosens.com/" target="_blank" rel="noopener" aria-label="Innovosens home" style="align-self: flex-start; background: #FAFAFA; border-radius: 12px; padding: 9px 14px; display: flex; align-items: center; transition: opacity .18s ease;" style-hover="opacity: 0.86;">
-            <img src="assets/innovosens-official-footer-logo.png" alt="Innovosens" style="height: 34px; width: auto; display: block; object-fit: contain;" />
+      <div data-footer-grid style="display: flex; flex-wrap: wrap; gap: clamp(26px, 3vw, 36px) clamp(20px, 2.2vw, 28px);">
+        <div data-footer-brand style="flex: 1.7 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+          <a href="https://www.innovosens.com/" target="_blank" rel="noopener noreferrer" aria-label="Innovosens home" style="align-self: flex-start; background: #FAFAFA; border-radius: 12px; padding: 9px 14px; display: flex; align-items: center; transition: opacity .18s ease;" style-hover="opacity: 0.86;">
+            <img src="assets/optimized/innovosens-official-footer-logo-df88ffc4-184.webp" alt="Innovosens" style="height: 34px; width: auto; display: block; object-fit: contain;" srcset="assets/optimized/innovosens-official-footer-logo-df88ffc4-184.webp 184w" width="184" height="146" decoding="async" loading="lazy" sizes="(max-width: 600px) 100vw, (max-width: 1024px) 70vw, 640px">
           </a>
           <p style="font-size: 13px; line-height: 1.6; color: #8A8A92; margin: 0; max-width: 32ch;">Wearable biosensors that make health data easy to reach.</p>
           <a href="mailto:info@innovosens.com" style="font-size: 13.5px; color: #C7C7CE; align-self: flex-start;">info@innovosens.com</a>
           <div style="display: flex; gap: 10px; margin-top: 2px;">
-          <a href="https://se.linkedin.com/company/innovosens" target="_blank" rel="noopener" aria-label="Innovosens on LinkedIn" title="LinkedIn" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;">
-            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: currentColor; display: block;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+          <a href="https://se.linkedin.com/company/innovosens" target="_blank" rel="noopener noreferrer" aria-label="Innovosens on LinkedIn" title="LinkedIn" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease, scale .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;" style-active="scale: .92">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: currentColor; display: block;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
-          <a href="https://x.com/innovosensAB" target="_blank" rel="noopener" aria-label="Innovosens on X" title="X" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;">
-            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; fill: currentColor; display: block;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"></path></svg>
+          <a href="https://x.com/innovosensAB" target="_blank" rel="noopener noreferrer" aria-label="Innovosens on X" title="X" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease, scale .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;" style-active="scale: .92">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 16px; height: 16px; fill: currentColor; display: block;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.451-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg>
           </a>
-          <a href="https://www.instagram.com/innovosens.inc/" target="_blank" rel="noopener" aria-label="Innovosens on Instagram" title="Instagram" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;">
-            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; display: block;"><rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5.4"></rect><circle cx="12" cy="12" r="4.35"></circle><circle cx="17.35" cy="6.65" r="1.15" style="fill: currentColor; stroke: none;"></circle></svg>
+          <a href="https://www.instagram.com/innovosens.inc/" target="_blank" rel="noopener noreferrer" aria-label="Innovosens on Instagram" title="Instagram" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #1C1C1F; background: #0C0C0E; color: #9A9AA2; display: flex; align-items: center; justify-content: center; transition: color .18s ease, border-color .18s ease, scale .18s ease;" style-hover="color: #FAFAFA; border-color: #34343A;" style-active="scale: .92">
+            <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; display: block;"><rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5.4"/><circle cx="12" cy="12" r="4.35"/><circle cx="17.35" cy="6.65" r="1.15" style="fill: currentColor; stroke: none;"/></svg>
           </a>
           </div>
         </div>
         <div data-footer-col="explore" style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
-          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Explore</div>
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0; text-transform: uppercase; color: #9A9AA6; margin-bottom: 3px;">Explore</div>
           <a href="#demo" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Book a 10 minute call</a>
-          <a href="https://www.kickstarter.com/projects/676853405/hydrosense-sweat-patch-optimize-hydration-and-performance" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Kickstarter campaign</a>
-          <a href="https://lp.hydrosense.store/product-safety/" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Product safety</a>
+          <a href="https://www.kickstarter.com/projects/676853405/hydrosense-sweat-patch-optimize-hydration-and-performance" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Kickstarter campaign</a>
+          <a href="https://lp.hydrosense.store/product-safety/" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Product safety</a>
         </div>
         <div data-footer-col="industries" style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
-          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Industries</div>
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0; text-transform: uppercase; color: #9A9AA6; margin-bottom: 3px;">Industries</div>
           <a href="https://hydrosense-us-firefighters.vercel.app" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Fire departments</a>
-          <a href="https://hydrosense-us-mining-safety.vercel.app" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Mining safety</a>
+          <a href="https://hydrosense-mining-safety.vercel.app/" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;" data-hs-industry-link="mining">Mining safety</a>
           <span style="font-size: 13.5px; line-height: 1.35; color: #FAFAFA;">Construction</span>
         </div>
         <div data-footer-col="company" style="flex: 1 1 116px; min-width: 0; display: flex; flex-direction: column; gap: 11px;">
-          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Company</div>
-          <a href="https://newsite.innovosens.com/aboutus" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">About us</a>
-          <a href="https://newsite.innovosens.com/technology" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Technology</a>
-          <a href="https://newsite.innovosens.com/partner" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Partners</a>
-          <a href="https://newsite.innovosens.com/blog" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Blog</a>
-          <a href="https://newsite.innovosens.com/" target="_blank" rel="noopener" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">innovosens.com</a>
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0; text-transform: uppercase; color: #9A9AA6; margin-bottom: 3px;">Company</div>
+          <a href="https://newsite.innovosens.com/aboutus" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">About us</a>
+          <a href="https://newsite.innovosens.com/technology" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Technology</a>
+          <a href="https://newsite.innovosens.com/partner" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Partners</a>
+          <a href="https://newsite.innovosens.com/blog" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">Blog</a>
+          <a href="https://newsite.innovosens.com/" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; line-height: 1.35; color: #8A8A92; transition: color .18s ease;" style-hover="color: #FAFAFA;">innovosens.com</a>
         </div>
-        <div data-footer-offices="" style="flex: 1.2 0 150px; max-width: 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
-          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #5E5E66; margin-bottom: 3px;">Offices</div>
+        <div data-footer-offices style="flex: 1.2 0 150px; max-width: 360px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0; text-transform: uppercase; color: #9A9AA6; margin-bottom: 3px;">Offices</div>
           <div style="display: flex; flex-wrap: wrap; gap: 16px 30px;">
           <address style="font-size: 12.5px; line-height: 1.6; color: #8A8A92; font-style: normal; margin: 0; flex: 1 1 150px; min-width: 0;"><span style="display: block; color: #C7C7CE;">United States</span>Innovosens AB Inc, c/o Nordic Innovation House, 470 Ramona Street, Palo Alto, CA 94301</address>
           <address style="font-size: 12.5px; line-height: 1.6; color: #8A8A92; font-style: normal; margin: 0; flex: 1 1 150px; min-width: 0;"><span style="display: block; color: #C7C7CE;">Sweden</span>Innovosens AB, c/o Medeon Science Park, Per Albin Hanssons väg 41, 214 32 Malmö</address>
@@ -877,12 +897,12 @@
       </div>
     </div>
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(28px, 3.2vw, 38px) clamp(20px, 4vw, 32px) clamp(24px, 3vw, 32px);">
-      <div style="border-top: 1px solid #16161A; padding-top: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; font-size: 12px; color: #6A6A72;">
+      <div style="border-top: 1px solid #16161A; padding-top: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; font-size: 12px; color: #9A9AA6;">
         <span>©2026 Innovosens. All rights reserved.</span>
         <span>Palo Alto, CA · Malmö, Sweden</span>
       </div>
     </div>
-  </footer>
+  <div style="max-width:1280px;margin:auto;padding:16px 24px 32px"><button data-hs-preferences type="button" style="background:none;border:0;color:#c4c4cc;text-decoration:underline;cursor:pointer;font:14px system-ui">Advertising privacy preferences</button></div></footer>
 
 </div>
 </x-dc>
@@ -912,36 +932,86 @@ class Component extends DCLogic {
      "A site safety lead, a superintendent who can pick the shifts, and whoever signs off on crew programs. Procurement joins once the scope is agreed."]
   ];
 
-  stickyCta() {
+stickyCta() {
     const bar = document.querySelector("[data-stickycta]");
     const hero = document.querySelector("[data-hero-root]");
     const demo = document.querySelector("#demo");
     if (!bar || !hero) return;
-    const onScroll = () => {
+    let raf = 0, shown = null;
+    const check = () => {
+      raf = 0;
       const pastHero = hero.getBoundingClientRect().bottom < 0;
       const atAsk = demo ? demo.getBoundingClientRect().top < window.innerHeight * 0.9 : false;
-      bar.style.transform = pastHero && !atAsk ? "translateY(0)" : "translateY(120%)";
+      const on = pastHero && !atAsk;
+      if (on === shown) return;
+      shown = on;
+      bar.style.transform = on ? "translateY(0)" : "translateY(120%)";
+      bar.setAttribute("aria-hidden", on ? "false" : "true");
+      bar.inert = !on;
     };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(check); };
     window.addEventListener("scroll", onScroll, { passive: true });
     document.addEventListener("scroll", onScroll, { passive: true, capture: true });
-    onScroll();
+    check();
     this._teardownSticky = () => { window.removeEventListener("scroll", onScroll); document.removeEventListener("scroll", onScroll, true); };
+  }
+
+  initDemoFocus() {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const onClick = (e) => {
+      const a = e.target.closest ? e.target.closest('a[href="#demo"]') : null;
+      if (!a) return;
+      let done = false;
+      const go = () => {
+        if (done) return;
+        done = true;
+        window.removeEventListener("scrollend", go);
+        const el = document.querySelector("#demo form input");
+        if (el && document.activeElement !== el) el.focus({ preventScroll: true });
+      };
+      if ("onscrollend" in window) window.addEventListener("scrollend", go);
+      setTimeout(go, "onscrollend" in window ? 1500 : 900);
+    };
+    document.addEventListener("click", onClick);
+    this._demoFocus = onClick;
   }
 
   slideCount = 3;
 
-  startSlideshow() {
+startSlideshow() {
     clearInterval(this.slideTimer);
+    if (this._dotAnim) { this._dotAnim.onfinish = null; this._dotAnim.cancel(); this._dotAnim = null; }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const fill = document.querySelectorAll("[data-dotfill]")[this.state.slide];
+    if (fill && fill.animate) {
+      const a = fill.animate([{ transform: "scaleX(0)" }, { transform: "scaleX(1)" }], { duration: 5200, easing: "linear" });
+      a.onfinish = () => { if (this._dotAnim === a) this.setSlide(this.state.slide + 1, true); };
+      this._dotAnim = a;
+      if (this._carHold && this._carHold.size) a.pause();
+      return;
+    }
     this.slideTimer = setInterval(() => {
       this.setState((s) => ({ slide: (s.slide + 1) % this.slideCount }));
     }, 5200);
   }
 
-  goSlide = (i) => () => {
-    this.setState({ slide: (i + this.slideCount) % this.slideCount });
-    this.startSlideshow();
-  };
+  setSlide(i, wrap) {
+    const n = this.slideCount;
+    const next = wrap ? ((i % n) + n) % n : Math.max(0, Math.min(n - 1, i));
+    if (next === this.state.slide) { this.startSlideshow(); return; }
+    this.setState({ slide: next }, () => this.startSlideshow());
+  }
+
+  holdCar(k, on) {
+    const s = this._carHold || (this._carHold = new Set());
+    if (on) s.add(k); else s.delete(k);
+    const a = this._dotAnim;
+    if (!a) return;
+    if (s.size) { if (a.playState === "running") a.pause(); }
+    else if (a.playState === "paused") a.play();
+  }
+
+goSlide = (i) => () => this.setSlide(i, true);
 
   hsSectors = [
     {
@@ -1056,22 +1126,30 @@ class Component extends DCLogic {
     }, 1500);
   }
 
-  startHeatGrid() {
+startHeatGrid() {
     const grid = document.querySelector("[data-heatgrid]");
     if (!grid) return;
+    const card = grid.closest("[data-heat-card]") || grid.parentElement;
     const months = Array.prototype.slice.call(document.querySelectorAll("[data-heatmonth]"));
     const rows = Array.prototype.slice.call(grid.querySelectorAll("[data-heat]")).map((r) => ({
-      cells: Array.prototype.slice.call(r.querySelectorAll("[data-heatcell]"))
+      el: r,
+      cells: Array.prototype.slice.call(r.querySelectorAll("[data-heatcell]")),
+      lv: (r.getAttribute("data-heat") || "").split(",").map((v) => parseInt(v, 10) || 0)
     }));
     const finals = rows.map((r) => r.cells.map((c) => c.style.background));
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const settle = () => {
       months.forEach((m) => { m.style.color = "#8A8A96"; });
       rows.forEach((r, i) => r.cells.forEach((c, j) => { c.style.background = finals[i][j]; c.style.opacity = "1"; }));
     };
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    rows.forEach((r) => r.cells.forEach((c) => { c.style.transition = "background .5s ease, opacity .5s ease"; }));
+    rows.forEach((r) => {
+      r.el.style.transition = "opacity .25s ease";
+      r.cells.forEach((c) => { c.style.transition = (reduce ? "" : "background .5s ease, opacity .5s ease, ") + "transform .18s ease, box-shadow .18s ease"; });
+    });
+    this.initHeatTips(card, rows, months);
+    if (reduce) return;
     months.forEach((m) => { m.style.transition = "color .35s ease"; });
-    let col = 0;
+    let col = 0, hold = false;
     const tick = () => {
       if (col === 0) rows.forEach((r) => r.cells.forEach((c) => { c.style.background = "#17171B"; c.style.opacity = "0.4"; }));
       rows.forEach((r, i) => {
@@ -1084,14 +1162,25 @@ class Component extends DCLogic {
       col += 1;
       if (col < 7) { this._hgT = setTimeout(tick, 290); return; }
       months.forEach((m) => { m.style.color = "#8A8A96"; });
-      this._hgT = setTimeout(() => { col = 0; tick(); }, 2800);
+      this._hgRunning = false; this._hgSwept = true;
     };
-    const start = () => { if (this._hgRunning) return; this._hgRunning = true; col = 0; tick(); };
+    const start = () => { if (this._hgRunning || hold || this._hgSwept) return; this._hgRunning = true; col = 0; tick(); };
     const stop = () => { this._hgRunning = false; clearTimeout(this._hgT); settle(); };
-    if (!("IntersectionObserver" in window)) { start(); return; }
-    this._hgIo = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) start(); else stop(); }), { threshold: 0.2 });
+    // Hovering or touching the map freezes the sweep so it can be read.
+    this._hgHold = (on, ms) => {
+      clearTimeout(this._hgResume);
+      const release = () => { hold = false; if (this._hgInView) start(); };
+      if (on) { hold = true; stop(); if (ms) this._hgResume = setTimeout(release, ms); }
+      else this._hgResume = setTimeout(release, 900);
+    };
+    if (!("IntersectionObserver" in window)) { this._hgInView = true; start(); return; }
+    this._hgIo = new IntersectionObserver((es) => es.forEach((e) => {
+      this._hgSeen = true;
+      this._hgInView = e.isIntersecting;
+      if (e.isIntersecting) start(); else { stop(); this._hgSwept = false; }
+    }), { threshold: 0.2 });
     this._hgIo.observe(grid);
-    this._hgFailsafe = setTimeout(() => { if (!this._hgRunning) start(); }, 1800);
+    this._hgFailsafe = setTimeout(() => { if (!this._hgSeen && !this._hgRunning) { this._hgInView = true; start(); } }, 1800);
   }
 
   hsArcFor(el) {
@@ -1163,6 +1252,7 @@ class Component extends DCLogic {
     const arm = (n) => {
       if (n.dataset.swipeArmed || n.dataset.swipeDone) return;
       n.dataset.swipeArmed = "1";
+      n._swT = n.style.transition;
       n.style.clipPath = "inset(0 100% 0 0)";
       n.style.opacity = "0";
       n.style.transform = "translateX(-16px)";
@@ -1194,7 +1284,7 @@ class Component extends DCLogic {
       imgReady(n).then(() => {
         n.style.transition = "clip-path .8s cubic-bezier(.22,1,.36,1) " + d + "ms, opacity .45s ease " + d + "ms, transform .8s cubic-bezier(.22,1,.36,1) " + d + "ms";
         setTimeout(() => show(n), 16);
-        setTimeout(() => { n.style.willChange = ""; n.style.clipPath = ""; n.style.transition = ""; }, d + 1200);
+        setTimeout(() => { n.style.willChange = ""; n.style.clipPath = ""; n.style.transition = n._swT || ""; }, d + 1200);
       });
       setTimeout(() => show(n), 2400);
     };
@@ -1253,16 +1343,29 @@ class Component extends DCLogic {
     window.addEventListener("resize", onScroll);
     upd();
   }
-  initActiveNav() {
+initActiveNav() {
     const links = Array.prototype.slice.call(document.querySelectorAll('header nav a:not([href="#demo"])'));
     if (!links.length) return;
     const pairs = links.map((a) => ({ a: a, sec: document.querySelector(a.getAttribute("href")) })).filter((p) => p.sec);
     if (!pairs.length) return;
+    pairs.forEach((p) => {
+      p.a.style.position = "relative";
+      const u = document.createElement("span");
+      u.setAttribute("aria-hidden", "true");
+      u.style.cssText = "position:absolute;left:0;right:0;bottom:-8px;height:1.5px;border-radius:2px;background:#22D3EE;transform:scaleX(0);transform-origin:0 50%;transition:transform .45s cubic-bezier(.16,1,.3,1);pointer-events:none;";
+      p.a.appendChild(u);
+      p.u = u;
+    });
+    let last;
     const paint = (active) => {
+      if (active === last) return;
+      last = active;
       pairs.forEach((p) => {
         const on = p.a === active;
         p.a.style.color = on ? "#FAFAFA" : "#9A9AA2";
         p.a.style.opacity = on ? "1" : "";
+        p.u.style.transform = on ? "scaleX(1)" : "scaleX(0)";
+        if (on) p.a.setAttribute("aria-current", "location"); else p.a.removeAttribute("aria-current");
       });
     };
     let ticking = false;
@@ -1282,15 +1385,34 @@ class Component extends DCLogic {
     document.addEventListener("scroll", onScroll, { passive: true, capture: true });
     upd();
   }
-  initChartReveal() {
+initChartReveal() {
     const bars = Array.prototype.slice.call(document.querySelectorAll("[data-barfill]"));
     if (!bars.length) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (!("IntersectionObserver" in window)) return;
     const card = document.querySelector("#data [data-report-card]");
     if (!card) return;
+    const vals = Array.prototype.slice.call(card.querySelectorAll("[data-barval]")).map((el) => {
+      const t = el.textContent;
+      const m = t.match(/^\s*([\d.]+)(.*)$/);
+      return m ? { el: el, t: t, n: parseFloat(m[1]), dec: (m[1].split(".")[1] || "").length, suf: m[2] } : null;
+    }).filter(Boolean);
+    const avg = Array.prototype.slice.call(card.querySelectorAll("[data-avgline], [data-avglabel]"));
     const settle = () => {
       bars.forEach((el) => { el.style.transition = ""; el.style.width = "var(--bw)"; el.style.willChange = ""; });
+      vals.forEach((v) => { v.el.textContent = v.t; });
+      avg.forEach((a) => { a.style.transition = ""; a.style.opacity = ""; });
+    };
+    this._chartSettle = settle;
+    window.addEventListener("beforeprint", settle);
+    const countUp = (v, delay) => {
+      const t0 = performance.now() + delay;
+      const step = (t) => {
+        const p = Math.max(0, Math.min(1, (t - t0) / 950));
+        v.el.textContent = p >= 1 ? v.t : (v.n * (1 - Math.pow(1 - p, 4))).toFixed(v.dec) + v.suf;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     };
     const run = () => {
       if (this._chartRan) return;
@@ -1299,7 +1421,9 @@ class Component extends DCLogic {
         el.style.transition = "width .95s cubic-bezier(.22,1,.36,1) " + i * 110 + "ms";
         el.style.width = "var(--bw)";
       });
-      setTimeout(settle, 2200);
+      vals.forEach((v, i) => countUp(v, i * 110));
+      avg.forEach((a) => { a.style.transition = "opacity .6s ease 820ms"; a.style.opacity = "1"; });
+      setTimeout(settle, 2400);
     };
     let primed = false;
     this._chartIo = new IntersectionObserver((es) => {
@@ -1308,6 +1432,8 @@ class Component extends DCLogic {
         primed = true;
         if (e.isIntersecting) { this._chartIo.disconnect(); return; }
         bars.forEach((el) => { el.style.width = "0px"; el.style.willChange = "width"; });
+        vals.forEach((v) => { v.el.textContent = (0).toFixed(v.dec) + v.suf; });
+        avg.forEach((a) => { a.style.opacity = "0"; });
         return;
       }
       if (e.isIntersecting) { run(); this._chartIo.disconnect(); }
@@ -1323,13 +1449,15 @@ class Component extends DCLogic {
     this._printSettle = settle;
     window.addEventListener("beforeprint", settle);
   }
-  initNavChrome() {
+initNavChrome() {
     const host = document.querySelector("[data-navprogress]");
     if (!host) return;
+    const hdr = host.closest("header");
     const bar = document.createElement("span");
     bar.style.cssText = "display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,#0E7490 0%,#22D3EE 100%);will-change:transform;";
     host.appendChild(bar);
-    let ticking = false;
+    if (hdr) hdr.style.transition = "box-shadow .35s ease";
+    let ticking = false, raised = null;
     const upd = () => {
       ticking = false;
       const doc = document.documentElement;
@@ -1337,6 +1465,8 @@ class Component extends DCLogic {
       const max = (r.height - (window.innerHeight || 800)) || 1;
       const p = Math.min(1, Math.max(0, -r.top / max));
       bar.style.transform = "scaleX(" + p.toFixed(4) + ")";
+      const up = -r.top > 8;
+      if (hdr && up !== raised) { raised = up; hdr.style.boxShadow = up ? "0 14px 34px -22px rgba(0,0,0,0.95)" : "none"; }
     };
     const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } };
     this._navScroll = onScroll;
@@ -1345,48 +1475,154 @@ class Component extends DCLogic {
     window.addEventListener("resize", onScroll);
     upd();
   }
-  componentDidMount() {
-    this.stickyCta();
-    this.startSlideshow();
-    this.mountLazyVideo();
-    this.idleLoops();
+initCarousel() {
+    const wrap = document.querySelector("[data-carousel-wrap]");
+    const root = document.querySelector("[data-carousel]");
+    const track = root ? root.querySelector("[data-slides]") : null;
+    if (!wrap || !root || !track) return;
+    const hold = (k, on) => this.holdCar(k, on);
+    wrap.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hold("hover", true); });
+    wrap.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse") hold("hover", false); });
+    wrap.addEventListener("focusin", () => hold("focus", true));
+    wrap.addEventListener("focusout", (e) => { if (!e.relatedTarget || !wrap.contains(e.relatedTarget)) hold("focus", false); });
+    wrap.addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      e.preventDefault();
+      this.setSlide(this.state.slide + (e.key === "ArrowRight" ? 1 : -1), true);
+    });
+    if ("IntersectionObserver" in window) {
+      this._carIo = new IntersectionObserver((es) => es.forEach((e) => hold("view", !e.isIntersecting)), { threshold: 0.25 });
+      this._carIo.observe(root);
+    }
+    this._carVis = () => hold("tab", document.hidden);
+    document.addEventListener("visibilitychange", this._carVis);
+    let id = null, x0 = 0, y0 = 0, dx = 0, t0 = 0, lock = false, w = 1, orig = "";
+    root.addEventListener("dragstart", (e) => e.preventDefault());
+    root.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0 || (e.target.closest && e.target.closest("button"))) return;
+      id = e.pointerId; x0 = e.clientX; y0 = e.clientY; dx = 0; t0 = performance.now(); lock = false; w = root.clientWidth || 1;
+    });
+    root.addEventListener("pointermove", (e) => {
+      if (id === null || e.pointerId !== id) return;
+      dx = e.clientX - x0;
+      const dy = e.clientY - y0;
+      if (!lock) {
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        if (Math.abs(dy) > Math.abs(dx)) { id = null; return; }
+        lock = true;
+        orig = track.style.transition;
+        track.style.transition = "none";
+        root.style.cursor = "grabbing";
+        try { root.setPointerCapture(id); } catch (err) {}
+        hold("drag", true);
+      }
+      const s = this.state.slide;
+      const edge = (s === 0 && dx > 0) || (s === this.slideCount - 1 && dx < 0);
+      track.style.transform = "translateX(calc(" + (-s * 100) + "% + " + (edge ? dx * 0.3 : dx).toFixed(1) + "px))";
+    });
+    const end = (e) => {
+      if (id === null || e.pointerId !== id) return;
+      id = null;
+      if (!lock) return;
+      lock = false;
+      root.style.cursor = "grab";
+      track.style.transition = orig;
+      const s = this.state.slide;
+      const v = Math.abs(dx) / Math.max(1, performance.now() - t0);
+      let next = s;
+      if (Math.abs(dx) > w * 0.18 || (Math.abs(dx) > 30 && v > 0.45)) next = dx < 0 ? s + 1 : s - 1;
+      next = Math.max(0, Math.min(this.slideCount - 1, next));
+      track.style.transform = "translateX(" + (-next * 100) + "%)";
+      hold("drag", false);
+      if (next !== s) this.setSlide(next, false);
+    };
+    root.addEventListener("pointerup", end);
+    root.addEventListener("pointercancel", end);
+  }
 
-    this.hsCount();
-    this.startHeatGrid();
-    this.initLogoSweep();
-    this.initNavChrome();
-    this.initActiveNav();
-    this.initChartReveal();
-    this.initHeroParallax();
-    this.initPrintSafety();
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
+  cadence(n, d) {
+    const hs = n.tagName === "H2" ? [n] : Array.prototype.slice.call(n.querySelectorAll("h2"));
+    hs.forEach((h) => {
+      const sp = Array.prototype.filter.call(h.children, (c) => c.tagName === "SPAN");
+      if (sp.length < 2 || !sp[1].animate) return;
+      sp[1].animate([{ opacity: 0 }, { opacity: 1 }], { duration: 900, delay: d + 280, easing: "ease", fill: "backwards" });
+    });
+  }
+
+  initReveals() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!("IntersectionObserver" in window)) return;
     const vh = () => window.innerHeight || 800;
-
-    // Reveals arm only after the observer reports, and only for off screen nodes.
+    const E = "cubic-bezier(.16,1,.3,1)";
     const armed = new Set();
+    this._rvTimers = [];
+    // Arm only nodes that start off screen; restore their own inline styles once revealed.
+    const arm = (n) => {
+      const k = n.getAttribute("data-reveal-kind") || "";
+      n._rv = { t: n.style.transition, tf: n.style.transform, o: n.style.opacity, cp: n.style.clipPath, to: n.style.transformOrigin };
+      n.style.transition = "none";
+      if (k === "rule") {
+        n.style.transformOrigin = "0 50%";
+        n.style.transform = "scaleX(0)";
+      } else if (k === "media") {
+        n._rvR = parseFloat(getComputedStyle(n).borderTopLeftRadius) || 0;
+        n.style.opacity = "0";
+        n.style.clipPath = "inset(8% 6% 8% 6% round " + n._rvR + "px)";
+        const m = n.querySelector("img, video");
+        if (m) { n._rvM = m; m._rvT = m.style.transition; m.style.transition = "none"; m.style.transform = "scale(1.12)"; }
+      } else {
+        n.style.opacity = "0";
+        n.style.transform = k === "left" ? "translateX(-14px)" : "translateY(16px)";
+      }
+      armed.add(n);
+    };
     const show = (n) => {
       if (!armed.has(n)) return;
       armed.delete(n);
-      n.style.transition = "opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)";
-      n.style.transitionDelay = (parseInt(n.getAttribute("data-reveal-delay") || "0", 10)) + "ms";
-      n.style.opacity = "1";
-      n.style.transform = "none";
+      const k = n.getAttribute("data-reveal-kind") || "";
+      const d = parseInt(n.getAttribute("data-reveal-delay") || "0", 10);
+      let dur = 800;
+      if (k === "rule") {
+        dur = 1100;
+        n.style.transition = "transform 1.1s " + E + " " + d + "ms";
+        n.style.transform = "scaleX(1)";
+      } else if (k === "media") {
+        dur = 1500;
+        n.style.transition = "clip-path 1.25s " + E + " " + d + "ms, opacity .6s ease " + d + "ms";
+        n.style.opacity = "1";
+        n.style.clipPath = "inset(0% 0% 0% 0% round " + n._rvR + "px)";
+        if (n._rvM) { n._rvM.style.transition = "transform 1.5s " + E + " " + d + "ms"; n._rvM.style.transform = "scale(1)"; }
+      } else {
+        n.style.transition = "opacity .7s " + E + " " + d + "ms, transform .8s " + E + " " + d + "ms";
+        n.style.opacity = "1";
+        n.style.transform = "none";
+      }
+      this.cadence(n, d);
+      this._rvTimers.push(setTimeout(() => {
+        const o = n._rv || {};
+        n.style.transition = o.t || "";
+        n.style.transform = o.tf || "";
+        n.style.opacity = o.o || "";
+        n.style.clipPath = o.cp || "";
+        n.style.transformOrigin = o.to || "";
+        const m = n._rvM;
+        if (m) { m.style.transition = m._rvT || ""; m.style.transform = ""; n._rvM = null; }
+      }, d + dur + 150));
     };
-    const sweep = () => {
+    let sRaf = 0;
+    const sweepNow = () => {
+      sRaf = 0;
       if (!armed.size) return;
       const limit = vh() * 0.95;
       armed.forEach((n) => { if (n.getBoundingClientRect().top < limit) show(n); });
     };
-    const teardown = () => {
+    const sweep = () => { if (!sRaf) sRaf = requestAnimationFrame(sweepNow); };
+    this._teardown = () => {
       window.removeEventListener("scroll", sweep);
       document.removeEventListener("scroll", sweep, true);
       window.removeEventListener("resize", sweep);
       if (this._io) this._io.disconnect();
-      if (this._bio) this._bio.disconnect();
     };
-    this._teardown = teardown;
-    if (!("IntersectionObserver" in window)) return;
     const seen = new WeakSet();
     const io = new IntersectionObserver((entries) => {
       entries.forEach((x) => {
@@ -1394,10 +1630,7 @@ class Component extends DCLogic {
         if (!seen.has(n)) {
           seen.add(n);
           if (x.isIntersecting) { io.unobserve(n); return; }
-          armed.add(n);
-          n.style.transition = "none";
-          n.style.opacity = "0";
-          n.style.transform = "translateY(12px)";
+          arm(n);
           return;
         }
         if (x.isIntersecting) { show(n); io.unobserve(n); }
@@ -1408,31 +1641,113 @@ class Component extends DCLogic {
     window.addEventListener("scroll", sweep, { passive: true });
     document.addEventListener("scroll", sweep, { passive: true, capture: true });
     window.addEventListener("resize", sweep, { passive: true });
+  }
 
-    // Bar fills, observed on the parent track (a 0% bar has no area).
-    const seenT = new WeakSet();
-    const bio = new IntersectionObserver((entries) => {
-      entries.forEach((x) => {
-        const t = x.target;
-        const b = t.querySelector("[data-bar]");
-        if (!b) return;
-        if (!seenT.has(t)) {
-          seenT.add(t);
-          if (x.isIntersecting) { bio.unobserve(t); return; }
-          b.dataset.target = b.style.width;
-          b.style.transition = "none";
-          b.style.width = "0%";
-          return;
-        }
-        if (x.isIntersecting) {
-          b.style.transition = "width 1s cubic-bezier(.16,1,.3,1) " + (parseInt(b.getAttribute("data-bar") || "0", 10)) + "ms";
-          b.style.width = b.dataset.target;
-          bio.unobserve(t);
-        }
-      });
-    }, { threshold: 0 });
-    Array.prototype.slice.call(document.querySelectorAll("[data-bar]")).forEach((b) => { if (b.parentElement) bio.observe(b.parentElement); });
-    this._bio = bio;
+  initGlow() {
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    let cur = null, raf = 0, lx = 0, ly = 0;
+    const off = (el) => { el.style.setProperty("--mx", "-999px"); el.style.setProperty("--my", "-999px"); };
+    const paint = () => {
+      raf = 0;
+      if (!cur) return;
+      const r = cur.getBoundingClientRect();
+      cur.style.setProperty("--mx", Math.round(lx - r.left) + "px");
+      cur.style.setProperty("--my", Math.round(ly - r.top) + "px");
+    };
+    const move = (e) => {
+      if (e.pointerType && e.pointerType !== "mouse") return;
+      const t = e.target;
+      const card = t && t.closest ? t.closest("[data-glow]") : null;
+      if (card !== cur) { if (cur) off(cur); cur = card; }
+      lx = e.clientX; ly = e.clientY;
+      if (cur && !raf) raf = requestAnimationFrame(paint);
+    };
+    const leave = () => { if (cur) off(cur); cur = null; };
+    document.addEventListener("pointermove", move, { passive: true });
+    document.documentElement.addEventListener("mouseleave", leave);
+    this._glow = { move: move, leave: leave };
+  }
+
+  initHeatTips(card, rows, months) {
+    if (!card) return;
+    const LV = ["Low", "Elevated", "High", "Extreme"];
+    const tip = document.createElement("div");
+    tip.setAttribute("aria-hidden", "true");
+    tip.style.cssText = "position:absolute;left:0;top:0;z-index:5;pointer-events:none;opacity:0;transform:translate(-50%,calc(-100% - 4px));transition:opacity .16s ease,transform .22s cubic-bezier(.16,1,.3,1);background:#FAFAFA;color:#060607;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;font-weight:500;letter-spacing: 0;text-transform:uppercase;line-height:1;padding:7px 9px 6px;border-radius:6px;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(0,0,0,.8);";
+    card.appendChild(tip);
+    let curCell = null, curRow = null, hideT = 0, lastType = "";
+    const lift = (c, on) => { if (!c) return; c.style.transform = on ? "scale(1.08)" : ""; c.style.boxShadow = on ? "0 0 0 1.5px rgba(250,250,250,0.85)" : ""; };
+    const focusRow = (row) => {
+      if (row === curRow) return;
+      curRow = row;
+      rows.forEach((r) => { r.el.style.opacity = row && r.el !== row ? "0.38" : ""; });
+    };
+    const hide = () => {
+      lift(curCell, false);
+      curCell = null;
+      tip.style.opacity = "0";
+      tip.style.transform = "translate(-50%,calc(-100% - 4px))";
+      months.forEach((m) => { m.style.color = "#8A8A96"; });
+    };
+    const show = (cell) => {
+      let ri = -1, ci = -1;
+      for (let i = 0; i < rows.length; i++) { const j = rows[i].cells.indexOf(cell); if (j !== -1) { ri = i; ci = j; break; } }
+      if (ri < 0) return;
+      if (curCell !== cell) { lift(curCell, false); curCell = cell; lift(cell, true); }
+      const m = months[ci] ? months[ci].textContent.trim() : "";
+      tip.textContent = (m ? m + " \u00B7 " : "") + (LV[rows[ri].lv[ci]] || "");
+      months.forEach((el, k) => { el.style.color = k === ci ? "#FAFAFA" : "#8A8A96"; });
+      const cr = card.getBoundingClientRect();
+      const r = cell.getBoundingClientRect();
+      const half = (tip.offsetWidth || 90) / 2;
+      const x = Math.max(half + 6, Math.min(cr.width - half - 6, r.left - cr.left + r.width / 2));
+      tip.style.left = x + "px";
+      tip.style.top = (r.top - cr.top) + "px";
+      tip.style.opacity = "1";
+      tip.style.transform = "translate(-50%,calc(-100% - 9px))";
+    };
+    card.addEventListener("pointerdown", (e) => { lastType = e.pointerType || ""; });
+    card.addEventListener("pointerover", (e) => {
+      if (e.pointerType !== "mouse") return;
+      const t = e.target;
+      focusRow(t.closest ? t.closest("[data-heat-row]") : null);
+      const cell = t.closest ? t.closest("[data-heatcell]") : null;
+      if (cell) show(cell); else hide();
+    });
+    card.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse" && this._hgHold) this._hgHold(true); });
+    card.addEventListener("pointerleave", (e) => {
+      if (e.pointerType !== "mouse") return;
+      focusRow(null); hide();
+      if (this._hgHold) this._hgHold(false);
+    });
+    card.addEventListener("click", (e) => {
+      if (lastType === "mouse") return;
+      const cell = e.target.closest ? e.target.closest("[data-heatcell]") : null;
+      if (!cell) return;
+      focusRow(cell.closest("[data-heat-row]"));
+      show(cell);
+      clearTimeout(hideT);
+      hideT = setTimeout(() => { focusRow(null); hide(); }, 2400);
+    });
+    card.addEventListener("touchstart", () => { if (this._hgHold) this._hgHold(true, 6000); }, { passive: true });
+  }
+  componentDidMount() {
+    this.stickyCta();
+    this.initCarousel();
+    this.startSlideshow();
+    this.mountLazyVideo();
+    this.idleLoops();
+    this.hsCount();
+    this.startHeatGrid();
+    this.initLogoSweep();
+    this.initNavChrome();
+    this.initActiveNav();
+    this.initChartReveal();
+    this.initHeroParallax();
+    this.initPrintSafety();
+    this.initGlow();
+    this.initReveals();
+    this.initDemoFocus();
   }
 
   idleLoops() {
@@ -1449,18 +1764,18 @@ class Component extends DCLogic {
     this._lio = lio;
   }
 
-  mountLazyVideo() {
-    const vids = Array.prototype.slice.call(
-      document.querySelectorAll("video[data-lazyvideo]")
-    );
+mountLazyVideo() {
+    const vids = Array.prototype.slice.call(document.querySelectorAll("video[data-lazyvideo]"));
     if (!vids.length) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const play = (v) => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
     const start = (v) => {
       if (v.dataset.loaded) return;
       v.dataset.loaded = "1";
+      if (reduce) { v.preload = "metadata"; v.controls = true; v.src = v.getAttribute("data-lazyvideo"); return; }
       v.preload = "auto";
       v.src = v.getAttribute("data-lazyvideo");
-      const go = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
-      v.addEventListener("loadeddata", go, { once: true });
+      v.addEventListener("loadeddata", () => { if (v._vis !== false) play(v); }, { once: true });
       v.load();
     };
     if (!("IntersectionObserver" in window)) { vids.forEach(start); return; }
@@ -1473,9 +1788,29 @@ class Component extends DCLogic {
     }, { rootMargin: "300px 0px" });
     vids.forEach((v) => vio.observe(v));
     this._vio = vio;
+    if (reduce) return;
+    // Pause the loop whenever it is scrolled away.
+    this._pvio = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const v = e.target;
+        v._vis = e.isIntersecting;
+        if (!v.dataset.loaded) return;
+        if (e.isIntersecting) play(v); else v.pause();
+      });
+    }, { threshold: 0.05 });
+    vids.forEach((v) => this._pvio.observe(v));
   }
 
   componentWillUnmount() {
+    if (this._dotAnim) { this._dotAnim.onfinish = null; this._dotAnim.cancel(); }
+    if (this._carIo) this._carIo.disconnect();
+    if (this._carVis) document.removeEventListener("visibilitychange", this._carVis);
+    if (this._pvio) this._pvio.disconnect();
+    if (this._glow) { document.removeEventListener("pointermove", this._glow.move); document.documentElement.removeEventListener("mouseleave", this._glow.leave); }
+    if (this._chartSettle) window.removeEventListener("beforeprint", this._chartSettle);
+    clearTimeout(this._hgResume);
+    if (this._demoFocus) document.removeEventListener("click", this._demoFocus);
+    if (this._rvTimers) this._rvTimers.forEach((t) => clearTimeout(t));
     if (this._printSettle) window.removeEventListener("beforeprint", this._printSettle);
     if (this._paraScroll) { window.removeEventListener("scroll", this._paraScroll); document.removeEventListener("scroll", this._paraScroll, true); window.removeEventListener("resize", this._paraScroll); }
     if (this._activeNav) { window.removeEventListener("scroll", this._activeNav); document.removeEventListener("scroll", this._activeNav, true); }
@@ -1510,6 +1845,8 @@ class Component extends DCLogic {
     return {
       trackX: (-sl * 100) + "%",
       dot0: dot(0), dot1: dot(1), dot2: dot(2),
+      dotS0: sl === 0 ? 1 : 0, dotS1: sl === 1 ? 1 : 0, dotS2: sl === 2 ? 1 : 0,
+      cur0: sl === 0 ? "true" : "false", cur1: sl === 1 ? "true" : "false", cur2: sl === 2 ? "true" : "false",
       prevSlide: this.goSlide(sl - 1),
       nextSlide: this.goSlide(sl + 1),
       goSlide0: this.goSlide(0), goSlide1: this.goSlide(1), goSlide2: this.goSlide(2),
@@ -1524,17 +1861,26 @@ class Component extends DCLogic {
           w: p === 0 ? "0%" : d.v + "%",
           barBg: p === 2 ? d.c : "#22D3EE",
           val: p === 0 ? "\u2014" : d.loss,
-          valFg: p === 0 ? "#5E5E66" : (p === 1 ? "#C7C7CE" : d.c),
+          valFg: p === 0 ? "#9A9AA6" : (p === 1 ? "#C7C7CE" : d.c),
           pill: p === 0 ? "Logged" : (p === 1 ? "Reading" : d.s),
           pillFg: p === 0 ? "#22D3EE" : (p === 1 ? "#8A8A92" : d.c),
           pillBg: p === 0 ? "rgba(34,211,238,0.10)" : (p === 1 ? "#17171B" : d.bg)
         };
       }),
-      faqs: this.faqData.map(([q, a], i) => ({
-        q: q, a: a, sign: this.state.open === i ? "−" : "+",
-        open: this.state.open === i,
-        toggle: () => this.setState((s) => ({ open: s.open === i ? -1 : i }))
-      })),
+      faqs: this.faqData.map(([q, a], i) => {
+        const on = (this.state.openSet || []).indexOf(i) !== -1;
+        return {
+          q: q, a: a, sign: on ? "\u2212" : "+", open: on,
+          rows: on ? "1fr" : "0fr",
+          op: on ? 1 : 0,
+          ty: on ? "none" : "translateY(-6px)",
+          vbar: on ? "rotate(90deg)" : "rotate(0deg)",
+          border: on ? "#2E2E35" : "#1F1F23",
+          expanded: on ? "true" : "false",
+          hidden: on ? "false" : "true",
+          toggle: () => this.setState((s) => { const cur = s.openSet || []; return { openSet: cur.indexOf(i) !== -1 ? cur.filter((x) => x !== i) : cur.concat([i]) }; })
+        };
+      }),
       first: f.first, last: f.last, email: f.email, phone: f.phone, dept: f.dept,
       consent: f.consent,
       setFirst: this.setField("first"), setLast: this.setField("last"),
@@ -1542,11 +1888,11 @@ class Component extends DCLogic {
       setDept: this.setField("dept"), setConsent: this.setField("consent"),
       submitted: this.state.submitted,
       notSubmitted: !this.state.submitted,
-      submit: (e) => { e.preventDefault(); const f = this.state.form; if (!f.first.trim() || !f.email.trim() || !f.dept.trim()) return; this.setState({ submitted: true }); },
-      reset: () => this.setState({ submitted: false })
+      submit: (e) => { e.preventDefault(); },
+      reset: () => this.setState({ submitted: false }, () => { const el = document.querySelector("#demo form input"); if (el) el.focus({ preventScroll: true }); })
     };
   }
 }
 </script>
-</body>
+<noscript><section class="hs-runtime-fallback"><h1>HydroSense for US Construction</h1><p>Measure sweat loss during work or training. JavaScript is required to submit an inquiry.</p><a href="https://calendly.com/sirisha-2/10min">Book a 10-minute introduction</a></section></noscript></body>
 </html>

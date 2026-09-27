@@ -1,33 +1,28 @@
 {
+  "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "rewrites": [
     {
       "source": "/book-a-meeting",
       "destination": "/book-a-meeting.html"
-    },
+    }
+  ],
+  "headers": [
     {
-      "source": "/Book a Meeting.dc.html",
-      "destination": "/book-a-meeting.html"
-    },
-    {
-      "source": "/Book%20a%20Meeting.dc.html",
-      "destination": "/book-a-meeting.html"
-    },
-    {
-      "source": "/US Construction Book a Meeting.dc.html",
-      "destination": "/book-a-meeting.html"
-    },
-    {
-      "source": "/US%20Construction%20Book%20a%20Meeting.dc.html",
-      "destination": "/book-a-meeting.html"
-    },
-    {
-      "source": "/US Construction Landing.dc.html",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/US%20Construction%20Landing.dc.html",
-      "destination": "/index.html"
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
     }
   ]
 }

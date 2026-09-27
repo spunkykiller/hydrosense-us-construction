@@ -1,0 +1,9 @@
+backend/
+source/
+tools/
+node_modules/
+test-results/
+*.md
+*.json
+package-lock.json
+.env*

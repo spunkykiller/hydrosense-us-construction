@@ -1,1 +1,9 @@
-.vercel
+node_modules/
+source/uploads/
+.env
+.env.*
+*.sqlite*
+config.local.php
+.vercel/
+test-results/
+*.log

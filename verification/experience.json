@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "checks": [
+    "Domain-root deployment loads",
+    "hydrosense-firefighters: reduced motion and nonblank hero image",
+    "hydrosense-firefighters: keyboard focus reaches controls",
+    "hydrosense-mining-safety: reduced motion and nonblank hero image",
+    "hydrosense-mining-safety: keyboard focus reaches controls",
+    "hydrosense-us-construction: reduced motion and nonblank hero image",
+    "hydrosense-us-construction: keyboard focus reaches controls",
+    "JavaScript-disabled booking fallback remains readable"
+  ],
+  "performance": [
+    {
+      "slug": "hydrosense-firefighters",
+      "conditions": "Local headless Chromium, 390px, reduced motion, unthrottled; not field Core Web Vitals",
+      "reduced": "0s",
+      "image": true,
+      "lcpMs": 196,
+      "cls": 0,
+      "fcpMs": 196,
+      "transferredBytes": 815798
+    },
+    {
+      "slug": "hydrosense-mining-safety",
+      "conditions": "Local headless Chromium, 390px, reduced motion, unthrottled; not field Core Web Vitals",
+      "reduced": "0s",
+      "image": true,
+      "lcpMs": 380,
+      "cls": 0,
+      "fcpMs": 380,
+      "transferredBytes": 669914
+    },
+    {
+      "slug": "hydrosense-us-construction",
+      "conditions": "Local headless Chromium, 390px, reduced motion, unthrottled; not field Core Web Vitals",
+      "reduced": "0s",
+      "image": true,
+      "lcpMs": 396,
+      "cls": 0,
+      "fcpMs": 396,
+      "transferredBytes": 604340
+    }
+  ]
+}

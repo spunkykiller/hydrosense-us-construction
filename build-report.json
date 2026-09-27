@@ -1,0 +1,86 @@
+{
+  "industry": "construction",
+  "generatedAt": "2026-09-27T18:06:37.421Z",
+  "images": [
+    {
+      "source": "assets/hero-construction.jpg",
+      "originalBytes": 227550,
+      "largestWebpBytes": 130888
+    },
+    {
+      "source": "assets/mark-eit-health-light.png",
+      "originalBytes": 53894,
+      "largestWebpBytes": 7374
+    },
+    {
+      "source": "assets/mark-sony-light.png",
+      "originalBytes": 28683,
+      "largestWebpBytes": 2514
+    },
+    {
+      "source": "assets/mark-eu-flag-sm.png",
+      "originalBytes": 188608,
+      "largestWebpBytes": 4454
+    },
+    {
+      "source": "assets/mark-venture-cup-light.png",
+      "originalBytes": 41370,
+      "largestWebpBytes": 3816
+    },
+    {
+      "source": "assets/mark-almi-light.png",
+      "originalBytes": 27394,
+      "largestWebpBytes": 1844
+    },
+    {
+      "source": "assets/card-construction.jpg",
+      "originalBytes": 198074,
+      "largestWebpBytes": 111700
+    },
+    {
+      "source": "assets/product-patch-skin.jpg",
+      "originalBytes": 129031,
+      "largestWebpBytes": 43322
+    },
+    {
+      "source": "assets/app-in-hand.png",
+      "originalBytes": 220374,
+      "largestWebpBytes": 14244
+    },
+    {
+      "source": "assets/product-phone-pack.jpg",
+      "originalBytes": 294293,
+      "largestWebpBytes": 158978
+    },
+    {
+      "source": "assets/award-eu-seal-sm.png",
+      "originalBytes": 185273,
+      "largestWebpBytes": 14332
+    },
+    {
+      "source": "assets/award-eureka-eurostars-sm.png",
+      "originalBytes": 105651,
+      "largestWebpBytes": 9304
+    },
+    {
+      "source": "assets/award-vinnova-sm.png",
+      "originalBytes": 117925,
+      "largestWebpBytes": 4774
+    },
+    {
+      "source": "assets/award-tie-germany-sm.png",
+      "originalBytes": 172508,
+      "largestWebpBytes": 8798
+    },
+    {
+      "source": "assets/innovosens-official-footer-logo.png",
+      "originalBytes": 21626,
+      "largestWebpBytes": 8452
+    },
+    {
+      "source": "assets/ff-sensor-closeup.jpg",
+      "originalBytes": 90456,
+      "largestWebpBytes": 39412
+    }
+  ]
+}
