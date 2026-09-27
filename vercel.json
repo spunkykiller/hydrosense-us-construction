@@ -1,8 +1,33 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/book-a-meeting", "destination": "/book-a-meeting.html" },
-    { "source": "/Book a Meeting.dc.html", "destination": "/book-a-meeting.html" },
-    { "source": "/Book%20a%20Meeting.dc.html", "destination": "/book-a-meeting.html" }
+    {
+      "source": "/book-a-meeting",
+      "destination": "/book-a-meeting.html"
+    },
+    {
+      "source": "/Book a Meeting.dc.html",
+      "destination": "/book-a-meeting.html"
+    },
+    {
+      "source": "/Book%20a%20Meeting.dc.html",
+      "destination": "/book-a-meeting.html"
+    },
+    {
+      "source": "/US Construction Book a Meeting.dc.html",
+      "destination": "/book-a-meeting.html"
+    },
+    {
+      "source": "/US%20Construction%20Book%20a%20Meeting.dc.html",
+      "destination": "/book-a-meeting.html"
+    },
+    {
+      "source": "/US Construction Landing.dc.html",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/US%20Construction%20Landing.dc.html",
+      "destination": "/index.html"
+    }
   ]
 }
