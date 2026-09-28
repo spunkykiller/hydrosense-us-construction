@@ -13,16 +13,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1216,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4359,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -37,16 +38,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1211,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4406,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -61,16 +63,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1222,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4461,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -85,16 +88,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1229,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4596,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -110,15 +114,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3674,
-      "detailsOpen": [
-        true,
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -134,15 +139,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3734,
-      "detailsOpen": [
-        true,
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -157,15 +163,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1238,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4380,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -180,15 +188,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1233,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4427,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -203,15 +213,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1222,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4499,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -226,15 +238,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1229,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4635,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -250,14 +264,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3754,
-      "detailsOpen": [
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -273,14 +289,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3734,
-      "detailsOpen": [
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -295,15 +313,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1270,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4402,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -318,15 +338,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1211,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4422,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -341,15 +363,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1222,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4461,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -364,15 +388,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1229,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4596,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -388,14 +414,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3694,
-      "detailsOpen": [
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -411,14 +439,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3734,
-      "detailsOpen": [
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -433,16 +463,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1216,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4359,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -457,16 +488,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1211,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4406,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -481,16 +513,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1222,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4461,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -505,16 +538,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1229,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4596,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -530,15 +564,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3674,
-      "detailsOpen": [
-        true,
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -554,15 +589,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3734,
-      "detailsOpen": [
-        true,
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -577,15 +613,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1238,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4380,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -600,15 +638,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1233,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4427,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -623,15 +663,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1222,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4499,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -646,15 +688,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1229,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4635,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -670,14 +714,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3754,
-      "detailsOpen": [
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -693,14 +739,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3734,
-      "detailsOpen": [
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -715,15 +763,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1270,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4444,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -738,15 +788,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1211,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4422,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -761,15 +813,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1222,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4461,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -784,15 +838,17 @@
       "photoAfterCopy": true,
       "ctaFits": true,
       "headerCtaVisible": false,
-      "productTop": 1229,
-      "detailsOpen": [
-        false,
-        false,
-        false,
-        false,
-        false
+      "productTop": 4596,
+      "detailsCount": 0,
+      "sectionVisibility": [
+        true,
+        true,
+        true,
+        true,
+        true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -808,14 +864,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3694,
-      "detailsOpen": [
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     },
     {
@@ -831,14 +889,16 @@
       "ctaFits": true,
       "headerCtaVisible": true,
       "productTop": 3734,
-      "detailsOpen": [
+      "detailsCount": 0,
+      "sectionVisibility": [
         true,
         true,
         true,
         true,
         true
       ],
-      "summary": "View credentials",
+      "sampleLabeled": true,
+      "extraDisclaimer": false,
       "errors": []
     }
   ]

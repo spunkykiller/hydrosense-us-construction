@@ -168,21 +168,7 @@
     }
     return true;
   }
-  function mobileDetails() {
-    const media = matchMedia('(max-width: 767px)');
-    const sync = () => {
-      document.querySelectorAll('details[data-mobile-details]').forEach((item) => {
-        const mode = media.matches ? 'mobile' : 'desktop';
-        if (item.dataset.hsMode === mode) return;
-        item.open = !media.matches;
-        item.dataset.hsMode = mode;
-      });
-    };
-    sync();
-    media.addEventListener('change', sync);
-  }
   function ready() {
-    mobileDetails();
     document.querySelectorAll('[data-hs-direct-booking]').forEach((a) => { a.href = new URL('book-a-meeting.html', root).href; });
     document.querySelectorAll('[data-hs-external-booking]').forEach((a) => { a.href = calendarUrl(); });
     document.querySelectorAll('[data-hs-industry-link]').forEach((a) => { const url = c.industryUrls?.[a.dataset.hsIndustryLink]; if (url) a.href = url; });
