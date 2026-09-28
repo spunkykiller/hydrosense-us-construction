@@ -51,7 +51,7 @@ function sharedHead($) {
   // Dependencies must load before the supplied runtime.
   const support = $('script[src="./support.js"]').remove(); $('head').append(support);
   $('head').append('<meta name="referrer" content="strict-origin-when-cross-origin">');
-  const description = `${manifest.label}: measure sweat loss during representative work or training. Discuss a paid organizational pilot in a 10-minute introductory call.`;
+  const description = `${manifest.label}: measure sweat loss during representative work or training. Discuss an organizational pilot in a 10-minute introductory call.`;
   $('head').append(`<meta name="description" content="${description}">`);
   $('link[href*="fonts.googleapis.com"], link[href*="fonts.gstatic.com"]').remove();
   $('head').append('<style>@font-face{font-family:Geist;font-style:normal;font-weight:300 700;font-display:swap;src:url(./assets/fonts/geist-latin.woff2) format("woff2")}@font-face{font-family:"Geist Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url(./assets/fonts/geist-mono-latin.woff2) format("woff2")}</style>');
@@ -94,17 +94,32 @@ async function landing() {
     input.before(`<label class="hs-form-label" for="hs-${name}">${placeholder || 'Organization'}</label>`); input.attr('id', `hs-${name}`);
   });
   form.find('[type="submit"]').addClass('hs-submit').before('<label class="hs-form-label" for="hs-phone">Phone (optional, include country code)</label><input id="hs-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+1" style="width:100%;padding:15px 17px;border:1px solid #2a2a30;border-radius:12px;font-size:16px;background:#0b0b0d;color:#fafafa"><label class="hs-inquiry-consent"><input name="inquiryConsent" type="checkbox" value="yes" required><span>I agree to be contacted about a pilot.</span></label><label class="hs-honeypot" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>');
-  form.append('<p class="hs-form-meta">Paid organizational pilots.</p><p data-hs-status role="status" aria-live="polite"></p><p class="hs-form-meta"><a data-hs-direct-booking href="./book-a-meeting.html">Book directly</a></p>');
+  form.append('<p data-hs-status role="status" aria-live="polite"></p><p class="hs-form-meta"><a data-hs-direct-booking href="./book-a-meeting.html">Book directly</a></p>');
   $('[data-site-footer]').append('<div style="max-width:1280px;margin:auto;padding:16px 24px 32px"><button data-hs-preferences type="button" style="background:none;border:0;color:#c4c4cc;text-decoration:underline;cursor:pointer;font:14px system-ui">Advertising privacy preferences</button></div>');
   const horizon = $('[data-marks-grid] [data-mark-tile]').filter((_, el) => $(el).text().includes('Horizon 2020'));
+  const almi = $('[data-marks-grid] [data-mark-tile]').filter((_, el) => $(el).find('img[alt="Almi"]').length);
+  if (horizon.length !== 1 || almi.length !== 1) throw new Error('Recognition marks missing');
+  const slot = $('<span data-hs-mark-slot></span>');
+  horizon.before(slot);
+  almi.before(horizon);
+  slot.replaceWith(almi);
   horizon.attr('data-hs-horizon', '');
   horizon.find('span').last().html('EU Research &amp;<br>Innovation');
   const outcomes = $('#data [data-outcomes]');
   outcomes.children().slice(1).remove();
   outcomes.contents().filter((_, node) => node.type === 'text' && !node.data.trim()).remove();
-  outcomes.children().first().find('span').first().text('Example insight');
-  outcomes.children().first().find('div').last().html('<span style="color:#FAFAFA">Sweat loss varies across a crew.</span>');
-  $('section[data-screen-label="Campaign record"] a > span:first-child > span').eq(1).text('Validation and field results.');
+  outcomes.children().first().find('span').first().remove();
+  const actionLine = {
+    firefighters: 'Plan rehab from measured sweat loss.',
+    mining: 'Adjust hydration before the next shift.',
+    construction: 'Plan breaks around measured sweat loss.'
+  }[manifest.industry];
+  outcomes.children().first().find('div').last().text(actionLine);
+  const campaignLink = $('section[data-screen-label="Campaign record"] a').first();
+  campaignLink.removeAttr('style data-glow data-nudge data-reveal style-hover style-active').addClass('hs-campaign-link');
+  campaignLink.html('<span class="hs-campaign-title">HydroSense on Kickstarter</span><span class="hs-campaign-action">View campaign <span aria-hidden="true">↗</span></span>');
+  const firstHeatFigure = $('section[data-screen-label="Heat risk map"] [data-countto]').first();
+  if (firstHeatFigure.length) firstHeatFigure.attr('data-hs-delayed-count', '');
   landingPresentation($);
   // If the export has no named dashboard root, label its simulated cohort panel directly.
   if (!$('#data [data-report-card]').length) $('[data-hs-panel], [data-hs-wrap], [data-hs]').first().append('<p class="hs-illustrative">Illustrative example only. Not a certification of operational readiness.</p>');
@@ -133,7 +148,12 @@ async function landing() {
     if (/^(assets|uploads)\//.test(url) && !url.startsWith('assets/optimized/')) await copy(path.join(source, decodeURIComponent(url)), path.join(repo, decodeURIComponent(url)));
   }
   const logic = $('script[data-dc-script]');
-  logic.text(logic.text().replace(/submit: \(e\) => \{[\s\S]*?\n      \},\n      reset:/, 'submit: (e) => { e.preventDefault(); },\n      reset:'));
+  let pageLogic = logic.text().replace(/submit: \(e\) => \{[\s\S]*?\n      \},\n      reset:/, 'submit: (e) => { e.preventDefault(); },\n      reset:');
+  pageLogic = pageLogic.replace('const el = en.target;\n        el._live = true;', 'const el = en.target.querySelector("[data-hs-delayed-count]") || en.target;\n        el._live = true;');
+  pageLogic = pageLogic.replace('this._cio.unobserve(el);', 'this._cio.unobserve(en.target);');
+  pageLogic = pageLogic.replace('els.forEach((e) => this._cio.observe(e));', 'els.forEach((e) => this._cio.observe(e.hasAttribute("data-hs-delayed-count") ? (e.closest("[data-glow]") || e) : e));');
+  if (!pageLogic.includes('en.target.querySelector("[data-hs-delayed-count]")')) throw new Error('Count-up animation transform failed');
+  logic.text(pageLogic);
   let html = $.html();
   html = html.replace(/letter-spacing\s*:\s*[^;"}]+/g, 'letter-spacing: 0');
   html = html.replace(/font-size:\s*clamp\(([^,]+),[^,]+,([^\)]+)\)/g, (_, min, max) => 'font-size: ' + max.trim());

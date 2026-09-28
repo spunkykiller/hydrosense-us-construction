@@ -29,6 +29,11 @@ input:focus-visible { outline-offset: 1px; }
 [data-hs-horizon] > div > div > span { display: block; max-width: 100%; overflow-wrap: normal; text-align: center; letter-spacing: 0 !important; }
 [data-hs-horizon] > div > div > span:first-child { font-size: 13px !important; line-height: 1.15 !important; }
 [data-hs-horizon] > div > div > span:last-child { font-size: 9px !important; line-height: 1.15 !important; }
+.hs-campaign-link { display: flex !important; align-items: center; justify-content: space-between; gap: 20px; width: 100%; max-width: 900px; margin: 0 auto; padding: 19px 0 !important; border: 0 !important; border-top: 1px solid #33343a !important; border-bottom: 1px solid #33343a !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; text-decoration: none !important; }
+.hs-campaign-title { color: #f2f3f3; font-size: 16px; font-weight: 600; line-height: 1.35; }
+.hs-campaign-action { display: inline-flex; align-items: center; gap: 7px; flex: none; color: #73d8e7; font-size: 14px; font-weight: 500; line-height: 1.35; }
+.hs-campaign-action [aria-hidden] { font-size: 18px; line-height: 1; }
+.hs-campaign-link:hover .hs-campaign-action, .hs-campaign-link:focus-visible .hs-campaign-action { color: #b7f1f8; text-decoration: underline; text-underline-offset: 4px; }
 #data [data-outcomes] { grid-template-columns: 1fr !important; margin-top: 24px !important; padding-top: 24px !important; }
 #data [data-outcomes] > div { gap: 6px !important; }
 #data [data-outcomes] > div > div { font-size: 18px !important; line-height: 1.35 !important; }
@@ -82,7 +87,7 @@ input:focus-visible { outline-offset: 1px; }
   [data-hero-root] > div:not([data-hero-scrim]):not([data-hero-base]) { order: 0; position: relative !important; width: 100%; max-width: none !important; margin: 0 !important; padding: 0 20px !important; }
   section[data-hero-root] [data-hero-copy] { max-width: 520px !important; padding: 27px 0 25px !important; }
   [data-hero-copy] > div:first-child { margin-bottom: 14px !important; }
-  [data-hero-badge] { padding: 0 !important; border-radius: 0 !important; background: none !important; color: #80cbd1 !important; font-size: 11px !important; line-height: 1.35 !important; }
+  [data-hero-badge] { display: inline-flex !important; align-items: center; max-width: 100%; padding: 9px 15px !important; border-radius: 999px !important; background: #fafafa !important; color: #15191a !important; font-size: 11px !important; line-height: 1.35 !important; white-space: normal !important; }
   section[data-hero-root] h1 { font-size: 32px !important; line-height: 1.12 !important; font-weight: 550 !important; margin: 0 0 13px !important; max-width: 20ch !important; text-wrap: pretty; }
   section[data-hero-root] h1 span:last-child { color: #cbd0d2 !important; }
   section[data-hero-root] p { font-size: 15.5px !important; line-height: 1.45 !important; color: #c6cdd0 !important; margin: 0 0 20px !important; max-width: 35ch !important; }
@@ -106,7 +111,13 @@ input:focus-visible { outline-offset: 1px; }
   section[data-screen-label="Recognition"] [data-reveal-kind="rule"] { display: none !important; }
   section[data-screen-label="Recognition"] [data-marks-grid] { gap: 8px !important; }
   section[data-screen-label="Recognition"] [data-mark-tile] { border-radius: 6px !important; }
-  section[data-screen-label="Recognition"] [data-mark-tile]:last-child { width: 100% !important; }
+  section[data-screen-label="Recognition"] [data-mark-tile]:last-child { width: 100% !important; aspect-ratio: 3 / 1 !important; }
+  section[data-screen-label="Recognition"] [data-hs-horizon] > div { flex-direction: row !important; justify-content: center !important; gap: 14px !important; padding: 14px !important; }
+  section[data-screen-label="Recognition"] [data-hs-horizon] img { width: 64px !important; max-width: 23% !important; max-height: 70% !important; }
+  section[data-screen-label="Recognition"] [data-hs-horizon] > div > div { align-items: flex-start !important; }
+  section[data-screen-label="Recognition"] [data-hs-horizon] > div > div > span { text-align: left !important; }
+  section[data-screen-label="Recognition"] [data-hs-horizon] > div > div > span:first-child { font-size: 15px !important; }
+  section[data-screen-label="Recognition"] [data-hs-horizon] > div > div > span:last-child { font-size: 11px !important; }
 
   section[data-screen-label="Why it matters"] > div:first-child { padding: 35px 20px 22px !important; }
   section[data-screen-label="Why it matters"] [data-reveal]:first-child { margin-bottom: 12px !important; }
@@ -144,7 +155,7 @@ input:focus-visible { outline-offset: 1px; }
   section[data-screen-label="FAQ"] button > span:first-child { font-size: 15px !important; line-height: 1.35 !important; }
   section[data-screen-label="FAQ"] button + div p { padding: 0 16px 18px !important; font-size: 14px !important; }
   section[data-screen-label="Campaign record"] > div:first-child { padding: 14px 20px 24px !important; }
-  section[data-screen-label="Campaign record"] a { padding: 17px 18px !important; border-radius: 8px !important; gap: 8px !important; }
+  section[data-screen-label="Campaign record"] .hs-campaign-link { padding: 16px 0 !important; border-radius: 0 !important; gap: 16px !important; }
   #demo > div:first-child { padding: 40px 20px !important; }
   #demo h2 { font-size: 30px !important; }
   [data-stickycta] > div { padding: 8px 16px calc(8px + env(safe-area-inset-bottom)) !important; }

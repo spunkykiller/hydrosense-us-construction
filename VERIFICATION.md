@@ -16,6 +16,8 @@ Tested on 28 September 2026. These are package and controlled integration checks
 - Fresh npm dependency installation and build tested in the firefighter repository. Every repository uses the same build code and includes ready-built frontend output.
 - Mobile design checks in Chromium and WebKit at 320, 375, 390, 430, 768 and 1440 pixels: 36 industry/viewport/browser cases. The photo is visible on the first screen at phone widths, the hero and product are in reading order, and the sticky booking button leaves the form clear. Short phone heights and reduced motion were included.
 - The mobile product section shows the patch first. Credentials fit at 320-430 pixels. Risk evidence, seasonal context, patch details, awards and pilot material remain directly visible without expandable controls.
+- Latest display revision: the three mobile industry labels render as white rounded badges; ALMI occupies a compact recognition tile and the supplied Horizon 2020 artwork fits the full-width bottom tile. The campaign link points to Kickstarter and is labeled as such. The sample insight lines are short measurement-based actions, and the redundant pilot-price line is absent from the form.
+- The first heat statistic's count-up was observed from below its target through completion in Chromium and WebKit at 390 pixels. The revised mobile badge, marks, form and campaign link passed visual layout checks at 320, 375, 390 and 430 pixels in both engines.
 
 Evidence summaries are in `verification/`. Tests use synthetic records and controlled Calendly messages. No real appointment was made. No Meta or Calendly settings were changed.
 
