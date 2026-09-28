@@ -79,10 +79,19 @@ async function landing() {
     input.wrap('<div class="hs-field"></div>');
     input.before(`<label class="hs-form-label" for="hs-${name}">${placeholder || 'Organization'}</label>`); input.attr('id', `hs-${name}`);
   });
-  form.find('[type="submit"]').before('<label class="hs-form-label" for="hs-phone">Phone (optional, include country code)</label><input id="hs-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+1" style="width:100%;padding:15px 17px;border:1px solid #2a2a30;border-radius:12px;font-size:16px;background:#0b0b0d;color:#fafafa"><label class="hs-inquiry-consent"><input name="inquiryConsent" type="checkbox" value="yes" required><span>I agree that Innovosens may save these details and contact me about an organizational pilot.</span></label><label class="hs-honeypot" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>');
-  form.append('<p class="hs-form-meta">Free 10-minute introduction. Organizational pilots are paid. <a data-hs-privacy>Privacy notice</a></p><p data-hs-status role="status" aria-live="polite"></p><p class="hs-form-meta"><a data-hs-direct-booking href="./book-a-meeting.html">Book directly instead</a></p>');
+  form.find('[type="submit"]').addClass('hs-submit').before('<label class="hs-form-label" for="hs-phone">Phone (optional, include country code)</label><input id="hs-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+1" style="width:100%;padding:15px 17px;border:1px solid #2a2a30;border-radius:12px;font-size:16px;background:#0b0b0d;color:#fafafa"><label class="hs-inquiry-consent"><input name="inquiryConsent" type="checkbox" value="yes" required><span>I agree to be contacted about a pilot.</span></label><label class="hs-honeypot" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>');
+  form.append('<p class="hs-form-meta">Paid organizational pilots.</p><p data-hs-status role="status" aria-live="polite"></p><p class="hs-form-meta"><a data-hs-direct-booking href="./book-a-meeting.html">Book directly</a></p>');
   $('[data-site-footer]').append('<div style="max-width:1280px;margin:auto;padding:16px 24px 32px"><button data-hs-preferences type="button" style="background:none;border:0;color:#c4c4cc;text-decoration:underline;cursor:pointer;font:14px system-ui">Advertising privacy preferences</button></div>');
-  $('#data [data-report-card]').append('<p class="hs-illustrative">Illustrative example, not a live worker assessment or certification of fitness for deployment.</p>');
+  const horizon = $('[data-marks-grid] [data-mark-tile]').filter((_, el) => $(el).text().includes('Horizon 2020'));
+  horizon.attr('data-hs-horizon', '');
+  horizon.find('span').last().html('EU Research &amp;<br>Innovation');
+  const outcomes = $('#data [data-outcomes]');
+  outcomes.children().slice(1).remove();
+  outcomes.contents().filter((_, node) => node.type === 'text' && !node.data.trim()).remove();
+  outcomes.children().first().find('span').first().text('Example insight');
+  outcomes.children().first().find('div').last().html('<span style="color:#FAFAFA">Sweat loss varies across a crew.</span>');
+  $('#data [data-report-card]').append('<p class="hs-illustrative">Illustrative data only.</p>');
+  $('section[data-screen-label="Campaign record"] a > span:first-child > span').eq(1).text('Validation and field results.');
   // If the export has no named dashboard root, label its simulated cohort panel directly.
   if (!$('.hs-illustrative').length) $('[data-hs-panel], [data-hs-wrap], [data-hs]').first().append('<p class="hs-illustrative">Illustrative example only. Not a certification of operational readiness.</p>');
   $('video').attr('preload', 'none');
