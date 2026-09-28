@@ -13,7 +13,9 @@ input:focus-visible { outline-offset: 1px; }
 .hs-form-label { display: block; font-size: 14px; line-height: 1.5; color: #e0e0e5; margin: 0; }
 .hs-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .hs-inquiry-consent { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; color: #d4d4dc; }
-.hs-inquiry-consent input { margin-top: 4px; min-width: 18px; min-height: 18px; accent-color: #22d3ee; }
+.hs-inquiry-consent input { appearance: none; -webkit-appearance: none; box-sizing: border-box; margin: 3px 0 0; width: 18px; height: 18px; flex: 0 0 18px; border: 2px solid #c4c4cc; border-radius: 3px; background: #0b0b0d; display: grid; place-items: center; cursor: pointer; }
+.hs-inquiry-consent input:checked { border-color: #22d3ee; background: #22d3ee; }
+.hs-inquiry-consent input:checked::after { content: ''; width: 5px; height: 9px; border: solid #060607; border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-1px, -1px); }
 .hs-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .hs-form-meta { font-size: 14px; line-height: 1.5; color: #c4c4cc; margin: 0; }
 .hs-form-meta a { color: #67e8f9; text-decoration: underline; }
