@@ -12,6 +12,8 @@ This package contains an industry-specific landing page, booking page, locally s
 
 The public Pixel ID is **743509325171589**. The package defaults to review mode: no production advertising events and no false inquiry-save success. The client must explicitly configure production mode. Do not install a second Pixel through a WordPress plugin or tag manager on the same pages without removing the duplicate implementation.
 
+On phones, the landing page shows a short industry-specific introduction, the emergency photo, product demonstration and meeting form. Supporting statistics, seasonal context and awards are available in expandable sections. The original supplied files remain in `source/`; the build applies the mobile presentation to the public pages.
+
 **Where inquiries go:** Meta Pixel is measurement, not contact storage. All three pages send inquiries to one client-owned backend only after `leadEndpoint` is configured. The WordPress option stores them in the site's `{prefix}hydrosense_inquiries` table; the standalone PHP option stores them in a private SQLite database at `HS_DB_PATH`. Each record identifies its industry. With the current blank `leadEndpoint`, the static pages do not save inquiries and do not show a false success message. See `DEPLOYMENT.md` for setup and export instructions.
 
 Review-mode booking pages show a local placeholder and an explicit external-calendar link. The live Calendly embed is enabled only in configured production mode, because Calendly can load its own third-party trackers outside this site's consent controls.

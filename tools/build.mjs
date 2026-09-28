@@ -44,7 +44,7 @@ async function image(url) {
 }
 
 function sharedHead($) {
-  $('html').attr('lang', 'en');
+  $('html').attr({ lang: 'en', 'data-hs-industry': manifest.industry });
   $('head').append(`<title>HydroSense for ${manifest.label} | Organizational Pilots</title><style>x-dc{display:none!important}</style>`);
   $('head').append('<script src="./site-config.js" defer></script><script src="./hs-client.js" defer></script><script src="./vendor/react.production.min.js" defer></script><script src="./vendor/react-dom.production.min.js" defer></script><link rel="stylesheet" href="./hs-enhancements.css">');
   $('script[src="./support.js"]').attr('defer', '');
@@ -56,6 +56,55 @@ function sharedHead($) {
   $('link[href*="fonts.googleapis.com"], link[href*="fonts.gstatic.com"]').remove();
   $('head').append('<style>@font-face{font-family:Geist;font-style:normal;font-weight:300 700;font-display:swap;src:url(./assets/fonts/geist-latin.woff2) format("woff2")}@font-face{font-family:"Geist Mono";font-style:normal;font-weight:400 500;font-display:swap;src:url(./assets/fonts/geist-mono-latin.woff2) format("woff2")}</style>');
   $('head').append('<link rel="preload" href="./assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>');
+}
+
+function mobilePresentation($) {
+  const hero = $('section[data-hero-root]');
+  hero.append(hero.children('picture').first());
+  const heroSubline = {
+    firefighters: 'Measure individual sweat loss during departmental training.',
+    mining: 'Measure individual sweat loss across a working shift.',
+    construction: 'Measure individual sweat loss during demanding site work.'
+  };
+  hero.find('[data-hero-copy] > p').first().text(heroSubline[manifest.industry]);
+
+  const detail = (section, label, preview) => {
+    const inner = section.children('div').first();
+    const disclosure = $(`<details open data-mobile-details><summary>${label}</summary><div data-mobile-details-body></div></details>`);
+    if (preview) section.prepend(`<div class="hs-mobile-intro">${preview}</div>`);
+    section.append(disclosure);
+    disclosure.find('[data-mobile-details-body]').append(inner);
+  };
+
+  const recognition = $('section[data-screen-label="Recognition"]');
+  const marks = recognition.find('[data-marks-grid]');
+  const credentials = $('<details open data-mobile-details><summary>View credentials</summary><div data-mobile-details-body></div></details>');
+  marks.before(credentials);
+  credentials.find('[data-mobile-details-body]').append(marks);
+
+  const facts = {
+    firefighters: ['Protective gear can increase heat-illness risk.', 'NIOSH', 'https://www.cdc.gov/niosh/heat-stress/recommendations/ppe.html'],
+    mining: ['Hot machinery, humidity and ventilation can contribute to mining heat stress.', 'MSHA', 'https://arlweb.msha.gov/s%26hinfo/heatstress/heatstress.htm'],
+    construction: ['Outdoor work and strenuous activity are recognized heat-risk factors.', 'OSHA', 'https://www.osha.gov/heat-exposure/planning']
+  };
+  const [fact, agency, url] = facts[manifest.industry];
+  const risk = $('section[data-screen-label="Why it matters"]');
+  const riskInner = risk.children('div').first();
+  const riskHeading = riskInner.children('div').first();
+  const riskDetail = $('<details open data-mobile-details><summary>Explore the risk evidence</summary><div data-mobile-details-body></div></details>');
+  riskHeading.after(`<p class="hs-risk-fact">${fact} <a href="${url}" target="_blank" rel="noopener noreferrer">${agency} source</a></p>`);
+  riskInner.append(riskDetail);
+  riskDetail.find('[data-mobile-details-body]').append(riskHeading.nextUntil(riskDetail).not('.hs-risk-fact'));
+
+  detail($('section[data-screen-label="Heat risk map"]'), 'Explore seasonal context');
+  $('section[data-screen-label="Heat risk map"] [data-mobile-details-body]').prepend('<p class="hs-map-note">Illustrative regional context, not a live heat forecast.</p>');
+
+  const slides = $('#product [data-slides]').children('div');
+  if (slides.length === 3) slides.eq(2).prependTo(slides.parent());
+  detail($('section[data-screen-label="The sensor"]'), 'View patch details', '<h2>Single-use sweat patch</h2><p>Worn for one session, then discarded.</p>');
+  detail($('section[data-screen-label="Awards"]'), 'View awards and grants', '<h2>Awards &amp; grants</h2>');
+  const pilot = $('section[data-screen-label="Seattle pilot"]');
+  if (pilot.length) detail(pilot, 'View pilot details', '<h2>Seattle pilot</h2>');
 }
 
 async function landing() {
@@ -92,6 +141,7 @@ async function landing() {
   outcomes.children().first().find('div').last().html('<span style="color:#FAFAFA">Sweat loss varies across a crew.</span>');
   $('#data [data-report-card]').append('<p class="hs-illustrative">Illustrative data only.</p>');
   $('section[data-screen-label="Campaign record"] a > span:first-child > span').eq(1).text('Validation and field results.');
+  mobilePresentation($);
   // If the export has no named dashboard root, label its simulated cohort panel directly.
   if (!$('.hs-illustrative').length) $('[data-hs-panel], [data-hs-wrap], [data-hs]').first().append('<p class="hs-illustrative">Illustrative example only. Not a certification of operational readiness.</p>');
   $('video').attr('preload', 'none');
@@ -125,6 +175,7 @@ async function landing() {
   html = html.replace(/font-size:\s*clamp\(([^,]+),[^,]+,([^\)]+)\)/g, (_, min, max) => 'font-size: ' + max.trim());
   html = html.replace(/#(?:5E5E66|6A6A72|60606A|64646E)/gi, '#9A9AA6');
   html = html.replace('</body>', `<noscript><section class="hs-runtime-fallback"><h1>HydroSense for ${manifest.label}</h1><p>Measure sweat loss during work or training. JavaScript is required to submit an inquiry.</p><a href="https://calendly.com/sirisha-2/10min">Book a 10-minute introduction</a></section></noscript></body>`);
+  html = html.replace(/^[\t ]+$/gm, '');
   await fs.writeFile(path.join(repo, 'index.html'), html);
   await fs.writeFile(path.join(repo, manifest.landing), html);
 }

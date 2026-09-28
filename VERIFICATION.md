@@ -1,6 +1,6 @@
 # Verification Report
 
-Tested on 27 September 2026. These are package and controlled integration checks, not proof of live advertising performance or production readiness.
+Tested on 28 September 2026. These are package and controlled integration checks, not proof of live advertising performance or production readiness.
 
 ## Passed Locally
 
@@ -14,6 +14,8 @@ Tested on 27 September 2026. These are package and controlled integration checks
 - Safe Calendly prefill and campaign/industry attribution; ad-set and ad identifiers mapped into supported UTM content. Contact information is not put into advertising URLs or browser event parameters.
 - Optional CAPI payload hashing and browser/server event ID alignment checked without sending a live Meta request. CAPI remains disabled by default.
 - Fresh npm dependency installation and build tested in the firefighter repository. Every repository uses the same build code and includes ready-built frontend output.
+- Mobile redesign checks in Chromium and WebKit at 320, 375, 390, 430, 768 and 1440 pixels: 36 industry/viewport/browser cases. The photo is visible on the first screen at phone widths, the hero and product are in reading order, disclosures work by keyboard, and the sticky booking button leaves the form clear. Short phone heights and reduced motion were included.
+- The mobile product section shows the patch first. Expanded credentials fit at 320-430 pixels. Secondary statistics, seasonal context, awards and sensor details remain reachable through native disclosures; without JavaScript they remain open.
 
 Evidence summaries are in `verification/`. Tests use synthetic records and controlled Calendly messages. No real appointment was made. No Meta or Calendly settings were changed.
 
@@ -28,6 +30,8 @@ The real Calendly booking interface was checked separately without submitting an
 The local performance measurements in `verification/experience.json` use unthrottled headless Chromium, a 390-pixel viewport and reduced motion. They are not field Core Web Vitals, low-end-device or cellular-network benchmarks. Image savings in `build-report.json` compare referenced originals with their largest WebP variants, not total bytes for all responsive variants.
 
 React, fonts and referenced assets are served locally. Unused Babel/runtime transpilation and redundant self-fetching were removed. Above-the-fold media is prioritized; below-the-fold images are lazy loaded. These changes cannot guarantee lower CPA, improved ROI or higher engagement.
+
+At 390 pixels, the redesigned landing pages measured about 5,600-5,900 pixels tall locally, versus about 10,300-11,300 pixels in the earlier builds. This is a layout comparison, not evidence of higher conversion. The new mobile layout prioritizes one CTA and a separate visible emergency image; desktop presentation remains largely unchanged. The general heat-risk points link to NIOSH, MSHA or OSHA. Industry-specific statistics, safety claims, awards, illustrative reports and pilot references still need the client's content approval.
 
 ## Client Production Checks Still Required
 
