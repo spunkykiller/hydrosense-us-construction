@@ -168,6 +168,29 @@
     }
     return true;
   }
+  let recognitionScrollScheduled = false;
+  function scheduleRecognitionScroll() {
+    if (recognitionScrollScheduled || !matchMedia('(max-width: 767px)').matches || !document.querySelector('section[data-screen-label="Recognition"]')) return;
+    recognitionScrollScheduled = true;
+    const events = ['wheel', 'touchstart', 'pointerdown', 'keydown'];
+    let timer;
+    const cleanup = () => {
+      clearTimeout(timer);
+      events.forEach((event) => window.removeEventListener(event, cleanup, true));
+      window.removeEventListener('pagehide', cleanup);
+    };
+    events.forEach((event) => window.addEventListener(event, cleanup, { capture: true, passive: true, once: true }));
+    window.addEventListener('pagehide', cleanup, { once: true });
+    timer = setTimeout(() => {
+      cleanup();
+      const active = document.activeElement;
+      if (!matchMedia('(max-width: 767px)').matches || document.hidden || window.scrollY > 12 || location.hash || (active !== document.body && active !== document.documentElement)) return;
+      const section = document.querySelector('section[data-screen-label="Recognition"]');
+      if (!section) return;
+      document.documentElement.dataset.hsAutoScrolled = 'true';
+      section.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+    }, 4500);
+  }
   function ready() {
     document.querySelectorAll('[data-hs-direct-booking]').forEach((a) => { a.href = new URL('book-a-meeting.html', root).href; });
     document.querySelectorAll('[data-hs-external-booking]').forEach((a) => { a.href = calendarUrl(); });
@@ -177,7 +200,7 @@
       else { a.removeAttribute('href'); a.textContent = 'Privacy notice pending client configuration'; }
     });
     document.querySelectorAll('[data-hs-preferences]').forEach((b) => { b.onclick = () => { try { sessionStorage.removeItem(key); } catch {} consentPanel(); }; });
-    consentPanel(); initialize();
+    consentPanel(); initialize(); scheduleRecognitionScroll();
   }
   function start() {
     if (document.querySelector('#dc-root > *')) ready();

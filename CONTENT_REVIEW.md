@@ -16,6 +16,7 @@ Before paid traffic, the client should approve or correct:
 | Seattle pilot and its timeline | Confirm the pilot happened as stated and that outcomes/partner names can be published; otherwise label it as a proposed/example pilot or remove the claims. |
 | Mining work context | Underground messaging may not fit quarry/aggregates prospects. Check the product's actual suitability; do not imply intrinsically safe certification without evidence. |
 | Sample report and demonstration values | Clearly illustrative; do not represent invented crew data as measured customer outcomes. |
+| Sample-report action line | The requested line, "ground the crew that is not ready", now appears on all three sample reports. Approve evidence and intended use before paid traffic. Sweat loss alone does not certify fitness for deployment or justify an employment decision. |
 | 10-minute call | Sirisha owns correction of the actual Calendly duration; the website does not change her event. |
 | Price / offer | Introduction is free. Organizational pilots are paid; confirm their scope, commercial terms and procurement route. |
 

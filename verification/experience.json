@@ -19,7 +19,7 @@
       "lcpMs": 88,
       "cls": 0,
       "fcpMs": 88,
-      "transferredBytes": 826788
+      "transferredBytes": 831331
     },
     {
       "slug": "hydrosense-mining-safety",
@@ -29,7 +29,7 @@
       "lcpMs": 84,
       "cls": 0,
       "fcpMs": 84,
-      "transferredBytes": 680904
+      "transferredBytes": 685447
     },
     {
       "slug": "hydrosense-us-construction",
@@ -39,7 +39,7 @@
       "lcpMs": 88,
       "cls": 0,
       "fcpMs": 88,
-      "transferredBytes": 615330
+      "transferredBytes": 619873
     }
   ]
 }

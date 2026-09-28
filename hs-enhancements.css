@@ -22,6 +22,9 @@ input:focus-visible { outline-offset: 1px; }
 .hs-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .hs-form-meta { font-size: 14px; line-height: 1.5; color: #c4c4cc; margin: 0; }
 .hs-form-meta a { color: #67e8f9; text-decoration: underline; }
+.hs-footer-brand-link { justify-content: center; width: 130px; min-height: 88px; padding: 12px !important; border-radius: 6px !important; }
+.hs-footer-brand-link img { height: 62px !important; max-width: 100%; }
+[data-footer-brand] > p { color: #cbd2d5 !important; font-size: 14px !important; line-height: 1.45 !important; max-width: 36ch !important; }
 .hs-illustrative { font-size: 13px; line-height: 1.5; color: #c4c4cc; margin-top: 12px; }
 [data-hs-horizon] > div { box-sizing: border-box; max-width: 100%; min-width: 0; padding: 6px 8px !important; gap: 3px !important; }
 [data-hs-horizon] img { width: 56px !important; max-width: 44% !important; max-height: 38% !important; object-fit: contain; }
@@ -29,6 +32,16 @@ input:focus-visible { outline-offset: 1px; }
 [data-hs-horizon] > div > div > span { display: block; max-width: 100%; overflow-wrap: normal; text-align: center; letter-spacing: 0 !important; }
 [data-hs-horizon] > div > div > span:first-child { font-size: 13px !important; line-height: 1.15 !important; }
 [data-hs-horizon] > div > div > span:last-child { font-size: 9px !important; line-height: 1.15 !important; }
+@media (min-width: 768px) and (max-width: 1199px) {
+  [data-hs-horizon] img { width: clamp(56px, 6vw, 70px) !important; max-width: 60% !important; max-height: 42% !important; }
+  [data-hs-horizon] > div > div > span:first-child { font-size: 14px !important; }
+  [data-hs-horizon] > div > div > span:last-child { font-size: 10px !important; }
+}
+@media (min-width: 1200px) {
+  [data-hs-horizon] img { width: clamp(82px, 6.5vw, 120px) !important; max-width: 70% !important; max-height: 48% !important; }
+  [data-hs-horizon] > div > div > span:first-child { font-size: clamp(18px, 1.1vw, 22px) !important; }
+  [data-hs-horizon] > div > div > span:last-child { font-size: clamp(11px, .8vw, 14px) !important; }
+}
 .hs-campaign-link { display: flex !important; align-items: center; justify-content: space-between; gap: 20px; width: 100%; max-width: 900px; margin: 0 auto; padding: 19px 0 !important; border: 0 !important; border-top: 1px solid #33343a !important; border-bottom: 1px solid #33343a !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; text-decoration: none !important; }
 .hs-campaign-title { color: #f2f3f3; font-size: 16px; font-weight: 600; line-height: 1.35; }
 .hs-campaign-action { display: inline-flex; align-items: center; gap: 7px; flex: none; color: #73d8e7; font-size: 14px; font-weight: 500; line-height: 1.35; }
@@ -148,6 +161,13 @@ input:focus-visible { outline-offset: 1px; }
   #data [data-barval] { font-size: 12px !important; width: 49px !important; }
   #data [data-outcomes] { margin-top: 19px !important; padding-top: 18px !important; }
 
+  [data-footer-brand] { display: grid !important; grid-template-columns: 106px minmax(0, 1fr); column-gap: 16px !important; row-gap: 16px !important; align-items: center; }
+  [data-footer-brand] > .hs-footer-brand-link { grid-column: 1; grid-row: 1; width: 106px; min-height: 78px; padding: 10px !important; }
+  [data-footer-brand] > a[aria-label="Innovosens home"].hs-footer-brand-link img { height: 56px !important; }
+  [data-footer-brand] > p { grid-column: 2; grid-row: 1; margin: 0 !important; font-size: 14px !important; line-height: 1.4 !important; }
+  [data-footer-brand] > a[href^="mailto:"] { grid-column: 1 / -1; grid-row: 2; }
+  [data-footer-brand] > div { grid-column: 1 / -1; grid-row: 3; margin-top: 0 !important; }
+
   section[data-screen-label="FAQ"] > div:first-child { padding: 36px 20px !important; }
   section[data-screen-label="FAQ"] > div > div:first-child { margin-bottom: 20px !important; }
   section[data-screen-label="FAQ"] > div > div:nth-child(2) { gap: 8px !important; }
@@ -165,4 +185,7 @@ input:focus-visible { outline-offset: 1px; }
   section[data-hero-root] h1 { font-size: 29px !important; }
   section[data-hero-root] [data-hero-copy] { padding: 22px 0 21px !important; }
   [data-hero-root] > picture { height: 260px; }
+  [data-footer-brand] { grid-template-columns: 94px minmax(0, 1fr); column-gap: 12px !important; }
+  [data-footer-brand] > .hs-footer-brand-link { width: 94px; min-height: 72px; }
+  [data-footer-brand] > p { font-size: 13px !important; }
 }

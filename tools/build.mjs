@@ -95,6 +95,7 @@ async function landing() {
   });
   form.find('[type="submit"]').addClass('hs-submit').before('<label class="hs-form-label" for="hs-phone">Phone (optional, include country code)</label><input id="hs-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" placeholder="+1" style="width:100%;padding:15px 17px;border:1px solid #2a2a30;border-radius:12px;font-size:16px;background:#0b0b0d;color:#fafafa"><label class="hs-inquiry-consent"><input name="inquiryConsent" type="checkbox" value="yes" required><span>I agree to be contacted about a pilot.</span></label><label class="hs-honeypot" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>');
   form.append('<p data-hs-status role="status" aria-live="polite"></p><p class="hs-form-meta"><a data-hs-direct-booking href="./book-a-meeting.html">Book directly</a></p>');
+  $('[data-footer-brand] > a').first().addClass('hs-footer-brand-link');
   $('[data-site-footer]').append('<div style="max-width:1280px;margin:auto;padding:16px 24px 32px"><button data-hs-preferences type="button" style="background:none;border:0;color:#c4c4cc;text-decoration:underline;cursor:pointer;font:14px system-ui">Advertising privacy preferences</button></div>');
   const horizon = $('[data-marks-grid] [data-mark-tile]').filter((_, el) => $(el).text().includes('Horizon 2020'));
   const almi = $('[data-marks-grid] [data-mark-tile]').filter((_, el) => $(el).find('img[alt="Almi"]').length);
@@ -109,17 +110,21 @@ async function landing() {
   outcomes.children().slice(1).remove();
   outcomes.contents().filter((_, node) => node.type === 'text' && !node.data.trim()).remove();
   outcomes.children().first().find('span').first().remove();
-  const actionLine = {
-    firefighters: 'Plan rehab from measured sweat loss.',
-    mining: 'Adjust hydration before the next shift.',
-    construction: 'Plan breaks around measured sweat loss.'
-  }[manifest.industry];
-  outcomes.children().first().find('div').last().text(actionLine);
+  outcomes.children().first().find('div').last().text('ground the crew that is not ready');
   const campaignLink = $('section[data-screen-label="Campaign record"] a').first();
   campaignLink.removeAttr('style data-glow data-nudge data-reveal style-hover style-active').addClass('hs-campaign-link');
   campaignLink.html('<span class="hs-campaign-title">HydroSense on Kickstarter</span><span class="hs-campaign-action">View campaign <span aria-hidden="true">↗</span></span>');
   const firstHeatFigure = $('section[data-screen-label="Heat risk map"] [data-countto]').first();
-  if (firstHeatFigure.length) firstHeatFigure.attr('data-hs-delayed-count', '');
+  if (firstHeatFigure.length) {
+    firstHeatFigure.attr('data-hs-delayed-count', '');
+    firstHeatFigure.closest('[data-glow]').attr('data-hs-count-trigger', '');
+  }
+  const riskFigures = $('section[data-screen-label="Why it matters"] [data-countto]').slice(0, 2);
+  if (riskFigures.length !== 2) throw new Error('Risk counters missing');
+  riskFigures.each((_, el) => {
+    $(el).attr('data-hs-delayed-count', '');
+    $(el).closest('[data-reveal]').attr('data-hs-count-trigger', '');
+  });
   landingPresentation($);
   // If the export has no named dashboard root, label its simulated cohort panel directly.
   if (!$('#data [data-report-card]').length) $('[data-hs-panel], [data-hs-wrap], [data-hs]').first().append('<p class="hs-illustrative">Illustrative example only. Not a certification of operational readiness.</p>');
@@ -151,7 +156,7 @@ async function landing() {
   let pageLogic = logic.text().replace(/submit: \(e\) => \{[\s\S]*?\n      \},\n      reset:/, 'submit: (e) => { e.preventDefault(); },\n      reset:');
   pageLogic = pageLogic.replace('const el = en.target;\n        el._live = true;', 'const el = en.target.querySelector("[data-hs-delayed-count]") || en.target;\n        el._live = true;');
   pageLogic = pageLogic.replace('this._cio.unobserve(el);', 'this._cio.unobserve(en.target);');
-  pageLogic = pageLogic.replace('els.forEach((e) => this._cio.observe(e));', 'els.forEach((e) => this._cio.observe(e.hasAttribute("data-hs-delayed-count") ? (e.closest("[data-glow]") || e) : e));');
+  pageLogic = pageLogic.replace('els.forEach((e) => this._cio.observe(e));', 'els.forEach((e) => this._cio.observe(e.hasAttribute("data-hs-delayed-count") ? (e.closest("[data-hs-count-trigger]") || e) : e));');
   if (!pageLogic.includes('en.target.querySelector("[data-hs-delayed-count]")')) throw new Error('Count-up animation transform failed');
   logic.text(pageLogic);
   let html = $.html();
