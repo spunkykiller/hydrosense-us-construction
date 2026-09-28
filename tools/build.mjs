@@ -126,6 +126,13 @@ async function landing() {
     $(el).closest('[data-reveal]').attr('data-hs-count-trigger', '');
   });
   landingPresentation($);
+  if (manifest.industry === 'firefighters') {
+    const pilotLine = $('#pilot h2').first().parent().children('p').first();
+    if (pilotLine.text().trim() !== 'A working program on live shifts. Baseline first, then measured sessions in full turnouts.') {
+      throw new Error('Seattle pilot supporting line changed');
+    }
+    pilotLine.remove();
+  }
   // If the export has no named dashboard root, label its simulated cohort panel directly.
   if (!$('#data [data-report-card]').length) $('[data-hs-panel], [data-hs-wrap], [data-hs]').first().append('<p class="hs-illustrative">Illustrative example only. Not a certification of operational readiness.</p>');
   $('video').attr('preload', 'none');
